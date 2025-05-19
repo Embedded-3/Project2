@@ -28,6 +28,9 @@
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
 
+#include "asclin.h"
+#include "adc.h"
+
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
 void core0_main(void)
@@ -44,7 +47,18 @@ void core0_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
         
+    initShellInterface();
+    Driver_MQ135_Init();
+    Driver_Adc0_ConvStart();
+
+    initPwm();
+    startPwm();
+
+    uint16 data = 0;
     while(1)
     {
+        data = Driver_Adc0_DataObtain();
+        print("%d\n\r", data);
+        for(volatile int i=0;i<10000000;i++);
     }
 }
