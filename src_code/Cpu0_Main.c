@@ -30,6 +30,7 @@
 
 #include "asclin.h"
 #include "adc.h"
+#include "driver/pwm/pwm.h"
 
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -59,6 +60,12 @@ void core0_main(void)
     {
         data = Driver_Adc0_DataObtain();
         print("%d\n\r", data);
+
+        // static int v = 4000;
+        // setPwm(FR, v);
+        // setPwm(FL, v);
+        // v-= 100;
+        // if(v == 0) v = 4000;
         for(volatile int i=0;i<10000000;i++);
     }
 }
