@@ -8,7 +8,8 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include uart/subdir.mk
+-include driver/uart/subdir.mk
+-include driver/smem/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_PinMap/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Impl/subdir.mk
@@ -20,7 +21,6 @@ RM := rm -rf
 -include Libraries/iLLD/TC27D/Tricore/Gtm/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Cpu/Trap/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Cpu/Std/subdir.mk
--include Libraries/iLLD/TC27D/Tricore/Cpu/Irq/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Cpu/CStart/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Asclin/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Asclin/Asc/subdir.mk
@@ -30,14 +30,23 @@ RM := rm -rf
 -include Configurations/Debug/subdir.mk
 -include subdir.mk
 ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(strip $(C++M_DEPS)),)
+-include $(C++M_DEPS)
+endif
 ifneq ($(strip $(C++_DEPS)),)
 -include $(C++_DEPS)
+endif
+ifneq ($(strip $(CCM_DEPS)),)
+-include $(CCM_DEPS)
 endif
 ifneq ($(strip $(CC_DEPS)),)
 -include $(CC_DEPS)
 endif
 ifneq ($(strip $(CPP_DEPS)),)
 -include $(CPP_DEPS)
+endif
+ifneq ($(strip $(CXXM_DEPS)),)
+-include $(CXXM_DEPS)
 endif
 ifneq ($(strip $(CXX_DEPS)),)
 -include $(CXX_DEPS)
@@ -58,39 +67,44 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := TC275_UART
+BUILD_ARTIFACT_NAME := aa
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_SIZE += \
-TC275_UART.siz \
+aa.siz \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: TC275_UART.elf secondary-outputs
+main-build: aa.elf secondary-outputs
 
 # Tool invocations
-TC275_UART.elf: $(OBJS) makefile $(OPTIONAL_TOOL_DEPS)
+aa.elf: $(OBJS) makefile $(OPTIONAL_TOOL_DEPS) .aa.elf.opt
 	@echo 'Building target: $@'
 	@echo 'Invoking: TASKING Linker'
-	cctc --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="TC275_UART.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --fp-model=3 -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc27xd -o"TC275_UART.elf" -Wl-o"TC275_UART.hex:IHEX" $(OBJS)
+	cctc -f .aa.elf.opt
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-TC275_UART.siz: TC275_UART.elf makefile $(OPTIONAL_TOOL_DEPS)
+.aa.elf.opt:
+	@argfile .aa.elf.opt --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="aa.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --fp-model=3 -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc27xd -o"aa.elf" -Wl-o"aa.hex:IHEX" $(OBJS)
+
+.PHONY: .aa.elf.opt
+
+aa.siz: aa.elf makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: Print Size'
-	elfsize  "TC275_UART.elf"
+	elfsize  "aa.elf"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) TC275_UART.siz TC275_UART.elf
+	-$(RM) aa.siz aa.elf
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_SIZE)

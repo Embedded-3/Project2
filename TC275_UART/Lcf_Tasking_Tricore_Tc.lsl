@@ -179,7 +179,7 @@ derivative tc27D
         map (dest=bus:tc1:fpi_bus, dest_offset=0xc0000000, size=32k, priority=8);
         map (dest=bus:sri, dest_offset=0x60100000, size=32k);
     }
-     
+    
     memory dsram0 // Data Scratch Pad Ram
     {
         mau = 8;
@@ -231,7 +231,23 @@ derivative tc27D
         type = ram;
         priority = 2;
         map     cached (dest=bus:sri, dest_offset=0x90000000,           size=32k);
-        map not_cached (dest=bus:sri, dest_offset=0xb0000000, reserved, size=32k);
+    }
+    
+    memory lmuram_uncached
+    {
+        mau = 8;
+        size = 32k;
+        type = ram;
+        priority = 2;
+        map (dest=bus:sri, dest_offset=0xb0000000, size=32k);
+    }
+    
+    section_layout :vtc:linear
+    {
+        group sharedGroup (ordered, run_addr=mem:lmuram_uncached)
+        {
+            select ".shared";
+        }
     }
     
     memory edmem

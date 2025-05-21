@@ -23,20 +23,20 @@
  * COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN 
  * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
  * IN THE SOFTWARE.
- *********************************************************************************************************************/
+ *********************************************************************************************************************/\
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
-
-#include "IfxStm.h"
-#include "IfxCpu_Irq.h"
-
-#include <uart/uart.h>
-
-
+#include "IfxPort.h"
+#include "IfxPort_PinMap.h"
+#include "shared_memory.h"
+#include "string.h"
 
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
+
+
+void initLED(void);
 
 void core0_main(void)
 {
@@ -48,18 +48,25 @@ void core0_main(void)
     IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
     IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
     
+    initLED();
+
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
-
-    IfxCpu_enableInterrupts();
-
-    init_Asc0();
-
-    txTestAsc0();
-    while(1)
+        
+    while (1)
     {
-
+        strcpy(s_arduinoTxBuf, "HELLO FROM TC275 main 0!\r\n");
+        for (int i = 0; i < 1000000; i++);
     }
 }
 
+void initLED(void)
+{
+    // RED LED D12
+    IfxPort_setPinModeOutput(IfxPort_P10_1.port, IfxPort_P10_1.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(IfxPort_P10_1.port, IfxPort_P10_1.pinIndex);
+    // BLUE LED D13
+    IfxPort_setPinModeOutput(IfxPort_P10_2.port, IfxPort_P10_2.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(IfxPort_P10_1.port, IfxPort_P10_1.pinIndex);
+}
