@@ -11,6 +11,8 @@ volatile int right_duration = 0;
 volatile uint8 right_encoderPinALast = 0;
 
 
+
+
 IFX_INTERRUPT(left_encoderInterruptHandler, 0, ISR_PRIORITY_LEFT_ENCODER);
 void left_encoderInterruptHandler(void)
 {

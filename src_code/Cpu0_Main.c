@@ -31,8 +31,27 @@
 #include "asclin.h"
 #include "adc.h"
 #include "driver/pwm/pwm.h"
+#include "driver/encoder/encoder.h"
+#include "driver/stm/stm.h"
+#include "driver/user_MotorCtl.h"
+
+#include "IfxPort.h"
+#include "IfxPort_PinMap.h"
+
+
 
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
+
+TestCnt stTestCnt;                      // Test counter for scheduling
+
+// Task scheduling related
+void AppScheduling(void);
+void AppTask1ms(void);
+void AppTask10ms(void);
+void AppTask100ms(void);
+void AppTask1000ms(void);
+
+
 
 void core0_main(void)
 {
@@ -48,24 +67,85 @@ void core0_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
         
-    initShellInterface();
-    Driver_MQ135_Init();
-    Driver_Adc0_ConvStart();
+    initShellInterface();   // 디버깅
+    Driver_Stm_Init();      // 스케줄링
+    initEncoder();          // 엔코더 초기화
 
-    initPwm();
-    startPwm();
+    initPwm();              // PWM 초기화
+    startPwm();             // PWM 시작
 
-    uint16 data = 0;
+
+    //for(int i=0;i<4;i++) setPwm(i, GO_AFTER_STOP);
+
+    //for(int i=0;i<4;i++) setPwm(i, MIN);
+    //for(int i=0;i<4;i++) setPwm(i, 1700);   
+    for(int i=0;i<4;i++) setPwm(i, 2000);   
+
     while(1)
     {
-        data = Driver_Adc0_DataObtain();
-        print("%d\n\r", data);
+        AppScheduling();
 
-        // static int v = 4000;
-        // setPwm(FR, v);
-        // setPwm(FL, v);
-        // v-= 100;
-        // if(v == 0) v = 4000;
-        for(volatile int i=0;i<10000000;i++);
+
+
+    }
+}
+
+
+
+void AppTask1ms(void)
+{
+    stTestCnt.u32nuCnt1ms++;
+}
+
+void AppTask10ms(void)
+{
+    stTestCnt.u32nuCnt10ms++;
+}
+
+void AppTask100ms(void)
+{
+    stTestCnt.u32nuCnt100ms++;
+}
+
+void AppTask1000ms(void)
+{
+    stTestCnt.u32nuCnt1000ms++;
+
+
+    //속도 (cm/s) = (duration × 바퀴 원주) / (PPR × 측정 시간(초))
+    // double left_speed, right_speed = 0;
+    // left_speed = left_duration * DIAMETER * 3.1416 / (PPR * 1);
+    // right_speed = right_duration * DIAMETER * 3.1416 / (PPR * 1);
+    // print(CYAN"%.3lf [cm/s] | %.3lf [cm/s]\n\r"RESET, left_speed, right_speed);
+
+    getSpeed(1); // 1초마다 속도 측정
+
+
+
+}
+
+void AppScheduling(void)
+{
+    if(stSchedulingInfo.u8nuScheduling1msFlag == 1u)
+    {
+        stSchedulingInfo.u8nuScheduling1msFlag = 0u;
+        AppTask1ms();
+
+        if(stSchedulingInfo.u8nuScheduling10msFlag == 1u)
+        {
+            stSchedulingInfo.u8nuScheduling10msFlag = 0u;
+            AppTask10ms();
+        }
+
+        if(stSchedulingInfo.u8nuScheduling100msFlag == 1u)
+        {
+            stSchedulingInfo.u8nuScheduling100msFlag = 0u;
+            AppTask100ms();
+        }
+        if(stSchedulingInfo.u8nuScheduling1000msFlag == 1u)
+        {
+            stSchedulingInfo.u8nuScheduling1000msFlag = 0u;
+            AppTask1000ms();
+        }
     }
 }

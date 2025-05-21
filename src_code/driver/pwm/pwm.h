@@ -8,9 +8,9 @@
 #include "IfxGtm_Atom_Pwm.h"
 #include "asclin.h"
 
-#define ISR_PRIORITY_TOM    20                                      /* Interrupt priority number                    */
+#define NUM_WHEELS 4
 
-// ATOM 모듈 0, 채널 0으로 통일
+// ATOM 모듈 0
 #define FrontRight          IfxGtm_ATOM0_0_TOUT0_P02_0_OUT // D2 pin
 #define FrontLeft           IfxGtm_ATOM0_1_TOUT1_P02_1_OUT // D3 pin
 #define RearRight           IfxGtm_ATOM0_3_TOUT3_P02_3_OUT // D5 pin
@@ -19,10 +19,10 @@
 
 #define CLK_FREQ                     100000000.0f // 1000000.0f
 #define PWM_PERIOD                   4000
-#define DEFAULT_DUTY_FRONT_RIGHT     2500 //5000000 //20000 //12000 //10000
-#define DEFAULT_DUTY_FRONT_LEFT      2300 // 2500 
-#define DEFAULT_DUTY_REAR_RIGHT      2300 //00 //20000 //12000 //10000                   
-#define DEFAULT_DUTY_REAR_LEFT       2300 //00 //3500 //5000 //10000                     
+#define DEFAULT_DUTY_FRONT_RIGHT     STOP
+#define DEFAULT_DUTY_FRONT_LEFT      STOP
+#define DEFAULT_DUTY_REAR_RIGHT      STOP                
+#define DEFAULT_DUTY_REAR_LEFT       STOP             
 
 typedef enum WHEEL{
     FR = 0,
@@ -31,9 +31,15 @@ typedef enum WHEEL{
     RL = 3,
 } e_Wheel_t;
 
+typedef enum STEERING_DIR{
+    LEFT = 0,
+    RIGHT = 1,
+} e_SteeringDir_t;
+
 typedef enum SPEED{
     STOP = 0,
-    MIN = 2300,
+    MMIN = 2000,
+    MIN = 2350,
 
     MAX = 4000,
 } e_Speed_t;
@@ -41,6 +47,17 @@ typedef enum SPEED{
 void initPwm(void);
 void startPwm(void);
 void setPwm(const e_Wheel_t whichWheel, uint32 dutyCycle);
-
+void setCurve(const e_SteeringDir_t dir, uint32 left_duty, uint32 right_duty);
 
 #endif
+/*
+무부하 엔코더 값 기록
+
+속도(듀티) | 엔코더 값
+1700    680?    // 진짜 최저 속도 거북이임
+MIN     1380
+MAX     3100
+3000    2400
+2500    1760
+
+*/

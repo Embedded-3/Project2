@@ -32,6 +32,7 @@ Libraries/Service/CpuGeneric/SysSe/Comm \
 Libraries/iLLD/TC27D/Tricore/Asclin/Asc \
 Libraries/iLLD/TC27D/Tricore/Asclin/Std \
 Libraries/iLLD/TC27D/Tricore/Cpu/CStart \
+Libraries/iLLD/TC27D/Tricore/Cpu/Irq \
 Libraries/iLLD/TC27D/Tricore/Cpu/Std \
 Libraries/iLLD/TC27D/Tricore/Cpu/Trap \
 Libraries/iLLD/TC27D/Tricore/Gtm/Atom/Pwm \
@@ -49,5 +50,8 @@ Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling \
 Libraries/iLLD/TC27D/Tricore/_PinMap \
 driver/adc \
 driver/debug_asclin \
+driver/encoder \
 driver/pwm \
+driver/stm \
+driver \
 

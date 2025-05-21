@@ -1,7 +1,6 @@
 // pwm.c
 #include "pwm.h"
 
-#define NUM_WHEELS 4
 
 typedef struct {
     IfxGtm_Atom_Pwm_Config config;
@@ -13,6 +12,7 @@ typedef struct {
 // Static function Definition
 static void initWheelPwm(PwmWheel_t* wheel);
 static void setDutyCycle(PwmWheel_t* wheel, const uint32 dutyCycle);
+static void checkDutyCycle(uint32* dutyCycle);
 
 // Wheel instance declarations
 PwmWheel_t pwmWheels[4] = {
@@ -23,7 +23,7 @@ PwmWheel_t pwmWheels[4] = {
 };
 
 // User Func : PWM 초기화
-void initPwm(void){
+void initPwm(void) {
     IfxGtm_enable(&MODULE_GTM); /* Enable GTM */
     IfxGtm_Cmu_setClkFrequency(&MODULE_GTM, IfxGtm_Cmu_Clk_0, CLK_FREQ);            /* Set the CMU clock 0 frequency    */
     IfxGtm_Cmu_enableClocks(&MODULE_GTM, IFXGTM_CMU_CLKEN_CLK0);                    /* Enable the CMU clock 0           */
@@ -53,12 +53,11 @@ void startPwm(void){
     }
 }
 
-// User Func : Duty조정
+// User Func : 각 바퀴마다 Duty조정
 void setPwm(const e_Wheel_t whichWheel, uint32 dutyCycle) {
     if (whichWheel >= NUM_WHEELS) return;   // 4 바퀴 초과의 값
 
-    if(dutyCycle >= PWM_PERIOD)  dutyCycle = PWM_PERIOD;
-    else if(dutyCycle <= 0)      dutyCycle = 0;
+    checkDutyCycle(&dutyCycle); // duty 범위 체크
     
     setDutyCycle(&pwmWheels[whichWheel], dutyCycle);
 }
@@ -67,4 +66,31 @@ void setPwm(const e_Wheel_t whichWheel, uint32 dutyCycle) {
 static void setDutyCycle(PwmWheel_t* wheel, const uint32 dutyCycle) {
     wheel->config.dutyCycle = dutyCycle;
     IfxGtm_Atom_Pwm_init(&(wheel->driver), &(wheel->config));
+}
+
+// User Func : 좌우 조향 // TODO
+void setCurve(const e_SteeringDir_t dir, uint32 left_duty, uint32 right_duty) {
+    // duty 범위 체크
+    checkDutyCycle(&left_duty);
+    checkDutyCycle(&right_duty);
+
+    if (dir == LEFT) {
+        setPwm(FL, left_duty);
+        setPwm(RL, left_duty);
+        setPwm(FR, right_duty);
+        setPwm(RR, right_duty);
+    } else if (dir == RIGHT) {
+        setPwm(FL, left_duty);
+        setPwm(RL, left_duty);
+        setPwm(FR, right_duty);
+        setPwm(RR, right_duty);
+    }
+}
+
+// Duty 범위 체크
+static void checkDutyCycle(uint32* dutyCycle) {
+    if (dutyCycle == NULL) return;
+    
+    if(*dutyCycle >= PWM_PERIOD)  *(unsigned int*)dutyCycle = PWM_PERIOD;
+    else if(*dutyCycle <= 0)      *(unsigned int*)dutyCycle = 0;
 }

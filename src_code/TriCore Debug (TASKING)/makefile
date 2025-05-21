@@ -8,9 +8,12 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include driver/stm/subdir.mk
 -include driver/pwm/subdir.mk
+-include driver/encoder/subdir.mk
 -include driver/debug_asclin/subdir.mk
 -include driver/adc/subdir.mk
+-include driver/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_PinMap/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Impl/subdir.mk
@@ -26,6 +29,7 @@ RM := rm -rf
 -include Libraries/iLLD/TC27D/Tricore/Gtm/Atom/Pwm/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Cpu/Trap/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Cpu/Std/subdir.mk
+-include Libraries/iLLD/TC27D/Tricore/Cpu/Irq/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Cpu/CStart/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Asclin/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Asclin/Asc/subdir.mk

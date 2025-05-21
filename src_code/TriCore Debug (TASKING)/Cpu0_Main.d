@@ -144,3 +144,29 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Atom\\Pwm\IfxGtm_Atom_Pwm.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h" :
+Cpu0_Main.o :	..\driver\encoder\encoder.h
+..\driver\encoder\encoder.h :
+Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdbool.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdbool.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\_PinMap\IfxPort_PinMap.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\_PinMap\IfxPort_PinMap.h" :
+Cpu0_Main.o :	..\driver\stm\stm.h
+..\driver\stm\stm.h :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Stm\\Std\IfxStm.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Stm\\Std\IfxStm.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxStm_cfg.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxStm_cfg.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCbs_reg.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCbs_reg.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCbs_regdef.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCbs_regdef.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D\Tricore\Cpu\Irq\IfxCpu_Irq.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D\Tricore\Cpu\Irq\IfxCpu_Irq.h" :
+Cpu0_Main.o :	..\driver\user_MotorCtl.h
+..\driver\user_MotorCtl.h :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\pwm\pwm.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\pwm\pwm.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\encoder\encoder.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\encoder\encoder.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h" :
