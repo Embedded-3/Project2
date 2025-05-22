@@ -24,11 +24,11 @@ void left_encoderInterruptHandler(void)
         uint8 valB = IfxPort_getPinState(LEFT_ENCODER_PIN_B);
         if (valB == 0 && LEFT_Direction)
         {
-            LEFT_Direction = FALSE; // Reverse
+            LEFT_Direction = FALSE;     // 앞으로
         }
         else if (valB == 1 && !LEFT_Direction)
         {
-            LEFT_Direction = TRUE; // Forward
+            LEFT_Direction = TRUE;      // 뒤로
         }
     }
 
@@ -51,11 +51,11 @@ void right_encoderInterruptHandler(void)
         uint8 valB = IfxPort_getPinState(RIGHT_ENCODER_PIN_B);
         if (valB == 0 && RIGHT_Direction)
         {
-            RIGHT_Direction = FALSE;
+            RIGHT_Direction = FALSE;    // 뒤로
         }
         else if (valB == 1 && !RIGHT_Direction)
         {
-            RIGHT_Direction = TRUE;
+            RIGHT_Direction = TRUE;     // 앞으로
         }
     }
 

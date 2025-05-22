@@ -87,3 +87,33 @@ void STM_Int0Handler(void)
         stSchedulingInfo.u8nuScheduling1000msFlag = 1u;
     }
 }
+
+
+/***********************************************************************/
+
+TestCnt stTestCnt;                      // Test counter for scheduling
+void AppScheduling(void)
+{
+    if(stSchedulingInfo.u8nuScheduling1msFlag == 1u)
+    {
+        stSchedulingInfo.u8nuScheduling1msFlag = 0u;
+        AppTask1ms();
+
+        if(stSchedulingInfo.u8nuScheduling10msFlag == 1u)
+        {
+            stSchedulingInfo.u8nuScheduling10msFlag = 0u;
+            AppTask10ms();
+        }
+
+        if(stSchedulingInfo.u8nuScheduling100msFlag == 1u)
+        {
+            stSchedulingInfo.u8nuScheduling100msFlag = 0u;
+            AppTask100ms();
+        }
+        if(stSchedulingInfo.u8nuScheduling1000msFlag == 1u)
+        {
+            stSchedulingInfo.u8nuScheduling1000msFlag = 0u;
+            AppTask1000ms();
+        }
+    }
+}

@@ -11,6 +11,7 @@
 //#include "IfxCpu_Irq.h"
 #include "Libraries\iLLD\TC27D\Tricore\Cpu\Irq\IfxCpu_Irq.h"
 
+#include "main.h"
 
 /***********************************************************************/
 /*Typedef*/
@@ -43,10 +44,11 @@ typedef struct
 extern SchedulingFlag stSchedulingInfo;
 
 
+extern TestCnt stTestCnt;   // main에서 사용할 전역변수
 /***********************************************************************/
 /*Global Function Prototype*/
 /***********************************************************************/
-extern void Driver_Stm_Init(void);
-
+void Driver_Stm_Init(void);
+void AppScheduling(void);
 
 #endif // STM_H

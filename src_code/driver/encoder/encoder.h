@@ -21,7 +21,7 @@
 #define RIGHT_ENCODER_PIN_B     &MODULE_P10, 5   // d10
 
 #define PPR             1950        // 한바퀴당 펄스
-#define DIAMETER        6.7         // 바퀴 지름 (cm)
+#define DIAMETER        6.6         // 바퀴 지름 (cm)
 
 
 

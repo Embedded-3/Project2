@@ -38,6 +38,8 @@ Libraries/iLLD/TC27D/Tricore/Cpu/Trap \
 Libraries/iLLD/TC27D/Tricore/Gtm/Atom/Pwm \
 Libraries/iLLD/TC27D/Tricore/Gtm/Std \
 Libraries/iLLD/TC27D/Tricore/Gtm/Tom/Pwm \
+Libraries/iLLD/TC27D/Tricore/I2c/I2c \
+Libraries/iLLD/TC27D/Tricore/I2c/Std \
 Libraries/iLLD/TC27D/Tricore/Mtu/Std \
 Libraries/iLLD/TC27D/Tricore/Port/Std \
 Libraries/iLLD/TC27D/Tricore/Scu/Std \
@@ -51,7 +53,7 @@ Libraries/iLLD/TC27D/Tricore/_PinMap \
 driver/adc \
 driver/debug_asclin \
 driver/encoder \
+driver \
 driver/pwm \
 driver/stm \
-driver \
 
