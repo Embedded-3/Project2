@@ -10,6 +10,8 @@ RM := rm -rf
 -include sources.mk
 -include driver/uart/subdir.mk
 -include driver/smem/subdir.mk
+-include driver/ringbuffer/subdir.mk
+-include driver/parser/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_PinMap/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Impl/subdir.mk
@@ -67,44 +69,44 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := aa
+BUILD_ARTIFACT_NAME := TC275_UART
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_SIZE += \
-aa.siz \
+TC275_UART.siz \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: aa.elf secondary-outputs
+main-build: TC275_UART.elf secondary-outputs
 
 # Tool invocations
-aa.elf: $(OBJS) makefile $(OPTIONAL_TOOL_DEPS) .aa.elf.opt
+TC275_UART.elf: $(OBJS) makefile $(OPTIONAL_TOOL_DEPS) .TC275_UART.elf.opt
 	@echo 'Building target: $@'
 	@echo 'Invoking: TASKING Linker'
-	cctc -f .aa.elf.opt
+	cctc -f .TC275_UART.elf.opt
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-.aa.elf.opt:
-	@argfile .aa.elf.opt --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="aa.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --fp-model=3 -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc27xd -o"aa.elf" -Wl-o"aa.hex:IHEX" $(OBJS)
+.TC275_UART.elf.opt:
+	@argfile .TC275_UART.elf.opt --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="TC275_UART.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --fp-model=3 -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc27xd -o"TC275_UART.elf" -Wl-o"TC275_UART.hex:IHEX" $(OBJS)
 
-.PHONY: .aa.elf.opt
+.PHONY: .TC275_UART.elf.opt
 
-aa.siz: aa.elf makefile $(OPTIONAL_TOOL_DEPS)
+TC275_UART.siz: TC275_UART.elf makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: Print Size'
-	elfsize  "aa.elf"
+	elfsize  "TC275_UART.elf"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) aa.siz aa.elf
+	-$(RM) TC275_UART.siz TC275_UART.elf
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_SIZE)

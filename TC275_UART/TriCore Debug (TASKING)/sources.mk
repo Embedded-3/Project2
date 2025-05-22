@@ -49,6 +49,8 @@ Libraries/iLLD/TC27D/Tricore/Stm/Std \
 Libraries/iLLD/TC27D/Tricore/_Impl \
 Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling \
 Libraries/iLLD/TC27D/Tricore/_PinMap \
+driver/parser \
+driver/ringbuffer \
 driver/smem \
 driver/uart \
 

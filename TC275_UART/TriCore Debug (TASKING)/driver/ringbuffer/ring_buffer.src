@@ -1,0 +1,685 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc26832a --dep-file=driver/ringbuffer/ring_buffer.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\driver\\\\parser -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\driver\\\\ringbuffer -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\driver\\\\smem -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\driver\\\\uart -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o driver/ringbuffer/ring_buffer.src ../driver/ringbuffer/ring_buffer.c"
+	.compiler_name		"ctc"
+	;source	'../driver/ringbuffer/ring_buffer.c'
+
+	
+$TC16X
+	
+	.sdecl	'.text.ring_buffer.RingBufferInit',code,cluster('RingBufferInit')
+	.sect	'.text.ring_buffer.RingBufferInit'
+	.align	2
+	
+	.global	RingBufferInit
+; Function RingBufferInit
+.L12:
+RingBufferInit:	.type	func
+	mov	d15,#0
+.L68:
+	st.h	[a4]256,d15
+.L69:
+	mov	d15,#0
+.L70:
+	st.h	[a4]258,d15
+.L71:
+	ret
+.L43:
+	
+__RingBufferInit_function_end:
+	.size	RingBufferInit,__RingBufferInit_function_end-RingBufferInit
+.L27:
+	; End of function
+	
+	.sdecl	'.text.ring_buffer.RingBufferPut',code,cluster('RingBufferPut')
+	.sect	'.text.ring_buffer.RingBufferPut'
+	.align	2
+	
+	.global	RingBufferPut
+; Function RingBufferPut
+.L14:
+RingBufferPut:	.type	func
+	ld.hu	d15,[a4]256
+.L76:
+	add	d15,#1
+.L77:
+	mov	d0,#256
+.L78:
+	div	e0,d15,d0
+.L59:
+	ld.hu	d15,[a4]258
+.L79:
+	jne	d15,d1,.L2
+.L80:
+	mov	d2,#-1
+.L81:
+	j	.L3
+.L2:
+	ld.hu	d15,[a4]256
+.L82:
+	addsc.a	a15,a4,d15,#0
+.L83:
+	st.b	[a15],d4
+.L84:
+	st.h	[a4]256,d1
+.L85:
+	mov	d2,#0
+.L86:
+	j	.L4
+.L4:
+.L3:
+	ret
+.L47:
+	
+__RingBufferPut_function_end:
+	.size	RingBufferPut,__RingBufferPut_function_end-RingBufferPut
+.L32:
+	; End of function
+	
+	.sdecl	'.text.ring_buffer.RingBufferGet',code,cluster('RingBufferGet')
+	.sect	'.text.ring_buffer.RingBufferGet'
+	.align	2
+	
+	.global	RingBufferGet
+; Function RingBufferGet
+.L16:
+RingBufferGet:	.type	func
+	ld.hu	d15,[a4]256
+.L91:
+	ld.hu	d0,[a4]258
+.L92:
+	jne	d15,d0,.L5
+.L93:
+	mov	d2,#0
+.L94:
+	j	.L6
+.L5:
+	ld.hu	d15,[a4]258
+.L95:
+	addsc.a	a15,a4,d15,#0
+	ld.bu	d15,[a15]
+.L96:
+	st.b	[a5],d15
+.L97:
+	ld.hu	d15,[a4]258
+.L98:
+	add	d15,#1
+.L99:
+	mov	d0,#256
+.L100:
+	div	e0,d15,d0
+.L101:
+	st.h	[a4]258,d1
+.L102:
+	mov	d2,#1
+.L103:
+	j	.L7
+.L7:
+.L6:
+	ret
+.L53:
+	
+__RingBufferGet_function_end:
+	.size	RingBufferGet,__RingBufferGet_function_end-RingBufferGet
+.L37:
+	; End of function
+	
+	.sdecl	'.text.ring_buffer.RingBufferAvailable',code,cluster('RingBufferAvailable')
+	.sect	'.text.ring_buffer.RingBufferAvailable'
+	.align	2
+	
+	.global	RingBufferAvailable
+; Function RingBufferAvailable
+.L18:
+RingBufferAvailable:	.type	func
+	ld.hu	d15,[a4]256
+.L108:
+	ld.hu	d0,[a4]258
+.L109:
+	jlt.u	d15,d0,.L8
+.L110:
+	ld.hu	d2,[a4]256
+.L111:
+	ld.hu	d15,[a4]258
+.L112:
+	sub	d2,d15
+.L113:
+	j	.L9
+.L8:
+	mov	d15,#256
+.L114:
+	ld.hu	d0,[a4]258
+.L115:
+	sub	d2,d15,d0
+.L116:
+	ld.hu	d15,[a4]256
+.L117:
+	add	d2,d15
+.L118:
+	j	.L10
+.L10:
+.L9:
+	ret
+.L57:
+	
+__RingBufferAvailable_function_end:
+	.size	RingBufferAvailable,__RingBufferAvailable_function_end-RingBufferAvailable
+.L42:
+	; End of function
+	
+	.calls	'RingBufferInit','',0
+	.calls	'RingBufferPut','',0
+	.calls	'RingBufferGet','',0
+	.calls	'RingBufferAvailable','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L20:
+	.word	687
+	.half	3
+	.word	.L21
+	.byte	4
+.L19:
+	.byte	1
+	.byte	'../driver/ringbuffer/ring_buffer.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.10-workspace\\TC275_UART\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L22
+.L49:
+	.byte	2
+	.byte	'unsigned char',0,1,8,3,128,2
+	.word	205
+	.byte	4,255,1,0
+.L51:
+	.byte	2
+	.byte	'unsigned short int',0,2,7,5
+	.word	233
+	.byte	5
+	.word	233
+	.byte	6
+	.byte	'_RingBuffer',0,1,8,16,132,2,7
+	.byte	'buffer',0
+	.word	222
+	.byte	128,2,2,35,0,7
+	.byte	'head',0
+	.word	255
+	.byte	2,3,35,128,2,7
+	.byte	'tail',0
+	.word	260
+	.byte	2,3,35,130,2,0
+.L44:
+	.byte	8
+	.word	265
+.L46:
+	.byte	2
+	.byte	'int',0,4,5
+.L55:
+	.byte	8
+	.word	205
+	.byte	2
+	.byte	'short int',0,2,5,9
+	.byte	'__wchar_t',0,2,1,1
+	.word	348
+	.byte	2
+	.byte	'unsigned int',0,4,7,9
+	.byte	'__size_t',0,2,1,1
+	.word	379
+	.byte	9
+	.byte	'__ptrdiff_t',0,2,1,1
+	.word	336
+	.byte	10,1,8
+	.word	432
+	.byte	9
+	.byte	'__codeptr',0,2,1,1
+	.word	434
+	.byte	9
+	.byte	'uint8',0,3,108,29
+	.word	205
+	.byte	9
+	.byte	'uint16',0,3,112,29
+	.word	233
+	.byte	2
+	.byte	'unsigned long int',0,4,7,9
+	.byte	'uint32',0,3,116,29
+	.word	486
+	.byte	9
+	.byte	'sint16',0,3,129,1,29
+	.word	348
+	.byte	2
+	.byte	'long int',0,4,5,9
+	.byte	'sint32',0,3,134,1,29
+	.word	538
+	.byte	2
+	.byte	'long long int',0,8,5,9
+	.byte	'sint64',0,3,141,1,29
+	.word	566
+	.byte	2
+	.byte	'float',0,4,4,9
+	.byte	'float32',0,3,170,1,29
+	.word	599
+	.byte	11
+	.byte	'void',0,8
+	.word	625
+	.byte	9
+	.byte	'pvoid',0,4,54,28
+	.word	631
+	.byte	9
+	.byte	'Ifx_TickTime',0,4,76,28
+	.word	566
+	.byte	9
+	.byte	'RingBuffer',0,1,12,3
+	.word	265
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L21:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,1,1,11,15,73,19,0,0,4,33,0
+	.byte	47,15,0,0,5,53,0,73,19,0,0,6,19,1,3,8,58,15,59,15,57,15,11,15,0,0,7,13,0,3,8,73,19,11,15,56,9,0,0,8,15
+	.byte	0,73,19,0,0,9,22,0,3,8,58,15,59,15,57,15,73,19,0,0,10,21,0,54,15,0,0,11,59,0,3,8,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L22:
+	.word	.L61-.L60
+.L60:
+	.half	3
+	.word	.L63-.L62
+.L62:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.10-workspace\\\\TC275_UART\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std',0
+	.byte	0
+	.byte	'..\\driver\\ringbuffer\\ring_buffer.h',0,0,0,0
+	.byte	'../driver/ringbuffer/ring_buffer.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0
+	.byte	'Ifx_Types.h',0,1,0,0,0
+.L63:
+.L61:
+	.sdecl	'.debug_info',debug,cluster('RingBufferInit')
+	.sect	'.debug_info'
+.L23:
+	.word	270
+	.half	3
+	.word	.L24
+	.byte	4,1
+	.byte	'../driver/ringbuffer/ring_buffer.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.10-workspace\\TC275_UART\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L26,.L25
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'RingBufferInit',0,1,26,6,1,1,1
+	.word	.L12,.L43,.L11
+	.byte	4
+	.byte	'rb',0,1,26,33
+	.word	.L44,.L45
+	.byte	5
+	.word	.L12,.L43
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('RingBufferInit')
+	.sect	'.debug_abbrev'
+.L24:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('RingBufferInit')
+	.sect	'.debug_line'
+.L25:
+	.word	.L65-.L64
+.L64:
+	.half	3
+	.word	.L67-.L66
+.L66:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../driver/ringbuffer/ring_buffer.c',0,0,0,0,0
+.L67:
+	.byte	5,16,7,0,5,2
+	.word	.L12
+	.byte	3,26,1,5,14,9
+	.half	.L68-.L12
+	.byte	1,5,16,9
+	.half	.L69-.L68
+	.byte	3,1,1,5,14,9
+	.half	.L70-.L69
+	.byte	1,5,1,9
+	.half	.L71-.L70
+	.byte	3,1,1,7,9
+	.half	.L27-.L71
+	.byte	0,1,1
+.L65:
+	.sdecl	'.debug_ranges',debug,cluster('RingBufferInit')
+	.sect	'.debug_ranges'
+.L26:
+	.word	-1,.L12,0,.L27-.L12,0,0
+	.sdecl	'.debug_info',debug,cluster('RingBufferPut')
+	.sect	'.debug_info'
+.L28:
+	.word	308
+	.half	3
+	.word	.L29
+	.byte	4,1
+	.byte	'../driver/ringbuffer/ring_buffer.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.10-workspace\\TC275_UART\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L31,.L30
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'RingBufferPut',0,1,32,5
+	.word	.L46
+	.byte	1,1,1
+	.word	.L14,.L47,.L13
+	.byte	4
+	.byte	'rb',0,1,32,31
+	.word	.L44,.L48
+	.byte	4
+	.byte	'data',0,1,32,41
+	.word	.L49,.L50
+	.byte	5
+	.word	.L14,.L47
+	.byte	6
+	.byte	'next',0,1,33,12
+	.word	.L51,.L52
+	.byte	0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('RingBufferPut')
+	.sect	'.debug_abbrev'
+.L29:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
+	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('RingBufferPut')
+	.sect	'.debug_line'
+.L30:
+	.word	.L73-.L72
+.L72:
+	.half	3
+	.word	.L75-.L74
+.L74:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../driver/ringbuffer/ring_buffer.c',0,0,0,0,0
+.L75:
+	.byte	5,22,7,0,5,2
+	.word	.L14
+	.byte	3,32,1,5,29,9
+	.half	.L76-.L14
+	.byte	1,5,36,9
+	.half	.L77-.L76
+	.byte	1,5,34,9
+	.half	.L78-.L77
+	.byte	1,5,19,9
+	.half	.L59-.L78
+	.byte	3,1,1,5,5,9
+	.half	.L79-.L59
+	.byte	1,5,16,7,9
+	.half	.L80-.L79
+	.byte	3,2,1,5,9,9
+	.half	.L81-.L80
+	.byte	1,5,18,9
+	.half	.L2-.L81
+	.byte	3,2,1,5,15,9
+	.half	.L82-.L2
+	.byte	1,5,26,9
+	.half	.L83-.L82
+	.byte	1,5,14,9
+	.half	.L84-.L83
+	.byte	3,1,1,5,12,9
+	.half	.L85-.L84
+	.byte	3,1,1,5,5,9
+	.half	.L86-.L85
+	.byte	1,5,1,9
+	.half	.L3-.L86
+	.byte	3,1,1,7,9
+	.half	.L32-.L3
+	.byte	0,1,1
+.L73:
+	.sdecl	'.debug_ranges',debug,cluster('RingBufferPut')
+	.sect	'.debug_ranges'
+.L31:
+	.word	-1,.L14,0,.L32-.L14,0,0
+	.sdecl	'.debug_info',debug,cluster('RingBufferGet')
+	.sect	'.debug_info'
+.L33:
+	.word	290
+	.half	3
+	.word	.L34
+	.byte	4,1
+	.byte	'../driver/ringbuffer/ring_buffer.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.10-workspace\\TC275_UART\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L36,.L35
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'RingBufferGet',0,1,44,5
+	.word	.L46
+	.byte	1,1,1
+	.word	.L16,.L53,.L15
+	.byte	4
+	.byte	'rb',0,1,44,31
+	.word	.L44,.L54
+	.byte	4
+	.byte	'data',0,1,44,42
+	.word	.L55,.L56
+	.byte	5
+	.word	.L16,.L53
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('RingBufferGet')
+	.sect	'.debug_abbrev'
+.L34:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('RingBufferGet')
+	.sect	'.debug_line'
+.L35:
+	.word	.L88-.L87
+.L87:
+	.half	3
+	.word	.L90-.L89
+.L89:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../driver/ringbuffer/ring_buffer.c',0,0,0,0,0
+.L90:
+	.byte	5,11,7,0,5,2
+	.word	.L16
+	.byte	3,44,1,5,23,9
+	.half	.L91-.L16
+	.byte	1,5,5,9
+	.half	.L92-.L91
+	.byte	1,5,16,7,9
+	.half	.L93-.L92
+	.byte	3,2,1,5,9,9
+	.half	.L94-.L93
+	.byte	1,5,26,9
+	.half	.L5-.L94
+	.byte	3,2,1,5,23,9
+	.half	.L95-.L5
+	.byte	1,5,11,9
+	.half	.L96-.L95
+	.byte	1,5,19,9
+	.half	.L97-.L96
+	.byte	3,1,1,5,26,9
+	.half	.L98-.L97
+	.byte	1,5,33,9
+	.half	.L99-.L98
+	.byte	1,5,31,9
+	.half	.L100-.L99
+	.byte	1,5,14,9
+	.half	.L101-.L100
+	.byte	1,5,12,9
+	.half	.L102-.L101
+	.byte	3,1,1,5,5,9
+	.half	.L103-.L102
+	.byte	1,5,1,9
+	.half	.L6-.L103
+	.byte	3,1,1,7,9
+	.half	.L37-.L6
+	.byte	0,1,1
+.L88:
+	.sdecl	'.debug_ranges',debug,cluster('RingBufferGet')
+	.sect	'.debug_ranges'
+.L36:
+	.word	-1,.L16,0,.L37-.L16,0,0
+	.sdecl	'.debug_info',debug,cluster('RingBufferAvailable')
+	.sect	'.debug_info'
+.L38:
+	.word	279
+	.half	3
+	.word	.L39
+	.byte	4,1
+	.byte	'../driver/ringbuffer/ring_buffer.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.10-workspace\\TC275_UART\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L41,.L40
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'RingBufferAvailable',0,1,55,5
+	.word	.L46
+	.byte	1,1,1
+	.word	.L18,.L57,.L17
+	.byte	4
+	.byte	'rb',0,1,55,37
+	.word	.L44,.L58
+	.byte	5
+	.word	.L18,.L57
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('RingBufferAvailable')
+	.sect	'.debug_abbrev'
+.L39:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('RingBufferAvailable')
+	.sect	'.debug_line'
+.L40:
+	.word	.L105-.L104
+.L104:
+	.half	3
+	.word	.L107-.L106
+.L106:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../driver/ringbuffer/ring_buffer.c',0,0,0,0,0
+.L107:
+	.byte	5,11,7,0,5,2
+	.word	.L18
+	.byte	3,55,1,5,23,9
+	.half	.L108-.L18
+	.byte	1,5,5,9
+	.half	.L109-.L108
+	.byte	1,5,18,7,9
+	.half	.L110-.L109
+	.byte	3,1,1,5,29,9
+	.half	.L111-.L110
+	.byte	1,5,25,9
+	.half	.L112-.L111
+	.byte	1,5,9,9
+	.half	.L113-.L112
+	.byte	1,5,16,9
+	.half	.L8-.L113
+	.byte	3,2,1,5,36,9
+	.half	.L114-.L8
+	.byte	1,5,32,9
+	.half	.L115-.L114
+	.byte	1,5,47,9
+	.half	.L116-.L115
+	.byte	1,5,43,9
+	.half	.L117-.L116
+	.byte	1,5,9,9
+	.half	.L118-.L117
+	.byte	1,5,1,9
+	.half	.L9-.L118
+	.byte	3,1,1,7,9
+	.half	.L42-.L9
+	.byte	0,1,1
+.L105:
+	.sdecl	'.debug_ranges',debug,cluster('RingBufferAvailable')
+	.sect	'.debug_ranges'
+.L41:
+	.word	-1,.L18,0,.L42-.L18,0,0
+	.sdecl	'.debug_loc',debug,cluster('RingBufferAvailable')
+	.sect	'.debug_loc'
+.L17:
+	.word	-1,.L18,0,.L57-.L18
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L58:
+	.word	-1,.L18,0,.L57-.L18
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('RingBufferGet')
+	.sect	'.debug_loc'
+.L15:
+	.word	-1,.L16,0,.L53-.L16
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L56:
+	.word	-1,.L16,0,.L53-.L16
+	.half	1
+	.byte	101
+	.word	0,0
+.L54:
+	.word	-1,.L16,0,.L53-.L16
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('RingBufferInit')
+	.sect	'.debug_loc'
+.L11:
+	.word	-1,.L12,0,.L43-.L12
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L45:
+	.word	-1,.L12,0,.L43-.L12
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('RingBufferPut')
+	.sect	'.debug_loc'
+.L13:
+	.word	-1,.L14,0,.L47-.L14
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L50:
+	.word	-1,.L14,0,.L47-.L14
+	.half	1
+	.byte	84
+	.word	0,0
+.L52:
+	.word	-1,.L14,.L59-.L14,.L47-.L14
+	.half	1
+	.byte	81
+	.word	0,0
+.L48:
+	.word	-1,.L14,0,.L47-.L14
+	.half	1
+	.byte	100
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L119:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('RingBufferInit')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L119,.L12,.L43-.L12
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('RingBufferPut')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L119,.L14,.L47-.L14
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('RingBufferGet')
+	.sect	'.debug_frame'
+	.word	20
+	.word	.L119,.L16,.L53-.L16
+	.byte	8,18,8,19,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('RingBufferAvailable')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L119,.L18,.L57-.L18
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	; Module end

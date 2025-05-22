@@ -60,6 +60,9 @@
 
 #define FIFO_OVERHEAD    (sizeof(Ifx_Fifo) + 8)
 
+#define TIMEOUT TIME_INFINITE
+#define MSG_LENGTH_ARDUINO (sizeof(ArduinoToTc275Msg_t))
+
 typedef enum _Channel
 {
     ARDUINO = 0,
@@ -114,4 +117,6 @@ void init_uart_arduino(void);
 void init_uart_rpi(void);
 void init_uart_tof(void);
 void initUART(void);
+
+
 #endif /* UART_H_ */

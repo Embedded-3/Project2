@@ -35,14 +35,14 @@
 #include "stdarg.h"
 #include "stdio.h"
 #include "IfxStm.h"
+#include "parser.h"
+#include "ring_buffer.h"
 
 extern IfxCpu_syncEvent g_cpuSyncEvent;
 
-#define TIMEOUT TIME_INFINITE
+ParserContext arduinoParser, rpiParser, tofParser;
 
-void tx_uart(int ch);
-void tx_uart_pc_debug(const char *fmt, ...);
-void rx_uart(int ch);
+
 
 /* Arduino (ASCLIN0) */
 
@@ -139,117 +139,6 @@ void asclin2ErISR(void)
     IfxAsclin_Asc_isrError(&g_uart_tof);
 }
 
-#define LOCAL_TX_BUFFER_SIZE (UART_BUFFER_SIZE + 16) // 충분히 큰 크기
-
-void tx_uart(int ch)
-{
-    if (ch < 0 || ch > 3 || g_uartInstances[ch] == NULL)
-        return;
-
-    const uint8 *sharedBuf = NULL;
-    Ifx_SizeT len = 0;
-    char localBuf[LOCAL_TX_BUFFER_SIZE] = {0};
-
-    switch (ch)
-    {
-        case ARDUINO:
-            sharedBuf = (const uint8 *)s_arduinoTxBuf;
-            len = (Ifx_SizeT)strlen((const char *)s_arduinoTxBuf);
-            break;
-        case RPI:
-            sharedBuf = (const uint8 *)s_rpiTxBuf;
-            len = (Ifx_SizeT)strlen((const char *)s_rpiTxBuf);
-            break;
-        case PC:
-            sharedBuf = (const uint8 *)s_pcTxBuf;
-            len = (Ifx_SizeT)strlen((const char *)s_pcTxBuf);
-            break;
-        case TOF:
-            sharedBuf = (const uint8 *)s_tofTxBuf;
-            len = (Ifx_SizeT)strlen((const char *)s_tofTxBuf);
-            break;
-        default:
-            return;
-    }
-
-    if (sharedBuf != NULL && len > 0 && len < LOCAL_TX_BUFFER_SIZE)
-    {
-        memcpy(localBuf, sharedBuf, len);
-        localBuf[len] = '\0'; // 안전한 문자열 종료
-
-        // debug 1
-        tx_uart_pc_debug("Copied data: %s, len : %d \r\n", localBuf, (int)len);
-
-        // debug 2
-        tx_uart_pc_debug("tx_uart[%d] sending: %s\r\n", ch, localBuf);
-
-        IfxAsclin_Asc_write(g_uartInstances[ch], (const void *)localBuf, &len, TIMEOUT);
-
-        tx_uart_pc_debug("TX DONE\r\n");
-
-        // shared buffer 비우기 (동기화 플래그가 있으면 여기서 처리)
-        ((uint8 *)sharedBuf)[0] = '\0';
-
-        // 간단한 딜레이 (필요시 조절)
-        for (volatile int i = 0; i < 100000; i++);
-    }
-}
-
-// for debug
-void tx_uart_pc_debug(const char *format, ...)
-{
-    uint8 debugBuf[UART_BUFFER_SIZE];
-    va_list args;
-    va_start(args, format);
-    vsnprintf(debugBuf, sizeof(debugBuf), format, args);
-    va_end(args);
-    Ifx_SizeT len = (Ifx_SizeT)strlen(debugBuf);
-    debugBuf[len] = 0;
-    IfxAsclin_Asc_write(g_uartInstances[PC], (const void *)debugBuf, &len, TIMEOUT);
-    for (int i = 0; i < 100000; i++);
-}
-
-void rx_uart(int ch)
-{
-    uint8 byte;
-    char lineBuffer[UART_BUFFER_SIZE];
-    int index = 0;
-    RingBuffer *rb = NULL;
-
-    switch (ch)
-    {
-        case ARDUINO:
-            rb = &s_arduinoRxRingBuffer;
-            break;
-        case RPI:
-            rb = &s_rpiRxRingBuffer;
-            break;
-        case PC:
-            rb = &s_pcRxRingBuffer;
-            break;
-        case TOF:
-            rb = &s_tofRxRingBuffer;
-            break;
-        default:
-            return;
-    }
-
-    if (rb == NULL)
-        return;
-
-    while (RingBufferGet(rb, &byte)) {
-        if (byte == '\r')  // CR 문자는 무시
-            continue;
-
-        lineBuffer[index++] = byte;
-        if (byte == '\n' || index >= UART_BUFFER_SIZE - 1 || byte == '\0') {
-            lineBuffer[index] = '\0';
-            tx_uart_pc_debug("rx_uart[%d] received line: %s\r\n", ch, lineBuffer);
-            index = 0;
-        }
-    }
-}
-
 void core1_main(void)
 {
     IfxCpu_enableInterrupts();
@@ -264,7 +153,12 @@ void core1_main(void)
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
     
     initUART();
-    RingBufferInit();
+    RingBufferInit(&s_arduinoRxRingBuffer);
+    RingBufferInit(&s_rpiRxRingBuffer);
+    RingBufferInit(&s_tofRxRingBuffer);
+    ParserInit(&arduinoParser);
+    ParserInit(&rpiParser);
+    ParserInit(&tofParser);
 
     tx_uart_pc_debug("hello TC275!\r\n");
     while (1)
@@ -281,16 +175,37 @@ void core1_main(void)
 
         // Arduino Transmit
         //strcpy(s_arduinoTxBuf, "HELLO FROM TC275!\r\n");
-        tx_uart_pc_debug("sending shared : %s\r\n", s_arduinoTxBuf);
-        tx_uart(ARDUINO);
+        //tx_uart_pc_debug("sending shared : %s\r\n", s_arduinoTxBuf);
+        //tx_uart(ARDUINO);
+
+        tx_uart_pc_debug("RECEIVE STARTS\r\n");
+        //tx_uart_debug(ARDUINO, "%c", 'a');
+        /*
+        tx_uart_debug(ARDUINO, "%c",0xaa);
+
+        tx_uart_debug(ARDUINO, "%c%c", 0x03, 0x05);
+        tx_uart_debug(ARDUINO, "%c%c", 0x03, 0x05);
+        tx_uart_debug(ARDUINO, "%c", 0x06);
+        tx_uart_debug(ARDUINO, "%c", 0x03);
+        tx_uart_debug(ARDUINO, "%c", 0x03);
+        tx_uart_debug(ARDUINO, "%c", 0x03);
+        tx_uart_debug(ARDUINO, "%c", 0x55);
+        tx_uart_debug(ARDUINO, "hello");
+        tx_uart_pc_debug("arduino sent\r\n");
+        */
 
         // Arduino Receive
+        //rx_uart_debug(ARDUINO);
         rx_uart(ARDUINO);
-        tx_uart_pc_debug("arduino head : %d , tail : %d\r\n", s_arduinoRxRingBuffer.head, s_arduinoRxRingBuffer.tail);
-        tx_uart_pc_debug("arduino received : %s\r\n", s_arduinoRxRingBuffer.buffer);
+        //tx_uart_pc_debug("arduino head : %d , tail : %d\r\n", s_arduinoRxRingBuffer.head, s_arduinoRxRingBuffer.tail);
+        //tx_uart_pc_debug("arduino received : %s\r\n", s_arduinoRxRingBuffer.buffer);
 
-        RingBufferInit();
-        // for (int i = 0; i < 50000000; i++); // 1 second
-        for (int i = 0; i < 1000000; i++); // 50 msec
+        // speedL, speedR, slope, targetSpeed, steeringAngle
+        PrepareArduinoMessageAndSend(10, 20, 30, 40, 50);
+        RingBufferInit(&s_arduinoRxRingBuffer);
+        RingBufferInit(&s_rpiRxRingBuffer);
+        RingBufferInit(&s_tofRxRingBuffer);
+        for (int i = 0; i < 50000000; i++); // 1 second
+        //for (int i = 0; i < 1000000; i++); // 50 msec
     }
 }
