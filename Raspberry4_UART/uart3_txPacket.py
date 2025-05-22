@@ -25,10 +25,10 @@ def main():
     count = 0
     try:
         while True:
-            # 예제용 float[3] 생성
-            values = [1.23 + count, 4.56 + count, 7.89 + count]
-            # little-endian 3개 float → 12바이트
-            payload = struct.pack('<3f', *values)
+            # 추종점 각도 : signed char -128 ~ 127
+            values = [23 + count]
+            # little-endian 1개 signed char(-128 ~ 127) → 1 바이트
+            payload = struct.pack('<b', *values)
 
             pkt = make_packet(payload)
             uart.write(pkt)

@@ -49,8 +49,8 @@ def main():
 
             pkt = parse_stream(buf)
             if pkt:
-                # 12바이트 페이로드 → 3x float
-                values = struct.unpack('<3f', pkt)
+                # 1 바이트 페이로드 → signed char
+                values = struct.unpack('b', pkt)
                 print("Received floats:", values)
 
             time.sleep(0.05)
