@@ -13,6 +13,7 @@ RM := rm -rf
 -include driver/encoder/subdir.mk
 -include driver/debug_asclin/subdir.mk
 -include driver/adc/subdir.mk
+-include driver/ToF/subdir.mk
 -include driver/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_PinMap/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling/subdir.mk

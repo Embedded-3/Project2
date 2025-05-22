@@ -50,6 +50,7 @@ Libraries/iLLD/TC27D/Tricore/Vadc/Std \
 Libraries/iLLD/TC27D/Tricore/_Impl \
 Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling \
 Libraries/iLLD/TC27D/Tricore/_PinMap \
+driver/ToF \
 driver/adc \
 driver/debug_asclin \
 driver/encoder \

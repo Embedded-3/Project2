@@ -10,6 +10,7 @@
 #include "driver/encoder/encoder.h"
 #include "driver/stm/stm.h"
 #include "driver/user_MotorCtl.h"
+#include "driver/ToF/Tof.h"
 #include "main.h"
 
 #include "IfxPort.h"
@@ -27,7 +28,10 @@
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
 int flag_on_off_sw = 0;
-switch_t flag_speed_sw = {0, 0, 0};
+switch_t flag_speed_sw = {0};
+
+int distance = 0;
+int prev_distance = -1;
 
 
 static void handleSpeedSwitch(int* cur, int* prev, Ifx_P *port, uint8 pin, SpeedType speed);
@@ -52,7 +56,7 @@ void core0_main(void)
 
     initPwm();              // PWM 초기화
     startPwm();             // PWM 시작
-
+    ToF_Init();
 
     //for(int i=0;i<4;i++) setPwm(i, GO_AFTER_STOP);
 
@@ -133,11 +137,34 @@ void AppTask1ms(void)
 void AppTask10ms(void)
 {
     stTestCnt.u32nuCnt10ms++;
+
+    if(!flag_on_off_sw) return; // TOOD 임시
+
+    if(stTestCnt.u32nuCnt10ms % 5 == 0) {   // Period : 50ms
+        if (distance >= 0) {
+            // 새 거리 유효 → 저장 및 출력
+            prev_distance = distance;
+        }
+        // 유효하지 않아도 이전 값 출력
+        if (prev_distance >= 0)
+            print("Distance: %d cm\n\r", prev_distance);
+        else
+            print("Distance: -1 (no valid reading yet)\n\r");
+    }
+
+
+    if(distance <= 50){ // 속도가 빠르면 tof가 읽기전에 이미 가 있음 조절 필요
+        for(int i=0;i<4;i++) setPwm(i, 0);   
+    }
+    else{
+        for(int i=0;i<4;i++) setPwm(i, 3500);   
+    }
 }
 
 void AppTask100ms(void)
 {
     stTestCnt.u32nuCnt100ms++;
+    distance = data();
 }
 
 void AppTask1000ms(void)
@@ -147,10 +174,11 @@ void AppTask1000ms(void)
 // print_mpu9250_sensor_data();
 
     if(flag_on_off_sw) {
-        for(int i=0;i<4;i++) setPwm(i, 3500);   
+        //for(int i=0;i<4;i++) setPwm(i, 3500);   
         getSpeed(1000); // 속도 측정
     }
 
     //print("%d %d %d\n\r", flag_speed_sw.y, flag_speed_sw.g, flag_speed_sw.b);
 
+    
 }
