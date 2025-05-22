@@ -170,5 +170,7 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\pwm\pwm.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\pwm\pwm.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\encoder\encoder.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\encoder\encoder.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\mp.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\mp.h" :
