@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc29668a --dep-file=driver/user_MotorCtl.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\ToF -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\encoder -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\parser -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\ringbuffer -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\smem -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\uart -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o driver/user_MotorCtl.src ../driver/user_MotorCtl.c"
+	.compiler_invocation	"ctc -f cc3548a --dep-file=driver/user_MotorCtl.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\encoder -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\parser -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\ringbuffer -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\smem -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\uart -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o driver/user_MotorCtl.src ../driver/user_MotorCtl.c"
 	.compiler_name		"ctc"
 	;source	'../driver/user_MotorCtl.c'
 
@@ -82,41 +82,51 @@ getSpeed:	.type	func
 	movh.a	a15,#@his(left_duration)
 	lea	a15,[a15]@los(left_duration)
 	ld.w	d0,[a15]
+.L52:
 	movh.a	a15,#@his(right_duration)
 	lea	a15,[a15]@los(right_duration)
 	ld.w	d15,[a15]
+.L53:
 	st.w	[a10],d0
+.L54:
 	st.w	[a10]4,d15
+.L55:
 	movh.a	a4,#@his(.2.str)
 	lea	a4,[a4]@los(.2.str)
 	call	tx_uart_pc_debug
-.L52:
+.L56:
 	movh.a	a15,#@his(speed)
 	lea	a15,[a15]@los(speed)
+.L57:
 	ld.w	d0,[a15]
+.L58:
 	movh.a	a15,#@his(speed)
 	lea	a15,[a15]@los(speed)
+.L59:
 	ld.w	d15,[a15]4
+.L60:
 	st.w	[a10],d0
+.L61:
 	st.w	[a10]4,d15
+.L62:
 	movh.a	a4,#@his(.3.str)
 	lea	a4,[a4]@los(.3.str)
 	call	tx_uart_pc_debug
-.L53:
+.L63:
 	movh.a	a15,#@his(right_duration)
 	lea	a15,[a15]@los(right_duration)
-.L54:
+.L64:
 	mov	d15,#0
-.L55:
+.L65:
 	st.w	[a15],d15
-.L56:
+.L66:
 	movh.a	a15,#@his(left_duration)
 	lea	a15,[a15]@los(left_duration)
-.L57:
+.L67:
 	mov	d15,#0
-.L58:
+.L68:
 	st.w	[a15],d15
-.L59:
+.L69:
 	ret
 .L15:
 	
@@ -6002,10 +6012,10 @@ speed:	.type	object
 	.byte	3
 	.word	38044
 	.byte	28
-	.byte	'tx_uart_pc_debug',0,21,79,6,1,1,1,1,5
-	.byte	'format',0,21,79,35
+	.byte	'tx_uart_pc_debug',0,21,81,6,1,1,1,1,5
+	.byte	'format',0,21,81,35
 	.word	38049
-	.byte	29,21,79,43,0,30
+	.byte	29,21,81,43,0,30
 	.byte	'__wchar_t',0,22,1,1
 	.word	33201
 	.byte	30
@@ -32028,10 +32038,10 @@ speed:	.type	object
 	.byte	30
 	.byte	'Ifx_Shell_CommandListConst',0,40,228,1,34
 	.word	230205
-	.byte	17,21,13,9,1,18
+	.byte	17,21,15,9,1,18
 	.byte	'WAIT_START',0,0,18
 	.byte	'RECEIVE_DATA',0,1,0,30
-	.byte	'ParserState',0,21,16,3
+	.byte	'ParserState',0,21,18,3
 	.word	230246
 	.byte	21,41,19,9,8,14
 	.byte	'lspeed',0
@@ -32229,26 +32239,46 @@ speed:	.type	object
 	.half	.L49-.L48
 	.byte	1,5,18,9
 	.half	.L50-.L49
-	.byte	1,5,5,9
+	.byte	1,5,37,9
 	.half	.L51-.L50
-	.byte	3,2,1,9
+	.byte	3,2,1,5,52,9
 	.half	.L52-.L51
-	.byte	3,1,1,9
+	.byte	1,5,37,9
 	.half	.L53-.L52
-	.byte	3,2,1,5,22,9
+	.byte	1,5,52,9
 	.half	.L54-.L53
-	.byte	1,5,20,9
+	.byte	1,5,22,9
 	.half	.L55-.L54
-	.byte	1,5,5,9
+	.byte	1,5,66,9
 	.half	.L56-.L55
-	.byte	3,1,1,5,21,9
+	.byte	3,1,1,5,71,9
 	.half	.L57-.L56
-	.byte	1,5,19,9
+	.byte	1,5,80,9
 	.half	.L58-.L57
-	.byte	1,5,1,9
+	.byte	1,5,85,9
 	.half	.L59-.L58
+	.byte	1,5,71,9
+	.half	.L60-.L59
+	.byte	1,5,85,9
+	.half	.L61-.L60
+	.byte	1,5,22,9
+	.half	.L62-.L61
+	.byte	1,5,5,9
+	.half	.L63-.L62
+	.byte	3,2,1,5,22,9
+	.half	.L64-.L63
+	.byte	1,5,20,9
+	.half	.L65-.L64
+	.byte	1,5,5,9
+	.half	.L66-.L65
+	.byte	3,1,1,5,21,9
+	.half	.L67-.L66
+	.byte	1,5,19,9
+	.half	.L68-.L67
+	.byte	1,5,1,9
+	.half	.L69-.L68
 	.byte	3,1,1,7,9
-	.half	.L12-.L59
+	.half	.L12-.L69
 	.byte	0,1,1
 .L26:
 	.sdecl	'.debug_ranges',debug,cluster('getSpeed')
@@ -32297,7 +32327,7 @@ speed:	.type	object
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L60:
+.L70:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
@@ -32305,7 +32335,7 @@ speed:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('getSpeed')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L60,.L3,.L15-.L3
+	.word	.L70,.L3,.L15-.L3
 	.byte	4
 	.word	(.L19-.L3)/2
 	.byte	19,8,22,26,3,19,138,8,4

@@ -74,38 +74,6 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\S
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxPort_regdef.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Scu\\Std\IfxScuWdt.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Scu\\Std\IfxScuWdt.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\adc\adc.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\adc\adc.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Vadc\\Std\IfxVadc.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Vadc\\Std\IfxVadc.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxVadc_cfg.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxVadc_cfg.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Src\Std\IfxSrc.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Src\Std\IfxSrc.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxSrc_cfg.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxSrc_cfg.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxVadc_PinMap.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxVadc_PinMap.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxVadc_reg.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxVadc_reg.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxVadc_regdef.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxVadc_regdef.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxVadc_bf.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxVadc_bf.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCcu6_reg.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCcu6_reg.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCcu6_regdef.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCcu6_regdef.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCcu6_bf.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCcu6_bf.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Vadc\\Adc\IfxVadc_Adc.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Vadc\\Adc\IfxVadc_Adc.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Vadc\Std\IfxVadc.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Vadc\Std\IfxVadc.h" :
-Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\math.h"
-"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\math.h" :
-Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\typeinfo.h"
-"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\typeinfo.h" :
 Cpu0_Main.o :	..\driver\pwm\pwm.h
 ..\driver\pwm\pwm.h :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Tom\\Pwm\IfxGtm_Tom_Pwm.h"
@@ -124,6 +92,10 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tbu.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tbu.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Src\Std\IfxSrc.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Src\Std\IfxSrc.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxSrc_cfg.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxSrc_cfg.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tom.h"
@@ -198,13 +170,11 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\smem\shared
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\smem\shared_memory.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\ringbuffer\ring_buffer.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\ringbuffer\ring_buffer.h" :
-Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h"
-"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h" :
 Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h"
 "C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h" :
-Cpu0_Main.o :	..\driver\ToF\Tof.h
-..\driver\ToF\Tof.h :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h" :
+Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdio.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdio.h" :
+Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h" :

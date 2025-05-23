@@ -29,10 +29,10 @@ extern volatile uint8 s_targetSpeedL;
 extern volatile uint8 s_targetSpeedR;
 
 // 라베파 받는 변수
-extern volatile char   s_followAngle __attribute__((section(".shared")));
+extern volatile char   s_followAngle;
 
 // tof 받는 변수
-extern volatile uint16 s_distance    __attribute__((section(".shared")));
+extern volatile uint16 s_distance;
 
 // 아두이노 보낼 변수
 extern volatile uint8 s_speedL;

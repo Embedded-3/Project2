@@ -84,7 +84,7 @@ volatile uint8 g_tofRxBuf[UART_BUFFER_SIZE + FIFO_OVERHEAD];
 void initUartChannel(IfxAsclin_Asc *asc,
                      IfxAsclin_Asc_Config *cfg,
                      const IfxAsclin_Asc_Pins *pins,
-                     IfxAsclin_Asc *module,
+                     Ifx_ASCLIN *module,
                      volatile uint8 *txBuf, volatile uint8 *rxBuf,
                      int channelIndex)
 {
@@ -102,9 +102,9 @@ void initUartChannel(IfxAsclin_Asc *asc,
 
     cfg->pins = pins;
 
-    cfg->txBuffer = txBuf;
+    cfg->txBuffer = (void*)txBuf;
     cfg->txBufferSize = UART_BUFFER_SIZE;
-    cfg->rxBuffer = rxBuf;
+    cfg->rxBuffer = (void*)rxBuf;
     cfg->rxBufferSize = UART_BUFFER_SIZE;
 
     IfxAsclin_Asc_initModule(asc, cfg);

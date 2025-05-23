@@ -109,7 +109,7 @@ extern IfxAsclin_Asc g_uart_tof;     // ASCLIN2 -> tof
 void initUartChannel(IfxAsclin_Asc *asc,
                      IfxAsclin_Asc_Config *cfg,
                      const IfxAsclin_Asc_Pins *pins,
-                     IfxAsclin_Asc *module,
+                     Ifx_ASCLIN *module,
                      volatile uint8 *txBuf, volatile uint8 *rxBuf,
                      int channelIndex);
 void init_uart_pc(void);
@@ -118,5 +118,6 @@ void init_uart_rpi(void);
 void init_uart_tof(void);
 void initUART(void);
 
+extern IfxAsclin_Asc g_uart_tof;     // ASCLIN2 -> tof
 
 #endif /* UART_H_ */

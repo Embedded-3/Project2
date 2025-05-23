@@ -1,12 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-typedef struct{
-    int on_off;
-    int y;
-    int g;
-    int b;
-} switch_t;
+
 
 typedef enum {
     ON_OFF = 0,

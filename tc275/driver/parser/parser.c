@@ -28,7 +28,7 @@ void ParserInit(ParserContext* ctx) {
     ctx->index = 0;
 }
 
-void ParseRingBuffer(RingBuffer* rb, ParserContext* ctx) {
+void ParseRingBuffer(volatile RingBuffer* rb, ParserContext* ctx) {
     uint8 byte;
     while (RingBufferGet(rb, &byte)) {
         switch (ctx->state) {
@@ -126,9 +126,7 @@ void ProcessReceivedMessage(uint8* msg, int len, int sourceDevice)
 void rx_uart_debug(int ch)
 {
     uint8 byte;
-    char lineBuffer[UART_BUFFER_SIZE];
-    int index = 0;
-    RingBuffer *rb = NULL;
+    volatile RingBuffer *rb = NULL;
 
     switch (ch)
     {
@@ -173,7 +171,7 @@ void rx_uart_debug(int ch)
 extern ParserContext arduinoParser, rpiParser, tofParser;
 
 void rx_uart(int ch) {
-    RingBuffer* rb = NULL;
+    volatile RingBuffer* rb = NULL;
     ParserContext* ctx = NULL;
 
     switch (ch) {
@@ -181,6 +179,12 @@ void rx_uart(int ch) {
         case RPI:     rb = &s_rpiRxRingBuffer;     ctx = &rpiParser;     break;
         case TOF:     rb = &s_tofRxRingBuffer;     ctx = &tofParser;     break;
         default: return;
+    }
+
+    if (ch == TOF)
+    {
+        rx_uart_tof();
+        return;
     }
 
     uint8 byte;
@@ -220,6 +224,76 @@ void rx_uart(int ch) {
     }
 }
 
+#define TOF_FRAME_SIZE      16
+#define TOF_HEADER_0        0x57
+#define TOF_HEADER_1        0x00
+#define TOF_HEADER_2        0xFF
+#define TOF_HEADER_3        0x00
+#define TOF_INVALID_DIST_MM 0xFFFFF6
+
+void rx_uart_tof(void)
+{
+    volatile RingBuffer* rb = &s_tofRxRingBuffer;
+    ParserContext* ctx = &tofParser;
+    uint8 byte;
+    static uint16 prev_distance = 0;
+
+    while (RingBufferGet(rb, &byte)) {
+        switch (ctx->state) {
+            case WAIT_START:
+                if (byte == TOF_HEADER_0) {
+                    ctx->index = 0;
+                    ctx->buffer[ctx->index++] = byte;
+                    ctx->state = RECEIVE_DATA;
+                }
+                break;
+
+            case RECEIVE_DATA:
+                ctx->buffer[ctx->index++] = byte;
+
+                // 프레임 길이 도달 시 파싱 시도
+                if (ctx->index == TOF_FRAME_SIZE) {
+                    // 헤더 확인
+                    if (ctx->buffer[0] == TOF_HEADER_0 &&
+                        ctx->buffer[1] == TOF_HEADER_1 &&
+                        ctx->buffer[2] == TOF_HEADER_2 &&
+                        ctx->buffer[3] == TOF_HEADER_3)
+                    {
+                        unsigned int dist_mm = ((unsigned int)ctx->buffer[8]) |
+                                               ((unsigned int)ctx->buffer[9] << 8) |
+                                               ((unsigned int)ctx->buffer[10] << 16);
+
+                        unsigned char status = ctx->buffer[11];
+
+                        if (status == 0 && dist_mm != 0 && dist_mm != TOF_INVALID_DIST_MM) {
+                            s_distance = dist_mm / 10; // mm → cm
+                            tx_uart_pc_debug("TOF → Valid dist: %u cm\r\n", s_distance);
+                            prev_distance = s_distance;
+                        } else {
+                            s_distance = prev_distance;
+                            tx_uart_pc_debug("TOF → Invalid dist: %u cm\r\n", s_distance);
+                            //tx_uart_pc_debug("TOF → Invalid (status=0x%02X, mm=%u)\r\n", status, dist_mm);
+                        }
+                    } else {
+                        tx_uart_pc_debug("TOF → Header mismatch: %02X %02X %02X %02X\r\n",
+                                         ctx->buffer[0], ctx->buffer[1], ctx->buffer[2], ctx->buffer[3]);
+                    }
+
+                    // reset FSM
+                    ctx->state = WAIT_START;
+                    ctx->index = 0;
+                    return;
+                }
+
+                // overflow 보호
+                if (ctx->index >= sizeof(ctx->buffer)) {
+                    ctx->state = WAIT_START;
+                    ctx->index = 0;
+                }
+                break;
+        }
+    }
+}
 
 void tx_uart(int ch)
 {
@@ -257,11 +331,11 @@ void tx_uart(int ch)
         memcpy(localBuf, sharedBuf, len);
         localBuf[len] = '\0'; // 안전한 문자열 종료
 
-        // debug 1
-        tx_uart_pc_debug("Copied data: %s, len : %d \r\n", localBuf, (int)len);
+        // // debug 1
+        // tx_uart_pc_debug("Copied data: %s, len : %d \r\n", localBuf, (int)len);
 
-        // debug 2
-        tx_uart_pc_debug("tx_uart[%d] sending: %s\r\n", ch, localBuf);
+        // // debug 2
+        // tx_uart_pc_debug("tx_uart[%d] sending: %s\r\n", ch, localBuf);
 
         IfxAsclin_Asc_write(g_uartInstances[ch], (const void *)localBuf, &len, TIMEOUT);
 
@@ -278,29 +352,29 @@ void tx_uart(int ch)
 // for debug
 void tx_uart_pc_debug(const char *format, ...)
 {
-    uint8 debugBuf[UART_BUFFER_SIZE];
+    char debugBuf[UART_BUFFER_SIZE];
     va_list args;
     va_start(args, format);
     vsnprintf(debugBuf, sizeof(debugBuf), format, args);
     va_end(args);
     Ifx_SizeT len = (Ifx_SizeT)strlen(debugBuf);
-    debugBuf[len] = 0;
+    //debugBuf[len] = 0;
     IfxAsclin_Asc_write(g_uartInstances[PC], (const void *)debugBuf, &len, TIMEOUT);
-    for (int i = 0; i < 100000; i++);
+    for (volatile int i = 0; i < 100000; i++);
 }
 
 // for debug
 void tx_uart_debug(int ch, const char *format, ...)
 {
-    uint8 debugBuf[UART_BUFFER_SIZE];
+    char debugBuf[UART_BUFFER_SIZE];
     va_list args;
     va_start(args, format);
     vsnprintf(debugBuf, sizeof(debugBuf), format, args);
     va_end(args);
     Ifx_SizeT len = (Ifx_SizeT)strlen(debugBuf);
-    debugBuf[len] = 0;
+    //debugBuf[len] = 0;
     IfxAsclin_Asc_write(g_uartInstances[ch], (const void *)debugBuf, &len, TIMEOUT);
-    for (int i = 0; i < 100000; i++);
+    for (volatile int i = 0; i < 100000; i++);
 }
 
 void PrepareArduinoMessageAndSend(uint8 speedL, uint8 speedR, char slope,

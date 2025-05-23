@@ -5,8 +5,10 @@
 #include "uart.h"
 #include "shared_memory.h"
 #include "ring_buffer.h"
-#include "stdarg.h"
-#include  <string.h>
+
+#include <string.h>
+#include <stdio.h>   // vsnprintf
+#include <stdarg.h>  // va_list, va_start, va_end
 
 #define MSG_MAX_LENGTH 256
 #define LOCAL_TX_BUFFER_SIZE (UART_BUFFER_SIZE + 16) // 충분히 큰 크기
@@ -71,7 +73,7 @@ int validateToFMessage(const uint8* data, uint8 len);
 void ProcessReceivedMessage(uint8* msg, int len, int sourceDevice);
 
 void ParserInit(ParserContext* ctx);
-void ParseRingBuffer(RingBuffer* rb, ParserContext* ctx);
+void ParseRingBuffer(volatile RingBuffer* rb, ParserContext* ctx);
 uint8 calculateCRC(const uint8* data, uint8 len);
 uint8 calculateToFSumCheck(const uint8* data, uint8 len);
 void PrepareArduinoMessageAndSend(uint8 speedL, uint8 speedR, char slope,
@@ -82,7 +84,7 @@ void tx_uart_pc_debug(const char *format, ...);
 void tx_uart_debug(int ch, const char *format, ...);
 void rx_uart_debug(int ch);
 void rx_uart(int ch);
-
+void rx_uart_tof(void);
 
 #define print(...) tx_uart_pc_debug(__VA_ARGS__)
 

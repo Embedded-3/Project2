@@ -118,5 +118,9 @@ parser.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\smem\shared_me
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\smem\shared_memory.h" :
 parser.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\ringbuffer\ring_buffer.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\ringbuffer\ring_buffer.h" :
+parser.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h" :
+parser.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdio.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdio.h" :
 parser.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h"
 "C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h" :

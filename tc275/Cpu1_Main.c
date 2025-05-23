@@ -121,20 +121,37 @@ void pcErISR(void)
 }
 
 
-IFX_INTERRUPT(asclin2TxISR, 1, ISR_PRIORITY_TOF_TX);
-void asclin2TxISR(void)
+IFX_INTERRUPT(tofTxISR, 1, ISR_PRIORITY_TOF_TX);
+void tof2TxISR(void)
 {
     IfxAsclin_Asc_isrTransmit(&g_uart_tof);
 }
 
-IFX_INTERRUPT(asclin2RxISR, 1, ISR_PRIORITY_TOF_RX);
-void asclin2RxISR(void)
+IFX_INTERRUPT(tofRxISR, 1, ISR_PRIORITY_TOF_RX);
+void tofRxISR(void)
 {
-    IfxAsclin_Asc_isrReceive(&g_uart_tof);
+    uint8 receivedData[UART_BUFFER_SIZE];
+    Ifx_SizeT length = UART_BUFFER_SIZE;
+
+    // 인터럽트 ACK
+    IfxAsclin_Asc_isrReceive(&g_uart_tof);  // g_uart_tof는 TOF 채널의 IfxAsclin_Asc 인스턴스
+
+    // FIFO에서 읽기 (timeout = 0 → 논블로킹)
+    IfxAsclin_Asc_read(&g_uart_tof, receivedData, &length, 0);
+
+    // 읽은 데이터를 RingBuffer로 복사
+    if (length > 0)
+    {
+        for (Ifx_SizeT i = 0; i < length; i++)
+        {
+            RingBufferPut(&s_tofRxRingBuffer, receivedData[i]);
+        }
+    }
 }
 
-IFX_INTERRUPT(asclin2ErISR, 1, ISR_PRIORITY_TOF_ER);
-void asclin2ErISR(void)
+
+IFX_INTERRUPT(tofErISR, 1, ISR_PRIORITY_TOF_ER);
+void tofErISR(void)
 {
     IfxAsclin_Asc_isrError(&g_uart_tof);
 }
@@ -200,15 +217,16 @@ void core1_main(void)
         rx_uart(ARDUINO);
         //tx_uart_pc_debug("arduino head : %d , tail : %d\r\n", s_arduinoRxRingBuffer.head, s_arduinoRxRingBuffer.tail);
         //tx_uart_pc_debug("arduino received : %s\r\n", s_arduinoRxRingBuffer.buffer);
-
+        rx_uart(TOF);
         // speedL, speedR, slope, targetSpeed, steeringAngle
 
-       
+        
         PrepareArduinoMessageAndSend(10, 20, 30, 40, 50);  // TODO 자꾸떠서 주석해놨음
         RingBufferInit(&s_arduinoRxRingBuffer);
         RingBufferInit(&s_rpiRxRingBuffer);
         RingBufferInit(&s_tofRxRingBuffer);
-        for (int i = 0; i < 50000000; i++); // 1 second
+        for (volatile int i = 0; i < 5000000; i++); //100ms
+        //for (volatile int i = 0; i < 50000000; i++); // 1 second
         //for (int i = 0; i < 1000000; i++); // 50 msec
     }
 }

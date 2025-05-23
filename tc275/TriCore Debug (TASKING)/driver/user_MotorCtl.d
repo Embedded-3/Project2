@@ -162,5 +162,7 @@ user_MotorCtl.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\ringbuf
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\ringbuffer\ring_buffer.h" :
 user_MotorCtl.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h"
 "C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h" :
+user_MotorCtl.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\string.h" :
 user_MotorCtl.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h" :

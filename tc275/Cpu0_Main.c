@@ -4,12 +4,10 @@
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
 
-#include "adc.h"
 #include "driver/pwm/pwm.h"
 #include "driver/encoder/encoder.h"
 #include "driver/stm/stm.h"
 #include "driver/user_MotorCtl.h"
-#include "driver/ToF/Tof.h"
 #include "parser.h"
 
 #include "shared_memory.h"
@@ -33,8 +31,7 @@
 
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
-int flag_on_off_sw = 0;
-switch_t flag_speed_sw = {0};
+switch_t flag_sw = {0};
 
 int distance = 0;
 int prev_distance = -1;
@@ -63,8 +60,6 @@ void core0_main(void)
     initPwm();              // PWM 초기화
     startPwm();             // PWM 시작
     
-    //ToF_Init();
-
     //for(int i=0;i<4;i++) setPwm(i, GO_AFTER_STOP);
 
     //for(int i=0;i<4;i++) setPwm(i, MIN);
@@ -75,9 +70,6 @@ void core0_main(void)
     //setCurve(RIGHT, MAX, 3000); // 왼쪽으로 회전 : 급격한 회전
     //setCurve(RIGHT, 3500, 3000); // 깔끔한 회전??
 
-
-    // init_I2C_module();
-    // init_mpu9250_registers();
 
     // 스위치
     IfxPort_setPinModeInput(ON_OFF_SW_PIN, IfxPort_InputMode_pullUp);
@@ -93,10 +85,9 @@ void core0_main(void)
     IfxPort_setPinModeOutput(BRAKE_PIN, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
     IfxPort_setPinLow(BRAKE_PIN); 
 
-
-    //strcpy(s_arduinoTxBuf, "HELLO FROM TC275 main 0!\r\n");
-    print("***********************CPU0************************\r\n");
-    //print("***********************CPU0************************\r\n");
+    tx_uart_pc_debug("\r\n");
+    tx_uart_pc_debug("***********************CPU0************************\r\n");
+    tx_uart_pc_debug("***********************CPU0************************\r\n");
 
     while(1)
     {
@@ -123,25 +114,25 @@ static void handleSpeedSwitch(int* cur, int* prev, Ifx_P *port, uint8 pin, Speed
     if (!(*cur) && *prev) {  // falling edge
         switch (speed) {
             case ON_OFF:
-                flag_on_off_sw = !flag_on_off_sw;
+                flag_sw.on_off = !flag_sw.on_off;               // on/off 토글
+                flag_sw = (switch_t){flag_sw.on_off, 0, 0, 0};  // 속도 초기화
                 IfxPort_togglePin(ADAS_LED_PIN);
-                print(RRED"ON/OFF : %d\n\r"RESET, flag_on_off_sw);
+                tx_uart_pc_debug(RRED"ON/OFF : %d\n\r"RESET, flag_sw.on_off);
                 break;
             case SPEED_YELLOW:
-                flag_speed_sw = (switch_t){flag_speed_sw.on_off, 1, 0, 0};
-                print(YELLOW"SPEED : YELLOW\n\r"RESET);
+                flag_sw = (switch_t){flag_sw.on_off, 1, 0, 0};
+                tx_uart_pc_debug(YELLOW"SPEED : YELLOW\n\r"RESET);
                 break;
             case SPEED_GREEN:
-                flag_speed_sw = (switch_t){flag_speed_sw.on_off, 0, 1, 0};
-                print(GREEN"SPEED : GREEN\n\r"RESET);
+                flag_sw = (switch_t){flag_sw.on_off, 0, 1, 0};
+                tx_uart_pc_debug(GREEN"SPEED : GREEN\n\r"RESET);
                 break;
             case SPEED_BLUE:
-                flag_speed_sw = (switch_t){flag_speed_sw.on_off, 0, 0, 1};
-                print(BLUE"SPEED : BLUE\n\r"RESET);
+                flag_sw = (switch_t){flag_sw.on_off, 0, 0, 1};
+                tx_uart_pc_debug(BLUE"SPEED : BLUE\n\r"RESET);
                 break;
         }
     }
-
     *prev = *cur;
 }
 
@@ -154,30 +145,20 @@ void AppTask10ms(void)
 {
     stTestCnt.u32nuCnt10ms++;
 
-    if(!flag_on_off_sw) return; // TOOD 임시
+    if(!flag_sw.on_off) return; // TOOD 임시
 
     if(stTestCnt.u32nuCnt10ms % 5 == 0) {   // Period : 50ms
-        if (distance >= 0) {
-            // 새 거리 유효 → 저장 및 출력
-            prev_distance = distance;
-        }
-        // 유효하지 않아도 이전 값 출력
-        if (prev_distance >= 0) 
-            print("Distance: %d cm\n\r", prev_distance);
-        else 
-            print("Distance: -1 (no valid reading yet)%d \n\r", distance);
-
-
-        if(prev_distance <= 50){ // 속도가 빠르면 tof가 읽기전에 이미 가 있음 조절 필요
-            IfxPort_setPinHigh(BRAKE_PIN);
-            //for(int i=0;i<4;i++) setPwm(i, 0);   
+        
+        if(s_distance <= 50){ // 속도가 빠르면 tof가 읽기전에 이미 가 있음 조절 필요
+            //IfxPort_setPinHigh(BRAKE_PIN);
+            for(int i=0;i<4;i++) setPwm(i, 0);   
             print("BRAKE\n\r");
 
         }
         else{
-            IfxPort_setPinLow(BRAKE_PIN);
+            //IfxPort_setPinLow(BRAKE_PIN);
             for(int i=0;i<4;i++) setPwm(i, 3500);   
-            print("GO\n\r");
+            //print("GO\n\r");
         }
 
 
@@ -191,23 +172,25 @@ void AppTask10ms(void)
 void AppTask100ms(void)
 {
     stTestCnt.u32nuCnt100ms++;
-    distance = data();
+    distance = s_distance; //data();
 }
 
 void AppTask1000ms(void)
 {
     stTestCnt.u32nuCnt1000ms++;
 
-    
-// read_mpu9250_sensor_data();
-// print_mpu9250_sensor_data();
 
-    if(flag_on_off_sw) {
-        //for(int i=0;i<4;i++) setPwm(i, 3500);   
-        getSpeed(1000); // 속도 측정
+    if(flag_sw.on_off) {
+        for(int i=0;i<4;i++) setPwm(i, 3500);   
+        //getSpeed(1000); // 속도 측정
+        s_speedL = (int)speed.lspeed;
+        s_speedR = (int)speed.rspeed;
+    }
+    else{
+        for(int i=0;i<4;i++) setPwm(i, 0);   
     }
 
-    //print("%d %d %d\n\r", flag_speed_sw.y, flag_speed_sw.g, flag_speed_sw.b);
+    //print("%d %d %d\n\r", flag_sw.y, flag_sw.g, flag_sw.b);
 
     
 }

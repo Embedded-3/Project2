@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc30532a --dep-file=driver/uart/uart.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\ToF -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\encoder -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\parser -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\ringbuffer -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\smem -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\uart -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o driver/uart/uart.src ../driver/uart/uart.c"
+	.compiler_invocation	"ctc -f cc13384a --dep-file=driver/uart/uart.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\encoder -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\parser -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\ringbuffer -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\smem -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\uart -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o driver/uart/uart.src ../driver/uart/uart.c"
 	.compiler_name		"ctc"
 	;source	'../driver/uart/uart.c'
 
@@ -16,85 +16,85 @@ $TC16X
 .L3:
 initUartChannel:	.type	func
 	mov.aa	a14,a4
-.L113:
-	mov.aa	a15,a5
 .L114:
-	mov.aa	a12,a6
-.L116:
-	ld.a	a13,[a10]
-.L117:
-	mov	d8,d4
-.L118:
-	mov.aa	a4,a15
-.L111:
-	mov.aa	a5,a7
-.L119:
-	call	IfxAsclin_Asc_initModuleConfig
-.L112:
-	movh	d15,#18401
-.L136:
-	st.w	[a15]4,d15
-.L137:
-	mov	d15,#15
-.L138:
-	st.b	[a15]10,d15
-.L139:
-	mov	d15,#1
-.L140:
-	st.b	[a15]12,d15
-.L141:
-	mov	d15,#8
-.L142:
-	st.b	[a15]13,d15
-.L143:
-	add	d0,d8,#8
-.L144:
-	st.h	[a15]32,d0
-.L145:
-	add	d15,d8,#4
-.L146:
-	st.h	[a15]34,d15
-.L147:
-	add	d0,d8,#12
-.L148:
-	st.h	[a15]36,d0
-.L149:
-	mov	d15,#1
-.L150:
-	st.b	[a15]38,d15
-.L151:
-	st.a	[a15]40,a12
-.L152:
-	st.a	[a15]48,a13
-.L153:
-	mov	d15,#256
-.L154:
-	st.h	[a15]46,d15
-.L155:
-	ld.a	a2,[a10]4
-.L120:
-	st.a	[a15]56,a2
-.L156:
-	mov	d15,#256
-.L157:
-	st.h	[a15]52,d15
-.L158:
-	mov.aa	a4,a14
-.L122:
-	mov.aa	a5,a15
-.L123:
-	call	IfxAsclin_Asc_initModule
-.L121:
-	mul	d15,d8,#4
-.L159:
-	movh.a	a15,#@his(g_uartInstances)
+	mov.aa	a15,a5
 .L115:
-	lea	a15,[a15]@los(g_uartInstances)
+	mov.aa	a12,a6
+.L117:
+	ld.a	a13,[a10]
+.L118:
+	mov	d8,d4
+.L119:
+	mov.aa	a4,a15
+.L112:
+	mov.aa	a5,a7
+.L120:
+	call	IfxAsclin_Asc_initModuleConfig
+.L113:
+	movh	d15,#18401
+.L137:
+	st.w	[a15]4,d15
+.L138:
+	mov	d15,#15
+.L139:
+	st.b	[a15]10,d15
+.L140:
+	mov	d15,#1
+.L141:
+	st.b	[a15]12,d15
+.L142:
+	mov	d15,#8
+.L143:
+	st.b	[a15]13,d15
+.L144:
+	add	d0,d8,#8
+.L145:
+	st.h	[a15]32,d0
+.L146:
+	add	d15,d8,#4
+.L147:
+	st.h	[a15]34,d15
+.L148:
+	add	d0,d8,#12
+.L149:
+	st.h	[a15]36,d0
+.L150:
+	mov	d15,#1
+.L151:
+	st.b	[a15]38,d15
+.L152:
+	st.a	[a15]40,a12
+.L153:
+	st.a	[a15]48,a13
+.L154:
+	mov	d15,#256
+.L155:
+	st.h	[a15]46,d15
+.L156:
+	ld.a	a2,[a10]4
+.L121:
+	st.a	[a15]56,a2
+.L157:
+	mov	d15,#256
+.L158:
+	st.h	[a15]52,d15
+.L159:
+	mov.aa	a4,a14
+.L123:
+	mov.aa	a5,a15
+.L124:
+	call	IfxAsclin_Asc_initModule
+.L122:
+	mul	d15,d8,#4
 .L160:
-	addsc.a	a15,a15,d15,#0
+	movh.a	a15,#@his(g_uartInstances)
+.L116:
+	lea	a15,[a15]@los(g_uartInstances)
 .L161:
-	st.a	[a15],a14
+	addsc.a	a15,a15,d15,#0
 .L162:
+	st.a	[a15],a14
+.L163:
 	ret
 .L74:
 	
@@ -112,30 +112,30 @@ __initUartChannel_function_end:
 .L5:
 init_uart_pc:	.type	func
 	sub.a	a10,#72
-.L124:
+.L125:
 	movh.a	a15,#@his(g_pcTxBuf)
 	lea	a15,[a15]@los(g_pcTxBuf)
 	st.a	[a10],a15
-.L167:
+.L168:
 	movh.a	a15,#@his(g_pcRxBuf)
 	lea	a15,[a15]@los(g_pcRxBuf)
 	st.a	[a10]4,a15
-.L168:
+.L169:
 	movh.a	a4,#@his(g_uart_pc)
 	lea	a4,[a4]@los(g_uart_pc)
-.L169:
-	lea	a5,[a10]8
 .L170:
+	lea	a5,[a10]8
+.L171:
 	movh.a	a6,#@his(_999001_pins)
 	lea	a6,[a6]@los(_999001_pins)
-.L171:
-	lea	a7,0xf0000900
 .L172:
+	lea	a7,0xf0000900
+.L173:
 	mov	d4,#2
 	call	initUartChannel
-.L173:
+.L174:
 	ret
-.L87:
+.L88:
 	
 __init_uart_pc_function_end:
 	.size	init_uart_pc,__init_uart_pc_function_end-init_uart_pc
@@ -151,30 +151,30 @@ __init_uart_pc_function_end:
 .L7:
 init_uart_arduino:	.type	func
 	sub.a	a10,#72
-.L125:
+.L126:
 	movh.a	a15,#@his(g_arduinoTxBuf)
 	lea	a15,[a15]@los(g_arduinoTxBuf)
 	st.a	[a10],a15
-.L178:
+.L179:
 	movh.a	a15,#@his(g_arduinoRxBuf)
 	lea	a15,[a15]@los(g_arduinoRxBuf)
 	st.a	[a10]4,a15
-.L179:
+.L180:
 	movh.a	a4,#@his(g_uart_arduino)
 	lea	a4,[a4]@los(g_uart_arduino)
-.L180:
-	lea	a5,[a10]8
 .L181:
+	lea	a5,[a10]8
+.L182:
 	movh.a	a6,#@his(_999002_pins)
 	lea	a6,[a6]@los(_999002_pins)
-.L182:
-	lea	a7,0xf0000600
 .L183:
+	lea	a7,0xf0000600
+.L184:
 	mov	d4,#0
 	call	initUartChannel
-.L184:
+.L185:
 	ret
-.L91:
+.L92:
 	
 __init_uart_arduino_function_end:
 	.size	init_uart_arduino,__init_uart_arduino_function_end-init_uart_arduino
@@ -190,30 +190,30 @@ __init_uart_arduino_function_end:
 .L9:
 init_uart_rpi:	.type	func
 	sub.a	a10,#72
-.L126:
+.L127:
 	movh.a	a15,#@his(g_rpiTxBuf)
 	lea	a15,[a15]@los(g_rpiTxBuf)
 	st.a	[a10],a15
-.L189:
+.L190:
 	movh.a	a15,#@his(g_rpiRxBuf)
 	lea	a15,[a15]@los(g_rpiRxBuf)
 	st.a	[a10]4,a15
-.L190:
+.L191:
 	movh.a	a4,#@his(g_uart_rpi)
 	lea	a4,[a4]@los(g_uart_rpi)
-.L191:
-	lea	a5,[a10]8
 .L192:
+	lea	a5,[a10]8
+.L193:
 	movh.a	a6,#@his(_999003_pins)
 	lea	a6,[a6]@los(_999003_pins)
-.L193:
-	lea	a7,0xf0000700
 .L194:
+	lea	a7,0xf0000700
+.L195:
 	mov	d4,#1
 	call	initUartChannel
-.L195:
+.L196:
 	ret
-.L94:
+.L95:
 	
 __init_uart_rpi_function_end:
 	.size	init_uart_rpi,__init_uart_rpi_function_end-init_uart_rpi
@@ -229,30 +229,30 @@ __init_uart_rpi_function_end:
 .L11:
 init_uart_tof:	.type	func
 	sub.a	a10,#72
-.L127:
+.L128:
 	movh.a	a15,#@his(g_tofTxBuf)
 	lea	a15,[a15]@los(g_tofTxBuf)
 	st.a	[a10],a15
-.L200:
+.L201:
 	movh.a	a15,#@his(g_tofRxBuf)
 	lea	a15,[a15]@los(g_tofRxBuf)
 	st.a	[a10]4,a15
-.L201:
+.L202:
 	movh.a	a4,#@his(g_uart_tof)
 	lea	a4,[a4]@los(g_uart_tof)
-.L202:
-	lea	a5,[a10]8
 .L203:
+	lea	a5,[a10]8
+.L204:
 	movh.a	a6,#@his(_999004_pins)
 	lea	a6,[a6]@los(_999004_pins)
-.L204:
-	lea	a7,0xf0000800
 .L205:
+	lea	a7,0xf0000800
+.L206:
 	mov	d4,#3
 	call	initUartChannel
-.L206:
+.L207:
 	ret
-.L97:
+.L98:
 	
 __init_uart_tof_function_end:
 	.size	init_uart_tof,__init_uart_tof_function_end-init_uart_tof
@@ -268,15 +268,15 @@ __init_uart_tof_function_end:
 .L13:
 initUART:	.type	func
 	call	init_uart_pc
-.L211:
-	call	init_uart_arduino
 .L212:
-	call	init_uart_rpi
+	call	init_uart_arduino
 .L213:
-	call	init_uart_tof
+	call	init_uart_rpi
 .L214:
+	call	init_uart_tof
+.L215:
 	ret
-.L100:
+.L101:
 	
 __initUART_function_end:
 	.size	initUART,__initUART_function_end-initUART
@@ -503,7 +503,7 @@ _999004_pins:	.type	object
 	.word	329
 	.byte	6,0,7
 	.byte	'unsigned int',0,4,7
-.L85:
+.L86:
 	.byte	7
 	.byte	'int',0,4,5,7
 	.byte	'unsigned int',0,4,7,10
@@ -3224,6 +3224,7 @@ _999004_pins:	.type	object
 	.word	16943
 	.byte	4,3,35,252,1,0,14
 	.word	16983
+.L81:
 	.byte	3
 	.word	17425
 	.byte	4
@@ -4169,7 +4170,7 @@ _999004_pins:	.type	object
 	.word	1705
 	.byte	14
 	.word	21868
-.L110:
+.L111:
 	.byte	20,17,214,2,9,28,13
 	.byte	'asclin',0
 	.word	17430
@@ -4497,7 +4498,7 @@ _999004_pins:	.type	object
 	.byte	'IfxAsclin_ClockSource_flexRayClock',0,4,16
 	.byte	'IfxAsclin_ClockSource_ascFastClock',0,8,16
 	.byte	'IfxAsclin_ClockSource_ascSlowClock',0,16,0
-.L88:
+.L89:
 	.byte	20,17,229,2,9,64,13
 	.byte	'asclin',0
 	.word	17430
@@ -4569,19 +4570,19 @@ _999004_pins:	.type	object
 	.word	17430
 	.byte	0,14
 	.word	622
-.L82:
+.L83:
 	.byte	3
 	.word	28977
-.L90:
+.L91:
 	.byte	26
 	.word	28156
-.L93:
+.L94:
 	.byte	26
 	.word	28156
-.L96:
+.L97:
 	.byte	26
 	.word	28156
-.L99:
+.L100:
 	.byte	26
 	.word	28156
 	.byte	29
@@ -16636,15 +16637,12 @@ _999004_pins:	.type	object
 	.byte	29
 	.byte	'Ifx_Shell_CommandListConst',0,29,228,1,34
 	.word	113101
-.L101:
+.L102:
 	.byte	18,16
 	.word	23199
 	.byte	19,3,0,18,164,2
 	.word	622
 	.byte	19,163,2,0
-.L102:
-	.byte	14
-	.word	113151
 .L103:
 	.byte	14
 	.word	113151
@@ -16664,6 +16662,9 @@ _999004_pins:	.type	object
 	.byte	14
 	.word	113151
 .L109:
+	.byte	14
+	.word	113151
+.L110:
 	.byte	14
 	.word	113151
 	.byte	29
@@ -16686,11 +16687,11 @@ _999004_pins:	.type	object
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
 .L17:
-	.word	.L129-.L128
-.L128:
+	.word	.L130-.L129
+.L129:
 	.half	3
-	.word	.L131-.L130
-.L130:
+	.word	.L132-.L131
+.L131:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg',0
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc',0
@@ -16743,8 +16744,8 @@ _999004_pins:	.type	object
 	.byte	0,0,0
 	.byte	'Ifx_Shell.h',0,4,0,0
 	.byte	'stdio.h',0,5,0,0,0
-.L131:
-.L129:
+.L132:
+.L130:
 	.sdecl	'.debug_info',debug,cluster('initUartChannel')
 	.sect	'.debug_info'
 .L18:
@@ -16771,17 +16772,17 @@ _999004_pins:	.type	object
 	.byte	'pins',0,1,86,48
 	.word	.L79,.L80
 	.byte	4
-	.byte	'module',0,1,87,37
-	.word	.L75,.L81
+	.byte	'module',0,1,87,34
+	.word	.L81,.L82
 	.byte	4
 	.byte	'txBuf',0,1,88,38
-	.word	.L82,.L83
+	.word	.L83,.L84
 	.byte	4
 	.byte	'rxBuf',0,1,88,61
-	.word	.L82,.L84
+	.word	.L83,.L85
 	.byte	4
 	.byte	'channelIndex',0,1,89,26
-	.word	.L85,.L86
+	.word	.L86,.L87
 	.byte	5
 	.word	.L3,.L74
 	.byte	0,0
@@ -16793,80 +16794,80 @@ _999004_pins:	.type	object
 	.sdecl	'.debug_line',debug,cluster('initUartChannel')
 	.sect	'.debug_line'
 .L20:
-	.word	.L133-.L132
-.L132:
+	.word	.L134-.L133
+.L133:
 	.half	3
-	.word	.L135-.L134
-.L134:
+	.word	.L136-.L135
+.L135:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../driver/uart/uart.c',0,0,0,0,0
-.L135:
+.L136:
 	.byte	5,6,7,0,5,2
 	.word	.L3
 	.byte	3,211,0,1,5,41,9
-	.half	.L118-.L3
+	.half	.L119-.L3
 	.byte	3,7,1,5,30,9
-	.half	.L112-.L118
+	.half	.L113-.L119
 	.byte	3,2,1,5,28,9
-	.half	.L136-.L112
+	.half	.L137-.L113
 	.byte	1,5,34,9
-	.half	.L137-.L136
-	.byte	3,1,1,5,32,9
 	.half	.L138-.L137
-	.byte	1,5,35,9
+	.byte	3,1,1,5,32,9
 	.half	.L139-.L138
-	.byte	3,1,1,5,33,9
+	.byte	1,5,35,9
 	.half	.L140-.L139
-	.byte	1,5,42,9
+	.byte	3,1,1,5,33,9
 	.half	.L141-.L140
-	.byte	3,1,1,5,40,9
+	.byte	1,5,42,9
 	.half	.L142-.L141
-	.byte	1,5,35,9
+	.byte	3,1,1,5,40,9
 	.half	.L143-.L142
-	.byte	3,2,1,5,31,9
+	.byte	1,5,35,9
 	.half	.L144-.L143
-	.byte	1,5,35,9
+	.byte	3,2,1,5,31,9
 	.half	.L145-.L144
-	.byte	3,1,1,5,31,9
+	.byte	1,5,35,9
 	.half	.L146-.L145
-	.byte	1,5,36,9
-	.half	.L147-.L146
 	.byte	3,1,1,5,31,9
-	.half	.L148-.L147
+	.half	.L147-.L146
 	.byte	1,5,36,9
+	.half	.L148-.L147
+	.byte	3,1,1,5,31,9
 	.half	.L149-.L148
-	.byte	3,1,1,5,34,9
+	.byte	1,5,36,9
 	.half	.L150-.L149
-	.byte	1,5,15,9
+	.byte	3,1,1,5,34,9
 	.half	.L151-.L150
-	.byte	3,2,1,5,19,9
+	.byte	1,5,15,9
 	.half	.L152-.L151
-	.byte	3,2,1,5,25,9
+	.byte	3,2,1,5,19,9
 	.half	.L153-.L152
-	.byte	3,1,1,5,23,9
+	.byte	3,2,1,5,25,9
 	.half	.L154-.L153
-	.byte	1,5,19,9
-	.half	.L155-.L154
-	.byte	3,1,1,5,25,9
-	.half	.L156-.L155
 	.byte	3,1,1,5,23,9
+	.half	.L155-.L154
+	.byte	1,5,19,9
+	.half	.L156-.L155
+	.byte	3,1,1,5,25,9
 	.half	.L157-.L156
-	.byte	1,5,35,9
+	.byte	3,1,1,5,23,9
 	.half	.L158-.L157
-	.byte	3,2,1,5,20,9
-	.half	.L121-.L158
-	.byte	3,2,1,5,5,9
-	.half	.L159-.L121
-	.byte	1,5,20,9
-	.half	.L160-.L159
 	.byte	1,5,35,9
+	.half	.L159-.L158
+	.byte	3,2,1,5,20,9
+	.half	.L122-.L159
+	.byte	3,2,1,5,5,9
+	.half	.L160-.L122
+	.byte	1,5,20,9
 	.half	.L161-.L160
-	.byte	1,5,1,9
+	.byte	1,5,35,9
 	.half	.L162-.L161
+	.byte	1,5,1,9
+	.half	.L163-.L162
 	.byte	3,1,1,7,9
-	.half	.L22-.L162
+	.half	.L22-.L163
 	.byte	0,1,1
-.L133:
+.L134:
 	.sdecl	'.debug_ranges',debug,cluster('initUartChannel')
 	.sect	'.debug_ranges'
 .L21:
@@ -16886,15 +16887,15 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'init_uart_pc',0,1,115,6,1,1,1
-	.word	.L5,.L87,.L4
+	.word	.L5,.L88,.L4
 	.byte	4
-	.word	.L5,.L87
+	.word	.L5,.L88
 	.byte	5
 	.byte	'cfg',0,1,117,26
-	.word	.L88,.L89
+	.word	.L89,.L90
 	.byte	6
 	.byte	'pins',0,1,118,37
-	.word	.L90
+	.word	.L91
 	.byte	5,3
 	.word	_999001_pins
 	.byte	0,0,0
@@ -16907,36 +16908,36 @@ _999004_pins:	.type	object
 	.sdecl	'.debug_line',debug,cluster('init_uart_pc')
 	.sect	'.debug_line'
 .L25:
-	.word	.L164-.L163
-.L163:
+	.word	.L165-.L164
+.L164:
 	.half	3
-	.word	.L166-.L165
-.L165:
+	.word	.L167-.L166
+.L166:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../driver/uart/uart.c',0,0,0,0,0
-.L166:
+.L167:
 	.byte	5,6,7,0,5,2
 	.word	.L5
 	.byte	3,242,0,1,5,63,9
-	.half	.L124-.L5
+	.half	.L125-.L5
 	.byte	3,14,1,5,74,9
-	.half	.L167-.L124
+	.half	.L168-.L125
 	.byte	1,5,22,9
-	.half	.L168-.L167
-	.byte	1,5,34,9
 	.half	.L169-.L168
-	.byte	1,5,40,9
+	.byte	1,5,34,9
 	.half	.L170-.L169
-	.byte	1,5,47,9
+	.byte	1,5,40,9
 	.half	.L171-.L170
-	.byte	1,5,85,9
+	.byte	1,5,47,9
 	.half	.L172-.L171
-	.byte	1,5,1,9
+	.byte	1,5,85,9
 	.half	.L173-.L172
+	.byte	1,5,1,9
+	.half	.L174-.L173
 	.byte	3,1,1,7,9
-	.half	.L27-.L173
+	.half	.L27-.L174
 	.byte	0,1,1
-.L164:
+.L165:
 	.sdecl	'.debug_ranges',debug,cluster('init_uart_pc')
 	.sect	'.debug_ranges'
 .L26:
@@ -16956,15 +16957,15 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'init_uart_arduino',0,1,132,1,6,1,1,1
-	.word	.L7,.L91,.L6
+	.word	.L7,.L92,.L6
 	.byte	4
-	.word	.L7,.L91
+	.word	.L7,.L92
 	.byte	5
 	.byte	'cfg',0,1,134,1,26
-	.word	.L88,.L92
+	.word	.L89,.L93
 	.byte	6
 	.byte	'pins',0,1,135,1,37
-	.word	.L93
+	.word	.L94
 	.byte	5,3
 	.word	_999002_pins
 	.byte	0,0,0
@@ -16977,36 +16978,36 @@ _999004_pins:	.type	object
 	.sdecl	'.debug_line',debug,cluster('init_uart_arduino')
 	.sect	'.debug_line'
 .L30:
-	.word	.L175-.L174
-.L174:
+	.word	.L176-.L175
+.L175:
 	.half	3
-	.word	.L177-.L176
-.L176:
+	.word	.L178-.L177
+.L177:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../driver/uart/uart.c',0,0,0,0,0
-.L177:
+.L178:
 	.byte	5,6,7,0,5,2
 	.word	.L7
 	.byte	3,131,1,1,5,68,9
-	.half	.L125-.L7
+	.half	.L126-.L7
 	.byte	3,14,1,5,84,9
-	.half	.L178-.L125
+	.half	.L179-.L126
 	.byte	1,5,22,9
-	.half	.L179-.L178
-	.byte	1,5,39,9
 	.half	.L180-.L179
-	.byte	1,5,45,9
+	.byte	1,5,39,9
 	.half	.L181-.L180
-	.byte	1,5,52,9
+	.byte	1,5,45,9
 	.half	.L182-.L181
-	.byte	1,5,100,9
+	.byte	1,5,52,9
 	.half	.L183-.L182
-	.byte	1,5,1,9
+	.byte	1,5,100,9
 	.half	.L184-.L183
+	.byte	1,5,1,9
+	.half	.L185-.L184
 	.byte	3,1,1,7,9
-	.half	.L32-.L184
+	.half	.L32-.L185
 	.byte	0,1,1
-.L175:
+.L176:
 	.sdecl	'.debug_ranges',debug,cluster('init_uart_arduino')
 	.sect	'.debug_ranges'
 .L31:
@@ -17026,15 +17027,15 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'init_uart_rpi',0,1,149,1,6,1,1,1
-	.word	.L9,.L94,.L8
+	.word	.L9,.L95,.L8
 	.byte	4
-	.word	.L9,.L94
+	.word	.L9,.L95
 	.byte	5
 	.byte	'cfg',0,1,151,1,26
-	.word	.L88,.L95
+	.word	.L89,.L96
 	.byte	6
 	.byte	'pins',0,1,152,1,37
-	.word	.L96
+	.word	.L97
 	.byte	5,3
 	.word	_999003_pins
 	.byte	0,0,0
@@ -17047,36 +17048,36 @@ _999004_pins:	.type	object
 	.sdecl	'.debug_line',debug,cluster('init_uart_rpi')
 	.sect	'.debug_line'
 .L35:
-	.word	.L186-.L185
-.L185:
+	.word	.L187-.L186
+.L186:
 	.half	3
-	.word	.L188-.L187
-.L187:
+	.word	.L189-.L188
+.L188:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../driver/uart/uart.c',0,0,0,0,0
-.L188:
+.L189:
 	.byte	5,6,7,0,5,2
 	.word	.L9
 	.byte	3,148,1,1,5,64,9
-	.half	.L126-.L9
+	.half	.L127-.L9
 	.byte	3,14,1,5,76,9
-	.half	.L189-.L126
+	.half	.L190-.L127
 	.byte	1,5,22,9
-	.half	.L190-.L189
-	.byte	1,5,35,9
 	.half	.L191-.L190
-	.byte	1,5,41,9
+	.byte	1,5,35,9
 	.half	.L192-.L191
-	.byte	1,5,48,9
+	.byte	1,5,41,9
 	.half	.L193-.L192
-	.byte	1,5,88,9
+	.byte	1,5,48,9
 	.half	.L194-.L193
-	.byte	1,5,1,9
+	.byte	1,5,88,9
 	.half	.L195-.L194
+	.byte	1,5,1,9
+	.half	.L196-.L195
 	.byte	3,1,1,7,9
-	.half	.L37-.L195
+	.half	.L37-.L196
 	.byte	0,1,1
-.L186:
+.L187:
 	.sdecl	'.debug_ranges',debug,cluster('init_uart_rpi')
 	.sect	'.debug_ranges'
 .L36:
@@ -17096,15 +17097,15 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'init_uart_tof',0,1,166,1,6,1,1,1
-	.word	.L11,.L97,.L10
+	.word	.L11,.L98,.L10
 	.byte	4
-	.word	.L11,.L97
+	.word	.L11,.L98
 	.byte	5
 	.byte	'cfg',0,1,168,1,26
-	.word	.L88,.L98
+	.word	.L89,.L99
 	.byte	6
 	.byte	'pins',0,1,169,1,37
-	.word	.L99
+	.word	.L100
 	.byte	5,3
 	.word	_999004_pins
 	.byte	0,0,0
@@ -17117,36 +17118,36 @@ _999004_pins:	.type	object
 	.sdecl	'.debug_line',debug,cluster('init_uart_tof')
 	.sect	'.debug_line'
 .L40:
-	.word	.L197-.L196
-.L196:
+	.word	.L198-.L197
+.L197:
 	.half	3
-	.word	.L199-.L198
-.L198:
+	.word	.L200-.L199
+.L199:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../driver/uart/uart.c',0,0,0,0,0
-.L199:
+.L200:
 	.byte	5,6,7,0,5,2
 	.word	.L11
 	.byte	3,165,1,1,5,9,9
-	.half	.L127-.L11
+	.half	.L128-.L11
 	.byte	3,20,1,9
-	.half	.L200-.L127
+	.half	.L201-.L128
 	.byte	3,1,1,5,10,9
-	.half	.L201-.L200
-	.byte	3,123,1,9
 	.half	.L202-.L201
-	.byte	3,1,1,9
+	.byte	3,123,1,9
 	.half	.L203-.L202
 	.byte	3,1,1,9
 	.half	.L204-.L203
-	.byte	3,1,1,5,9,9
+	.byte	3,1,1,9
 	.half	.L205-.L204
-	.byte	3,3,1,5,1,9
+	.byte	3,1,1,5,9,9
 	.half	.L206-.L205
+	.byte	3,3,1,5,1,9
+	.half	.L207-.L206
 	.byte	3,2,1,7,9
-	.half	.L42-.L206
+	.half	.L42-.L207
 	.byte	0,1,1
-.L197:
+.L198:
 	.sdecl	'.debug_ranges',debug,cluster('init_uart_tof')
 	.sect	'.debug_ranges'
 .L41:
@@ -17166,9 +17167,9 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'initUART',0,1,193,1,6,1,1,1
-	.word	.L13,.L100,.L12
+	.word	.L13,.L101,.L12
 	.byte	4
-	.word	.L13,.L100
+	.word	.L13,.L101
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('initUART')
 	.sect	'.debug_abbrev'
@@ -17178,28 +17179,28 @@ _999004_pins:	.type	object
 	.sdecl	'.debug_line',debug,cluster('initUART')
 	.sect	'.debug_line'
 .L45:
-	.word	.L208-.L207
-.L207:
+	.word	.L209-.L208
+.L208:
 	.half	3
-	.word	.L210-.L209
-.L209:
+	.word	.L211-.L210
+.L210:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../driver/uart/uart.c',0,0,0,0,0
-.L210:
+.L211:
 	.byte	5,17,7,0,5,2
 	.word	.L13
 	.byte	3,194,1,1,5,22,9
-	.half	.L211-.L13
+	.half	.L212-.L13
 	.byte	3,1,1,5,18,9
-	.half	.L212-.L211
-	.byte	3,1,1,9
 	.half	.L213-.L212
-	.byte	3,1,1,5,1,9
+	.byte	3,1,1,9
 	.half	.L214-.L213
+	.byte	3,1,1,5,1,9
+	.half	.L215-.L214
 	.byte	3,1,1,7,9
-	.half	.L47-.L214
+	.half	.L47-.L215
 	.byte	0,1,1
-.L208:
+.L209:
 	.sdecl	'.debug_ranges',debug,cluster('initUART')
 	.sect	'.debug_ranges'
 .L46:
@@ -17217,7 +17218,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_uartInstances',0,21,46,16
-	.word	.L101
+	.word	.L102
 	.byte	1,5,3
 	.word	g_uartInstances
 	.byte	0
@@ -17239,7 +17240,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_pcTxBuf',0,21,58,16
-	.word	.L102
+	.word	.L103
 	.byte	1,5,3
 	.word	g_pcTxBuf
 	.byte	0
@@ -17261,7 +17262,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_pcRxBuf',0,21,59,16
-	.word	.L103
+	.word	.L104
 	.byte	1,5,3
 	.word	g_pcRxBuf
 	.byte	0
@@ -17283,7 +17284,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_arduinoTxBuf',0,21,61,16
-	.word	.L104
+	.word	.L105
 	.byte	1,5,3
 	.word	g_arduinoTxBuf
 	.byte	0
@@ -17305,7 +17306,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_arduinoRxBuf',0,21,62,16
-	.word	.L105
+	.word	.L106
 	.byte	1,5,3
 	.word	g_arduinoRxBuf
 	.byte	0
@@ -17327,7 +17328,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_rpiTxBuf',0,21,64,16
-	.word	.L106
+	.word	.L107
 	.byte	1,5,3
 	.word	g_rpiTxBuf
 	.byte	0
@@ -17349,7 +17350,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_rpiRxBuf',0,21,65,16
-	.word	.L107
+	.word	.L108
 	.byte	1,5,3
 	.word	g_rpiRxBuf
 	.byte	0
@@ -17371,7 +17372,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_tofTxBuf',0,21,67,16
-	.word	.L108
+	.word	.L109
 	.byte	1,5,3
 	.word	g_tofTxBuf
 	.byte	0
@@ -17393,7 +17394,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_tofRxBuf',0,21,68,16
-	.word	.L109
+	.word	.L110
 	.byte	1,5,3
 	.word	g_tofRxBuf
 	.byte	0
@@ -17415,7 +17416,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_uart_pc',0,21,49,15
-	.word	.L110
+	.word	.L111
 	.byte	1,5,3
 	.word	g_uart_pc
 	.byte	0
@@ -17437,7 +17438,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_uart_arduino',0,21,50,15
-	.word	.L110
+	.word	.L111
 	.byte	1,5,3
 	.word	g_uart_arduino
 	.byte	0
@@ -17459,7 +17460,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_uart_rpi',0,21,51,15
-	.word	.L110
+	.word	.L111
 	.byte	1,5,3
 	.word	g_uart_rpi
 	.byte	0
@@ -17481,7 +17482,7 @@ _999004_pins:	.type	object
 	.word	.L14
 	.byte	3
 	.byte	'g_uart_tof',0,21,52,15
-	.word	.L110
+	.word	.L111
 	.byte	1,5,3
 	.word	g_uart_tof
 	.byte	0
@@ -17493,42 +17494,42 @@ _999004_pins:	.type	object
 	.sdecl	'.debug_loc',debug,cluster('initUART')
 	.sect	'.debug_loc'
 .L12:
-	.word	-1,.L13,0,.L100-.L13
+	.word	-1,.L13,0,.L101-.L13
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('initUartChannel')
 	.sect	'.debug_loc'
 .L76:
-	.word	-1,.L3,0,.L111-.L3
+	.word	-1,.L3,0,.L112-.L3
 	.half	1
 	.byte	100
-	.word	.L113-.L3,.L74-.L3
+	.word	.L114-.L3,.L74-.L3
 	.half	1
 	.byte	110
-	.word	.L122-.L3,.L121-.L3
+	.word	.L123-.L3,.L122-.L3
 	.half	1
 	.byte	100
 	.word	0,0
 .L78:
-	.word	-1,.L3,0,.L111-.L3
+	.word	-1,.L3,0,.L112-.L3
 	.half	1
 	.byte	101
-	.word	.L114-.L3,.L115-.L3
+	.word	.L115-.L3,.L116-.L3
 	.half	1
 	.byte	111
-	.word	.L111-.L3,.L112-.L3
+	.word	.L112-.L3,.L113-.L3
 	.half	1
 	.byte	100
-	.word	.L123-.L3,.L121-.L3
+	.word	.L124-.L3,.L122-.L3
 	.half	1
 	.byte	101
 	.word	0,0
-.L86:
-	.word	-1,.L3,0,.L112-.L3
+.L87:
+	.word	-1,.L3,0,.L113-.L3
 	.half	1
 	.byte	84
-	.word	.L118-.L3,.L74-.L3
+	.word	.L119-.L3,.L74-.L3
 	.half	1
 	.byte	88
 	.word	0,0
@@ -17537,113 +17538,113 @@ _999004_pins:	.type	object
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L81:
-	.word	-1,.L3,0,.L112-.L3
+.L82:
+	.word	-1,.L3,0,.L113-.L3
 	.half	1
 	.byte	103
-	.word	.L119-.L3,.L112-.L3
+	.word	.L120-.L3,.L113-.L3
 	.half	1
 	.byte	101
 	.word	0,0
 .L80:
-	.word	-1,.L3,0,.L112-.L3
+	.word	-1,.L3,0,.L113-.L3
 	.half	1
 	.byte	102
-	.word	.L116-.L3,.L74-.L3
+	.word	.L117-.L3,.L74-.L3
 	.half	1
 	.byte	108
+	.word	0,0
+.L85:
+	.word	-1,.L3,0,.L74-.L3
+	.half	2
+	.byte	145,4
+	.word	.L121-.L3,.L122-.L3
+	.half	1
+	.byte	98
 	.word	0,0
 .L84:
 	.word	-1,.L3,0,.L74-.L3
 	.half	2
-	.byte	145,4
-	.word	.L120-.L3,.L121-.L3
-	.half	1
-	.byte	98
-	.word	0,0
-.L83:
-	.word	-1,.L3,0,.L74-.L3
-	.half	2
 	.byte	145,0
-	.word	.L117-.L3,.L74-.L3
+	.word	.L118-.L3,.L74-.L3
 	.half	1
 	.byte	109
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('init_uart_arduino')
 	.sect	'.debug_loc'
-.L92:
-	.word	-1,.L7,0,.L91-.L7
+.L93:
+	.word	-1,.L7,0,.L92-.L7
 	.half	2
 	.byte	145,64
 	.word	0,0
 .L6:
-	.word	-1,.L7,0,.L125-.L7
+	.word	-1,.L7,0,.L126-.L7
 	.half	2
 	.byte	138,0
-	.word	.L125-.L7,.L91-.L7
+	.word	.L126-.L7,.L92-.L7
 	.half	3
 	.byte	138,200,0
-	.word	.L91-.L7,.L91-.L7
+	.word	.L92-.L7,.L92-.L7
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('init_uart_pc')
 	.sect	'.debug_loc'
-.L89:
-	.word	-1,.L5,0,.L87-.L5
+.L90:
+	.word	-1,.L5,0,.L88-.L5
 	.half	2
 	.byte	145,64
 	.word	0,0
 .L4:
-	.word	-1,.L5,0,.L124-.L5
+	.word	-1,.L5,0,.L125-.L5
 	.half	2
 	.byte	138,0
-	.word	.L124-.L5,.L87-.L5
+	.word	.L125-.L5,.L88-.L5
 	.half	3
 	.byte	138,200,0
-	.word	.L87-.L5,.L87-.L5
+	.word	.L88-.L5,.L88-.L5
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('init_uart_rpi')
 	.sect	'.debug_loc'
-.L95:
-	.word	-1,.L9,0,.L94-.L9
+.L96:
+	.word	-1,.L9,0,.L95-.L9
 	.half	2
 	.byte	145,64
 	.word	0,0
 .L8:
-	.word	-1,.L9,0,.L126-.L9
+	.word	-1,.L9,0,.L127-.L9
 	.half	2
 	.byte	138,0
-	.word	.L126-.L9,.L94-.L9
+	.word	.L127-.L9,.L95-.L9
 	.half	3
 	.byte	138,200,0
-	.word	.L94-.L9,.L94-.L9
+	.word	.L95-.L9,.L95-.L9
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('init_uart_tof')
 	.sect	'.debug_loc'
-.L98:
-	.word	-1,.L11,0,.L97-.L11
+.L99:
+	.word	-1,.L11,0,.L98-.L11
 	.half	2
 	.byte	145,64
 	.word	0,0
 .L10:
-	.word	-1,.L11,0,.L127-.L11
+	.word	-1,.L11,0,.L128-.L11
 	.half	2
 	.byte	138,0
-	.word	.L127-.L11,.L97-.L11
+	.word	.L128-.L11,.L98-.L11
 	.half	3
 	.byte	138,200,0
-	.word	.L97-.L11,.L97-.L11
+	.word	.L98-.L11,.L98-.L11
 	.half	2
 	.byte	138,0
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L215:
+.L216:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
@@ -17651,45 +17652,45 @@ _999004_pins:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('initUartChannel')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L215,.L3,.L74-.L3
+	.word	.L216,.L3,.L74-.L3
 	.sdecl	'.debug_frame',debug,cluster('init_uart_pc')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L215,.L5,.L87-.L5
+	.word	.L216,.L5,.L88-.L5
 	.byte	4
-	.word	(.L124-.L5)/2
+	.word	(.L125-.L5)/2
 	.byte	19,200,0,22,26,4,19,138,200,0,4
-	.word	(.L87-.L124)/2
+	.word	(.L88-.L125)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('init_uart_arduino')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L215,.L7,.L91-.L7
+	.word	.L216,.L7,.L92-.L7
 	.byte	4
-	.word	(.L125-.L7)/2
+	.word	(.L126-.L7)/2
 	.byte	19,200,0,22,26,4,19,138,200,0,4
-	.word	(.L91-.L125)/2
+	.word	(.L92-.L126)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('init_uart_rpi')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L215,.L9,.L94-.L9
+	.word	.L216,.L9,.L95-.L9
 	.byte	4
-	.word	(.L126-.L9)/2
+	.word	(.L127-.L9)/2
 	.byte	19,200,0,22,26,4,19,138,200,0,4
-	.word	(.L94-.L126)/2
+	.word	(.L95-.L127)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('init_uart_tof')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L215,.L11,.L97-.L11
+	.word	.L216,.L11,.L98-.L11
 	.byte	4
-	.word	(.L127-.L11)/2
+	.word	(.L128-.L11)/2
 	.byte	19,200,0,22,26,4,19,138,200,0,4
-	.word	(.L97-.L127)/2
+	.word	(.L98-.L128)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('initUART')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L215,.L13,.L100-.L13
+	.word	.L216,.L13,.L101-.L13
 	; Module end

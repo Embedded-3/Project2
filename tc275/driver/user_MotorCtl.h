@@ -21,6 +21,12 @@ typedef struct{
     double rspeed;
 } Speed_t;
 
+typedef struct{
+    int on_off;
+    int y;
+    int g;
+    int b;
+} switch_t;
 
 extern volatile Speed_t speed;
 
