@@ -27,7 +27,7 @@
 
 #ifndef DRIVER_IMU_H_
 #define DRIVER_IMU_H_
-
+#include <stdbool.h>
 /*********************************************************************************************************************/
 /*-----------------------------------------------------Includes------------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -52,11 +52,29 @@
 /*------------------------------------------------Function Prototypes------------------------------------------------*/
 /*********************************************************************************************************************/
 void init_I2C_module(void);
+void init_I2C_module(void);
+void resetMPU9250(void);
+void calibrate_mpu9250(void);
 void init_mpu9250_registers(void);
-void read_mpu9250_sensor_data(void);
 void init_ak8963_registers(void);
+
+
 void read_accel_raw(sint16* ax, sint16* ay, sint16* az);
 void read_gyro_raw(sint16* gx, sint16* gy, sint16* gz);
 void read_magnetometer_raw(sint16* mx, sint16* my, sint16* mz);
+void read_accel_g(float* ax, float* ay, float* az);
+void read_gyro_dps(float* gx, float* gy, float* gz);
+void MadgwickQuaternionUpdate(float ax, float ay, float az, float gx, float gy, float gz, float mx, float my, float mz);
+void quaternionToEuler(void);
+float calculate_pitch_from_accel(float ax, float ay, float az);
+
+extern float q[4];
+extern float beta;
+extern float deltat;
+
+extern float yaw;
+extern float pitch;
+extern float roll;
+extern bool offset_calibrated;
 
 #endif /* DRIVER_IMU_H_ */

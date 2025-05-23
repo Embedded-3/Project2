@@ -49,6 +49,11 @@ void AppTask1000ms(void);
 int distance = 0;
 int prev_distance = -1;
 int flag50ms = 0;
+float ax, ay, az;
+float gx, gy, gz;
+sint16 mx, my, mz;
+
+
 
 int core0_main(void)
 {
@@ -67,10 +72,17 @@ int core0_main(void)
     /* Initialize */
     initShellInterface();                   //Debug_init
     Driver_Stm_Init();                      //Scheduling_init
-    ToF_Init();                             //ToF_init
+//    ToF_Init();                             //ToF_init
+
+
     init_I2C_module();                      //I2C_init
+    resetMPU9250();
+    calibrate_mpu9250();
     init_mpu9250_registers();               //mpu92500_registers_init
     init_ak8963_registers();                //ak8963_registers_init
+
+
+
     delay_ms(500);
 //    calibrate_gyro();                       //calibrate
 //    delay_ms(1000);
@@ -94,54 +106,46 @@ void AppTask10ms(void)
     stTestCnt.u32nuCnt10ms++;
     flag50ms++;
     if(flag50ms ==5){
-//        read_mpu9250_sensor_data();
-//        print_mpu9250_sensor_data();
         flag50ms = 0;
-//        sint16 mx, my, mz;
-//        read_magnetometer_raw(&mx, &my, &mz);
-//        print("MAG: X=%d Y=%d Z=%d\n\r", mx, my, mz);
-//        if (distance >= 0)
-//        {
-//            // 새 거리 유효 → 저장 및 출력
-//            prev_distance = distance;
-//        }
-//            // 유효하지 않아도 이전 값 출력
-//            if (prev_distance >= 0)
-//                print("Distance: %d cm\n\r", prev_distance);
-//            else
-//                print("Distance: -1 (no valid reading yet)\n\r");
+        read_accel_g(&ax, &ay, &az);
+        read_gyro_dps(&gx, &gy, &gz);
+        read_magnetometer_raw(&mx, &my, &mz);
+        float mx_ut = mx * 0.15f;
+        float my_ut = my * 0.15f;
+        float mz_ut = mz * 0.15f;
+    //    print("Accel: X=%.2f Y=%.2f Z=%.2f\n\r", ax, ay, az);
+    //    print("Gyro: X=%.2f Y=%.2f Z=%.2f\n\r", gx, gy, gz);
+    //    print("MAG: X=%d Y=%d Z=%d\n\r", mx, my, mz);
+        MadgwickQuaternionUpdate(ax, ay, az, gx , gy, gz, mx_ut, my_ut, mz_ut);
+    //    print("q = [%f, %f, %f, %f]\n\r", q[0], q[1], q[2], q[3]);
+        quaternionToEuler();
+//        if(offset_calibrated) print("Yaw=%d, Pitch=%d, Roll=%d\n\r", (int)yaw, (int)pitch, (int)roll);
+        if(offset_calibrated) print("Madgwick = %d\n\r",(int)pitch);
+        float pitch_accel_only = calculate_pitch_from_accel(ax, ay, az);
+        print("raw = %d deg\n\r", (int)(pitch_accel_only+12));
+////        if (distance >= 0)
+////        {
+////            // 새 거리 유효 → 저장 및 출력
+////            prev_distance = distance;
+////        }
+////            // 유효하지 않아도 이전 값 출력
+////            if (prev_distance >= 0)
+////                print("Distance: %d cm\n\r", prev_distance);
+////            else
+////                print("Distance: -1 (no valid reading yet)\n\r");
     }
 }
 
 void AppTask100ms(void)
 {
     stTestCnt.u32nuCnt100ms++;
-    distance = data();
+//    distance = data();
+
 }
 
 void AppTask1000ms(void)
 {
     stTestCnt.u32nuCnt1000ms++;
-    sint16 ax, ay, az;
-    sint16 gx, gy, gz;
-    sint16 mx, my, mz;
-    read_accel_raw(&ax, &ay, &az);
-    read_gyro_raw(&gx, &gy, &gz);
-    read_magnetometer_raw(&mx, &my, &mz);
-    print("Accel: X=%d Y=%d Z=%d\n\r", ax, ay, az);
-    print("Gyro: X=%d Y=%d Z=%d\n\r", gx, gy, gz);
-    print("MAG: X=%d Y=%d Z=%d\n\r", mx, my, mz);
-
-//    if (distance >= 0)
-//    {
-//        // 새 거리 유효 → 저장 및 출력
-//        prev_distance = distance;
-//    }
-//        // 유효하지 않아도 이전 값 출력
-//        if (prev_distance >= 0)
-//            print("Distance: %d cm\n\r", prev_distance);
-//        else
-//            print("Distance: -1 (no valid reading yet)\n\r");
 }
 
 void AppScheduling(void)
