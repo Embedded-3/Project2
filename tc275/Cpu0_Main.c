@@ -167,8 +167,13 @@ void AppTask10ms(void)
 
     // Priority 1 : ToF
     if(stTestCnt.u32nuCnt10ms % 5== 0) {   // Period : 50ms
-        if(s_distance <= 40) {
-            ; //setSpeed(STOP);
+        uint16 avg_speed = (s_speedL_integer + s_speedR_integer) / 2;
+        uint32 stop_distance = (avg_speed / 5) * 5 + 20;    //ex) 30이면 50cm, 20이면 40cm
+        if(s_distance <= stop_distance) {
+            ;
+            // tx_uart_pc_debug("distance %d\n\r", s_distance);
+            // tx_uart_pc_debug("BRAKE\n\r");
+            //setSpeed(STOP);
         }
         else {
             ;
@@ -249,7 +254,7 @@ void AppTask1000ms(void)
         //getSpeed(1000); // 속도 측정
         //tx_uart_pc_debug(MAGENTA"set %.3lf \n\r"RESET, pid_control(s_targetSpeed, measured_speed.lspeed, 1));
 
-        // 소수점 두자리만 보내도록 고치기
+        // TODO 소수점 두자리만 보내도록 고치기
         s_speedL_integer = (uint8)measured_speed.lspeed;
         s_speedL_decimal = (uint8)(measured_speed.lspeed - (double)s_speedL_integer);
         s_speedR_integer = (uint8)measured_speed.rspeed;
