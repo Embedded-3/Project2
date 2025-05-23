@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import time
 
-
+# 차선 클래스 정의
 class Line:
     def __init__(self):
         self.window_margin = 40
@@ -11,14 +11,14 @@ class Line:
         self.allx = None
         self.ally = None
 
-
+# 투시 변환 함수
 def warp_image(img, src, dst, size):
     M = cv2.getPerspectiveTransform(src, dst)
     Minv = cv2.getPerspectiveTransform(dst, src)
     warp_img = cv2.warpPerspective(img, M, size, flags=cv2.INTER_LINEAR)
     return warp_img, M, Minv
 
-
+# 곡선 보정 (평균화)
 def smoothing(lines, pre_lines=5):
     lines = np.squeeze(lines)
     avg_line = np.zeros((lines.shape[1]))
@@ -27,7 +27,7 @@ def smoothing(lines, pre_lines=5):
     avg_line = avg_line / pre_lines
     return avg_line
 
-
+# 조향각 계산
 def calculate_center_angle(left_line, right_line, xm_per_pix, ym_per_pix):
     if left_line.allx is None or right_line.allx is None:
         return None
@@ -41,7 +41,7 @@ def calculate_center_angle(left_line, right_line, xm_per_pix, ym_per_pix):
     angle = np.arctan(slope) * (180 / np.pi)
     return angle
 
-
+# 차선 찾기
 def find_lines(binary_img, left_line, right_line):
     histogram = np.sum(binary_img[binary_img.shape[0]//2:, :], axis=0)
     midpoint = np.int32(histogram.shape[0] / 2)
@@ -111,7 +111,7 @@ def find_lines(binary_img, left_line, right_line):
             right_fitx = avg
         right_line.allx, right_line.ally = right_fitx, ploty
 
-
+# 차선 시각화
 def draw_center_lane(img, left_line, right_line):
     if left_line.allx is None or right_line.allx is None:
         return img
@@ -122,9 +122,9 @@ def draw_center_lane(img, left_line, right_line):
     result = cv2.addWeighted(img, 1, warp_zero, 0.6, 0)
     return result
 
-
+# 메인 실행부
 def main():
-    
+     # 투시 변환용 좌표 (카메라 높이와 각도에 따라 조정 가능)
     src = np.float32([[100, 300], [0, 470], [540, 300], [640, 470]])
     dst = np.float32([[150, 0], [150, 480], [490, 0], [490, 480]])
 
