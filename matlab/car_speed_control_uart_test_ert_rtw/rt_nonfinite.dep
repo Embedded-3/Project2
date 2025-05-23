@@ -1,0 +1,14 @@
+rt_nonfinite.o: \
+ C:/Users/USER/Desktop/Github/Project2/matlab/car_speed_control_uart_test_ert_rtw/rt_nonfinite.c \
+ C:/Users/USER/Desktop/Github/Project2/matlab/car_speed_control_uart_test_ert_rtw/rtGetNaN.h \
+ C:/Users/USER/Desktop/Github/Project2/matlab/car_speed_control_uart_test_ert_rtw/rt_nonfinite.h \
+ C:/Users/USER/Desktop/Github/Project2/matlab/car_speed_control_uart_test_ert_rtw/rtwtypes.h \
+ C:/Users/USER/Desktop/Github/Project2/matlab/car_speed_control_uart_test_ert_rtw/rtGetInf.h
+
+C:/Users/USER/Desktop/Github/Project2/matlab/car_speed_control_uart_test_ert_rtw/rtGetNaN.h:
+
+C:/Users/USER/Desktop/Github/Project2/matlab/car_speed_control_uart_test_ert_rtw/rt_nonfinite.h:
+
+C:/Users/USER/Desktop/Github/Project2/matlab/car_speed_control_uart_test_ert_rtw/rtwtypes.h:
+
+C:/Users/USER/Desktop/Github/Project2/matlab/car_speed_control_uart_test_ert_rtw/rtGetInf.h:

@@ -1,0 +1,5 @@
+uart_handler.o: \
+ C:/Users/USER/Desktop/Github/Project2/matlab/uart_handler.c \
+ C:/Users/USER/Desktop/Github/Project2/matlab/uart_handler.h
+
+C:/Users/USER/Desktop/Github/Project2/matlab/uart_handler.h:
