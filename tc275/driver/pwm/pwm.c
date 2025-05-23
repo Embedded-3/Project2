@@ -68,29 +68,22 @@ static void setDutyCycle(PwmWheel_t* wheel, const uint32 dutyCycle) {
     IfxGtm_Atom_Pwm_init(&(wheel->driver), &(wheel->config));
 }
 
-// // User Func : 좌우 조향 // TODO
-// void setCurve(const e_SteeringDir_t dir, uint32 left_duty, uint32 right_duty) {
-//     // duty 범위 체크
-//     checkDutyCycle(&left_duty);
-//     checkDutyCycle(&right_duty);
-
-//     if (dir == LEFT) {
-//         setPwm(FL, left_duty);
-//         setPwm(RL, left_duty);
-//         setPwm(FR, right_duty);
-//         setPwm(RR, right_duty);
-//     } else if (dir == RIGHT) {
-//         setPwm(FL, left_duty);
-//         setPwm(RL, left_duty);
-//         setPwm(FR, right_duty);
-//         setPwm(RR, right_duty);
-//     }
-// }
-
 // Duty 범위 체크
 static void checkDutyCycle(uint32* dutyCycle) {
     if (dutyCycle == NULL) return;
     
     if(*dutyCycle >= PWM_PERIOD)  *(unsigned int*)dutyCycle = PWM_PERIOD;
     else if(*dutyCycle <= 0)      *(unsigned int*)dutyCycle = 0;
+}
+
+
+void setAllMotor(uint32 dutyCycle) {
+    if(dutyCycle == 0) {
+        IfxPort_setPinHigh(BRAKE_PIN);
+        for (int i = 0; i < NUM_WHEELS; i++) setPwm(i, STOP);
+    }
+    else{
+        IfxPort_setPinLow(BRAKE_PIN);
+        for (int i = 0; i < NUM_WHEELS; i++) setPwm(i, dutyCycle);
+    }
 }

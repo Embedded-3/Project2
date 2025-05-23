@@ -14,6 +14,8 @@ RM := rm -rf
 -include driver/ringbuffer/subdir.mk
 -include driver/pwm/subdir.mk
 -include driver/parser/subdir.mk
+-include driver/imu/subdir.mk
+-include driver/etc/subdir.mk
 -include driver/encoder/subdir.mk
 -include driver/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_PinMap/subdir.mk
@@ -26,6 +28,8 @@ RM := rm -rf
 -include Libraries/iLLD/TC27D/Tricore/Scu/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Port/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Mtu/Std/subdir.mk
+-include Libraries/iLLD/TC27D/Tricore/I2c/Std/subdir.mk
+-include Libraries/iLLD/TC27D/Tricore/I2c/I2c/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Gtm/Tom/Pwm/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Gtm/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Gtm/Atom/Pwm/subdir.mk

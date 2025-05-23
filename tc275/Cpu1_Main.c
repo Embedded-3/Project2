@@ -221,7 +221,7 @@ void core1_main(void)
         // speedL, speedR, slope, targetSpeed, steeringAngle
 
         
-        PrepareArduinoMessageAndSend(10, 20, 30, 40, 50);  // TODO 자꾸떠서 주석해놨음
+        //PrepareArduinoMessageAndSend(10, 20, 30, 40, 50);  // TODO 자꾸떠서 주석해놨음
         RingBufferInit(&s_arduinoRxRingBuffer);
         RingBufferInit(&s_rpiRxRingBuffer);
         RingBufferInit(&s_tofRxRingBuffer);

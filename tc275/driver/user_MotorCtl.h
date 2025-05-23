@@ -14,8 +14,6 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[37m"
 
-
-
 typedef struct{
     double lspeed;
     double rspeed;
@@ -35,10 +33,10 @@ typedef enum {
     SPEED_3 = 30,
 } SpeedType;
 
-extern volatile Speed_t speed;
+extern volatile Speed_t measured_speed;
 
 void getSpeed(int time);
 void setSpeed(SpeedType speedType);
-
+int pid_control(float set_speed, float measured_speed, float dt_ms);
 
 #endif

@@ -18,7 +18,11 @@
 #include "IfxPort.h"
 #include "IfxPort_PinMap.h"
 
-
+#include "driver/imu/imu.h"
+#include "etc.h"
+float ax, ay, az;
+float gx, gy, gz;
+sint16 mx, my, mz;
 
 
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
@@ -52,6 +56,14 @@ void core0_main(void)
     initPwm();              // PWM 초기화
     startPwm();             // PWM 시작
     
+    init_I2C_module();                      //I2C_init
+    resetMPU9250();
+    calibrate_mpu9250();
+    init_mpu9250_registers();               //mpu92500_registers_init
+    init_ak8963_registers();                //ak8963_registers_init
+    delay_ms(500);
+
+
     //for(int i=0;i<4;i++) setPwm(i, GO_AFTER_STOP);
 
     //for(int i=0;i<4;i++) setPwm(i, MIN);
@@ -153,12 +165,49 @@ void AppTask10ms(void)
 
     if(!flag_sw.on_off) return; // TOOD 임시
 
+    // Priority 1 : ToF
+    if(stTestCnt.u32nuCnt10ms % 5== 0) {   // Period : 50ms
+        if(s_distance <= 40) {
+            ; //setSpeed(STOP);
+        }
+        else {
+            ;
+        }
+    }
+
+    // Priority 2 : IMU
     if(stTestCnt.u32nuCnt10ms % 5 == 0) {   // Period : 50ms
+        // imu
+        read_accel_g(&ax, &ay, &az);
+        read_gyro_dps(&gx, &gy, &gz);
+        read_magnetometer_raw(&mx, &my, &mz);
+        float mx_ut = mx * 0.15f;
+        float my_ut = my * 0.15f;
+        float mz_ut = mz * 0.15f;
+        MadgwickQuaternionUpdate(ax, ay, az, gx , gy, gz, mx_ut, my_ut, mz_ut);
+        quaternionToEuler();
+        //if(offset_calibrated) print("Yaw=%d, Pitch=%d, Roll=%d\n\r", (int)yaw, (int)pitch, (int)roll);
+        if(offset_calibrated) {
+            //tx_uart_pc_debug("Madgwick = %d\n\r",(int)pitch);
+            s_slope = (int)pitch;
+        }
+        //
+
+
+
+
+
+
+        // if(flag_sw.on_off) {
+        //     getSpeed(50); // 속도 측정
+        //     tx_uart_pc_debug(MAGENTA"set %.3lf \n\r"RESET, pid_control(s_targetSpeed, measured_speed.lspeed, 50));
+        // }
         
         if(s_distance <= 30){ // 속도가 빠르면 tof가 읽기전에 이미 가 있음 조절 필요
             //IfxPort_setPinHigh(BRAKE_PIN);
             //for(int i=0;i<4;i++) setPwm(i, 0);   
-            print("BRAKE\n\r");
+            ;
+            //print("BRAKE\n\r");
 
         }
         else{ ;
@@ -178,22 +227,33 @@ void AppTask10ms(void)
 void AppTask100ms(void)
 {
     stTestCnt.u32nuCnt100ms++;
-    distance = s_distance; //data();
+    distance = s_distance;
+
+
+
 }
 
 void AppTask1000ms(void)
 {
     stTestCnt.u32nuCnt1000ms++;
 
+    if(flag_sw.on_off) {
+        getSpeed(1000); // 속도 측정
+        //setSpeed(SPEED_3);
+    }
 
+    //pid_control(s_targetSpeed, measured_speed.rspeed, 1000);
+    //tx_uart_pc_debug(MAGENTA"set %d \n\r"RESET, pid_control(s_targetSpeed, measured_speed.rspeed, 1000));
     if(flag_sw.on_off) {
         //for(int i=0;i<4;i++) setPwm(i, 3500);   
-        getSpeed(1000); // 속도 측정
+        //getSpeed(1000); // 속도 측정
+        //tx_uart_pc_debug(MAGENTA"set %.3lf \n\r"RESET, pid_control(s_targetSpeed, measured_speed.lspeed, 1));
 
-        s_speedL_integer = (uint8)speed.lspeed;
-        s_speedL_decimal = (uint8)(speed.lspeed - (double)s_speedL_integer);
-        s_speedR_integer = (uint8)speed.rspeed;
-        s_speedR_decimal = (uint8)(speed.rspeed - (double)s_speedR_integer);
+        // 소수점 두자리만 보내도록 고치기
+        s_speedL_integer = (uint8)measured_speed.lspeed;
+        s_speedL_decimal = (uint8)(measured_speed.lspeed - (double)s_speedL_integer);
+        s_speedR_integer = (uint8)measured_speed.rspeed;
+        s_speedR_decimal = (uint8)(measured_speed.rspeed - (double)s_speedR_integer);
     }
     else{
         for(int i=0;i<4;i++) setPwm(i, 0);   

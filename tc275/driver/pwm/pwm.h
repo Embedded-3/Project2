@@ -30,10 +30,6 @@ typedef enum WHEEL{
     RL = 3,
 } e_Wheel_t;
 
-typedef enum STEERING_DIR{
-    LEFT = 0,
-    RIGHT = 1,
-} e_SteeringDir_t;
 
 typedef enum DUTYCYCLE{
     DT_STOP = 0,
@@ -49,7 +45,7 @@ typedef enum DUTYCYCLE{
 void initPwm(void);
 void startPwm(void);
 void setPwm(const e_Wheel_t whichWheel, uint32 dutyCycle);
-//void setCurve(const e_SteeringDir_t dir, uint32 left_duty, uint32 right_duty);
+void setAllMotor(uint32 dutyCycle);
 
 #endif
 /*
