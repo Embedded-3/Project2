@@ -132,12 +132,8 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h" :
 Cpu0_Main.o :	..\driver\user_MotorCtl.h
 ..\driver\user_MotorCtl.h :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\pwm\pwm.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\pwm\pwm.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\encoder\encoder.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\encoder\encoder.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\driver\parser\parser.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\driver\parser\parser.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\uart\uart.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\uart\uart.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Asclin\\Asc\IfxAsclin_Asc.h"
@@ -176,5 +172,3 @@ Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc
 "C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdio.h" :
 Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h"
 "C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdarg.h" :
-Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h" :

@@ -35,18 +35,21 @@ typedef enum STEERING_DIR{
     RIGHT = 1,
 } e_SteeringDir_t;
 
-typedef enum SPEED{
-    STOP = 0,
-    MMIN = 2000,
-    MIN = 2350,
+typedef enum DUTYCYCLE{
+    DT_STOP = 0,
 
-    MAX = 4000,
-} e_Speed_t;
+
+    DT_SPEED_1 = 2400, // 앞바퀴는 바닥에서만 감
+    DT_SPEED_2 = 3200,
+    DT_SPEED_3 = 4000,
+} e_DutyCycle_t;
+
+
 
 void initPwm(void);
 void startPwm(void);
 void setPwm(const e_Wheel_t whichWheel, uint32 dutyCycle);
-void setCurve(const e_SteeringDir_t dir, uint32 left_duty, uint32 right_duty);
+//void setCurve(const e_SteeringDir_t dir, uint32 left_duty, uint32 right_duty);
 
 #endif
 /*

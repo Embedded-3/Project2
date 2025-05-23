@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc23668a --dep-file=driver/smem/shared_memory.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\encoder -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\parser -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\ringbuffer -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\smem -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\uart -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o driver/smem/shared_memory.src ../driver/smem/shared_memory.c"
+	.compiler_invocation	"ctc -f cc19364a --dep-file=driver/smem/shared_memory.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Atom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\encoder -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\parser -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\ringbuffer -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\smem -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\driver\\\\uart -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o driver/smem/shared_memory.src ../driver/smem/shared_memory.c"
 	.compiler_name		"ctc"
 	;source	'../driver/smem/shared_memory.c'
 
@@ -65,17 +65,29 @@ s_pcRxRingBuffer:	.type	object
 s_tofRxRingBuffer:	.type	object
 	.size	s_tofRxRingBuffer,260
 	.space	260
-	.sdecl	'.shared',data,cluster('s_targetSpeedL')
+	.sdecl	'.shared',data,cluster('s_targetSpeedL_integer')
 	.sect	'.shared'
-	.global	s_targetSpeedL
-s_targetSpeedL:	.type	object
-	.size	s_targetSpeedL,1
+	.global	s_targetSpeedL_integer
+s_targetSpeedL_integer:	.type	object
+	.size	s_targetSpeedL_integer,1
 	.space	1
-	.sdecl	'.shared',data,cluster('s_targetSpeedR')
+	.sdecl	'.shared',data,cluster('s_targetSpeedL_decimal')
 	.sect	'.shared'
-	.global	s_targetSpeedR
-s_targetSpeedR:	.type	object
-	.size	s_targetSpeedR,1
+	.global	s_targetSpeedL_decimal
+s_targetSpeedL_decimal:	.type	object
+	.size	s_targetSpeedL_decimal,1
+	.space	1
+	.sdecl	'.shared',data,cluster('s_targetSpeedR_integer')
+	.sect	'.shared'
+	.global	s_targetSpeedR_integer
+s_targetSpeedR_integer:	.type	object
+	.size	s_targetSpeedR_integer,1
+	.space	1
+	.sdecl	'.shared',data,cluster('s_targetSpeedR_decimal')
+	.sect	'.shared'
+	.global	s_targetSpeedR_decimal
+s_targetSpeedR_decimal:	.type	object
+	.size	s_targetSpeedR_decimal,1
 	.space	1
 	.sdecl	'.shared',data,cluster('s_followAngle')
 	.sect	'.shared'
@@ -90,17 +102,29 @@ s_followAngle:	.type	object
 s_distance:	.type	object
 	.size	s_distance,2
 	.space	2
-	.sdecl	'.shared',data,cluster('s_speedL')
+	.sdecl	'.shared',data,cluster('s_speedL_integer')
 	.sect	'.shared'
-	.global	s_speedL
-s_speedL:	.type	object
-	.size	s_speedL,1
+	.global	s_speedL_integer
+s_speedL_integer:	.type	object
+	.size	s_speedL_integer,1
 	.space	1
-	.sdecl	'.shared',data,cluster('s_speedR')
+	.sdecl	'.shared',data,cluster('s_speedL_decimal')
 	.sect	'.shared'
-	.global	s_speedR
-s_speedR:	.type	object
-	.size	s_speedR,1
+	.global	s_speedL_decimal
+s_speedL_decimal:	.type	object
+	.size	s_speedL_decimal,1
+	.space	1
+	.sdecl	'.shared',data,cluster('s_speedR_integer')
+	.sect	'.shared'
+	.global	s_speedR_integer
+s_speedR_integer:	.type	object
+	.size	s_speedR_integer,1
+	.space	1
+	.sdecl	'.shared',data,cluster('s_speedR_decimal')
+	.sect	'.shared'
+	.global	s_speedR_decimal
+s_speedR_decimal:	.type	object
+	.size	s_speedR_decimal,1
 	.space	1
 	.sdecl	'.shared',data,cluster('s_slope')
 	.sect	'.shared'
@@ -123,7 +147,7 @@ s_steeringAngle:	.type	object
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
 .L3:
-	.word	112198
+	.word	112218
 	.half	3
 	.word	.L4
 	.byte	4
@@ -16133,61 +16157,73 @@ s_steeringAngle:	.type	object
 	.byte	26
 	.byte	'Ifx_Shell_CommandListConst',0,30,228,1,34
 	.word	112059
-.L42:
+.L50:
 	.byte	14
 	.word	631
 	.byte	18,164,2
 	.word	631
 	.byte	19,163,2,0
-.L43:
-	.byte	14
-	.word	112105
-.L44:
-	.byte	14
-	.word	112105
-.L45:
-	.byte	14
-	.word	112105
-.L46:
-	.byte	14
-	.word	112105
-.L47:
-	.byte	14
-	.word	23283
-.L48:
-	.byte	14
-	.word	23283
-.L49:
-	.byte	14
-	.word	23283
-.L50:
-	.byte	14
-	.word	23283
 .L51:
 	.byte	14
-	.word	631
+	.word	112105
 .L52:
 	.byte	14
-	.word	631
+	.word	112105
 .L53:
 	.byte	14
-	.word	22919
+	.word	112105
 .L54:
 	.byte	14
-	.word	648
+	.word	112105
 .L55:
 	.byte	14
-	.word	631
+	.word	23283
 .L56:
 	.byte	14
-	.word	631
+	.word	23283
 .L57:
 	.byte	14
-	.word	22919
+	.word	23283
 .L58:
 	.byte	14
-	.word	631
+	.word	23283
 .L59:
+	.byte	14
+	.word	631
+.L60:
+	.byte	14
+	.word	631
+.L61:
+	.byte	14
+	.word	631
+.L62:
+	.byte	14
+	.word	631
+.L63:
+	.byte	14
+	.word	22919
+.L64:
+	.byte	14
+	.word	648
+.L65:
+	.byte	14
+	.word	631
+.L66:
+	.byte	14
+	.word	631
+.L67:
+	.byte	14
+	.word	631
+.L68:
+	.byte	14
+	.word	631
+.L69:
+	.byte	14
+	.word	22919
+.L70:
+	.byte	14
+	.word	631
+.L71:
 	.byte	14
 	.word	22919
 	.byte	0
@@ -16206,11 +16242,11 @@ s_steeringAngle:	.type	object
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
 .L5:
-	.word	.L61-.L60
-.L60:
+	.word	.L73-.L72
+.L72:
 	.half	3
-	.word	.L63-.L62
-.L62:
+	.word	.L75-.L74
+.L74:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg',0
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p2\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std',0
@@ -16264,8 +16300,8 @@ s_steeringAngle:	.type	object
 	.byte	0,0,0
 	.byte	'IfxAsclin_Asc.h',0,4,0,0
 	.byte	'Ifx_Shell.h',0,5,0,0,0
-.L63:
-.L61:
+.L75:
+.L73:
 	.sdecl	'.debug_info',debug,cluster('s_ledFlag')
 	.sect	'.debug_info'
 .L6:
@@ -16279,7 +16315,7 @@ s_steeringAngle:	.type	object
 	.word	.L2
 	.byte	3
 	.byte	's_ledFlag',0,17,3,16
-	.word	.L42
+	.word	.L50
 	.byte	1,5,3
 	.word	s_ledFlag
 	.byte	0
@@ -16301,7 +16337,7 @@ s_steeringAngle:	.type	object
 	.word	.L2
 	.byte	3
 	.byte	's_pcTxBuf',0,17,5,16
-	.word	.L43
+	.word	.L51
 	.byte	1,5,3
 	.word	s_pcTxBuf
 	.byte	0
@@ -16323,7 +16359,7 @@ s_steeringAngle:	.type	object
 	.word	.L2
 	.byte	3
 	.byte	's_arduinoTxBuf',0,17,7,16
-	.word	.L44
+	.word	.L52
 	.byte	1,5,3
 	.word	s_arduinoTxBuf
 	.byte	0
@@ -16345,7 +16381,7 @@ s_steeringAngle:	.type	object
 	.word	.L2
 	.byte	3
 	.byte	's_rpiTxBuf',0,17,9,16
-	.word	.L45
+	.word	.L53
 	.byte	1,5,3
 	.word	s_rpiTxBuf
 	.byte	0
@@ -16367,7 +16403,7 @@ s_steeringAngle:	.type	object
 	.word	.L2
 	.byte	3
 	.byte	's_tofTxBuf',0,17,11,16
-	.word	.L46
+	.word	.L54
 	.byte	1,5,3
 	.word	s_tofTxBuf
 	.byte	0
@@ -16389,7 +16425,7 @@ s_steeringAngle:	.type	object
 	.word	.L2
 	.byte	3
 	.byte	's_arduinoRxRingBuffer',0,17,14,21
-	.word	.L47
+	.word	.L55
 	.byte	1,5,3
 	.word	s_arduinoRxRingBuffer
 	.byte	0
@@ -16411,7 +16447,7 @@ s_steeringAngle:	.type	object
 	.word	.L2
 	.byte	3
 	.byte	's_rpiRxRingBuffer',0,17,15,21
-	.word	.L48
+	.word	.L56
 	.byte	1,5,3
 	.word	s_rpiRxRingBuffer
 	.byte	0
@@ -16433,7 +16469,7 @@ s_steeringAngle:	.type	object
 	.word	.L2
 	.byte	3
 	.byte	's_pcRxRingBuffer',0,17,16,21
-	.word	.L49
+	.word	.L57
 	.byte	1,5,3
 	.word	s_pcRxRingBuffer
 	.byte	0
@@ -16455,7 +16491,7 @@ s_steeringAngle:	.type	object
 	.word	.L2
 	.byte	3
 	.byte	's_tofRxRingBuffer',0,17,17,21
-	.word	.L50
+	.word	.L58
 	.byte	1,5,3
 	.word	s_tofRxRingBuffer
 	.byte	0
@@ -16464,10 +16500,10 @@ s_steeringAngle:	.type	object
 .L23:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('s_targetSpeedL')
+	.sdecl	'.debug_info',debug,cluster('s_targetSpeedL_integer')
 	.sect	'.debug_info'
 .L24:
-	.word	220
+	.word	228
 	.half	3
 	.word	.L25
 	.byte	4,1
@@ -16476,20 +16512,20 @@ s_steeringAngle:	.type	object
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
 	.word	.L2
 	.byte	3
-	.byte	's_targetSpeedL',0,17,19,16
-	.word	.L51
+	.byte	's_targetSpeedL_integer',0,17,19,16
+	.word	.L59
 	.byte	1,5,3
-	.word	s_targetSpeedL
+	.word	s_targetSpeedL_integer
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('s_targetSpeedL')
+	.sdecl	'.debug_abbrev',debug,cluster('s_targetSpeedL_integer')
 	.sect	'.debug_abbrev'
 .L25:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('s_targetSpeedR')
+	.sdecl	'.debug_info',debug,cluster('s_targetSpeedL_decimal')
 	.sect	'.debug_info'
 .L26:
-	.word	220
+	.word	228
 	.half	3
 	.word	.L27
 	.byte	4,1
@@ -16498,20 +16534,20 @@ s_steeringAngle:	.type	object
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
 	.word	.L2
 	.byte	3
-	.byte	's_targetSpeedR',0,17,20,16
-	.word	.L52
+	.byte	's_targetSpeedL_decimal',0,17,20,16
+	.word	.L60
 	.byte	1,5,3
-	.word	s_targetSpeedR
+	.word	s_targetSpeedL_decimal
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('s_targetSpeedR')
+	.sdecl	'.debug_abbrev',debug,cluster('s_targetSpeedL_decimal')
 	.sect	'.debug_abbrev'
 .L27:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('s_followAngle')
+	.sdecl	'.debug_info',debug,cluster('s_targetSpeedR_integer')
 	.sect	'.debug_info'
 .L28:
-	.word	219
+	.word	228
 	.half	3
 	.word	.L29
 	.byte	4,1
@@ -16520,20 +16556,20 @@ s_steeringAngle:	.type	object
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
 	.word	.L2
 	.byte	3
-	.byte	's_followAngle',0,17,22,17
-	.word	.L53
+	.byte	's_targetSpeedR_integer',0,17,21,16
+	.word	.L61
 	.byte	1,5,3
-	.word	s_followAngle
+	.word	s_targetSpeedR_integer
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('s_followAngle')
+	.sdecl	'.debug_abbrev',debug,cluster('s_targetSpeedR_integer')
 	.sect	'.debug_abbrev'
 .L29:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('s_distance')
+	.sdecl	'.debug_info',debug,cluster('s_targetSpeedR_decimal')
 	.sect	'.debug_info'
 .L30:
-	.word	216
+	.word	228
 	.half	3
 	.word	.L31
 	.byte	4,1
@@ -16542,20 +16578,20 @@ s_steeringAngle:	.type	object
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
 	.word	.L2
 	.byte	3
-	.byte	's_distance',0,17,24,17
-	.word	.L54
+	.byte	's_targetSpeedR_decimal',0,17,22,16
+	.word	.L62
 	.byte	1,5,3
-	.word	s_distance
+	.word	s_targetSpeedR_decimal
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('s_distance')
+	.sdecl	'.debug_abbrev',debug,cluster('s_targetSpeedR_decimal')
 	.sect	'.debug_abbrev'
 .L31:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('s_speedL')
+	.sdecl	'.debug_info',debug,cluster('s_followAngle')
 	.sect	'.debug_info'
 .L32:
-	.word	214
+	.word	219
 	.half	3
 	.word	.L33
 	.byte	4,1
@@ -16564,20 +16600,20 @@ s_steeringAngle:	.type	object
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
 	.word	.L2
 	.byte	3
-	.byte	's_speedL',0,17,26,16
-	.word	.L55
+	.byte	's_followAngle',0,17,24,17
+	.word	.L63
 	.byte	1,5,3
-	.word	s_speedL
+	.word	s_followAngle
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('s_speedL')
+	.sdecl	'.debug_abbrev',debug,cluster('s_followAngle')
 	.sect	'.debug_abbrev'
 .L33:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('s_speedR')
+	.sdecl	'.debug_info',debug,cluster('s_distance')
 	.sect	'.debug_info'
 .L34:
-	.word	214
+	.word	216
 	.half	3
 	.word	.L35
 	.byte	4,1
@@ -16586,20 +16622,20 @@ s_steeringAngle:	.type	object
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
 	.word	.L2
 	.byte	3
-	.byte	's_speedR',0,17,27,16
-	.word	.L56
+	.byte	's_distance',0,17,26,17
+	.word	.L64
 	.byte	1,5,3
-	.word	s_speedR
+	.word	s_distance
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('s_speedR')
+	.sdecl	'.debug_abbrev',debug,cluster('s_distance')
 	.sect	'.debug_abbrev'
 .L35:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('s_slope')
+	.sdecl	'.debug_info',debug,cluster('s_speedL_integer')
 	.sect	'.debug_info'
 .L36:
-	.word	213
+	.word	222
 	.half	3
 	.word	.L37
 	.byte	4,1
@@ -16608,20 +16644,20 @@ s_steeringAngle:	.type	object
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
 	.word	.L2
 	.byte	3
-	.byte	's_slope',0,17,28,16
-	.word	.L57
+	.byte	's_speedL_integer',0,17,28,16
+	.word	.L65
 	.byte	1,5,3
-	.word	s_slope
+	.word	s_speedL_integer
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('s_slope')
+	.sdecl	'.debug_abbrev',debug,cluster('s_speedL_integer')
 	.sect	'.debug_abbrev'
 .L37:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('s_targetSpeed')
+	.sdecl	'.debug_info',debug,cluster('s_speedL_decimal')
 	.sect	'.debug_info'
 .L38:
-	.word	219
+	.word	222
 	.half	3
 	.word	.L39
 	.byte	4,1
@@ -16630,20 +16666,20 @@ s_steeringAngle:	.type	object
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
 	.word	.L2
 	.byte	3
-	.byte	's_targetSpeed',0,17,29,16
-	.word	.L58
+	.byte	's_speedL_decimal',0,17,29,16
+	.word	.L66
 	.byte	1,5,3
-	.word	s_targetSpeed
+	.word	s_speedL_decimal
 	.byte	0
-	.sdecl	'.debug_abbrev',debug,cluster('s_targetSpeed')
+	.sdecl	'.debug_abbrev',debug,cluster('s_speedL_decimal')
 	.sect	'.debug_abbrev'
 .L39:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
-	.sdecl	'.debug_info',debug,cluster('s_steeringAngle')
+	.sdecl	'.debug_info',debug,cluster('s_speedR_integer')
 	.sect	'.debug_info'
 .L40:
-	.word	221
+	.word	222
 	.half	3
 	.word	.L41
 	.byte	4,1
@@ -16652,14 +16688,102 @@ s_steeringAngle:	.type	object
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
 	.word	.L2
 	.byte	3
-	.byte	's_steeringAngle',0,17,30,16
-	.word	.L59
+	.byte	's_speedR_integer',0,17,30,16
+	.word	.L67
+	.byte	1,5,3
+	.word	s_speedR_integer
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('s_speedR_integer')
+	.sect	'.debug_abbrev'
+.L41:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('s_speedR_decimal')
+	.sect	'.debug_info'
+.L42:
+	.word	222
+	.half	3
+	.word	.L43
+	.byte	4,1
+	.byte	'../driver/smem/shared_memory.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
+	.word	.L2
+	.byte	3
+	.byte	's_speedR_decimal',0,17,31,16
+	.word	.L68
+	.byte	1,5,3
+	.word	s_speedR_decimal
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('s_speedR_decimal')
+	.sect	'.debug_abbrev'
+.L43:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('s_slope')
+	.sect	'.debug_info'
+.L44:
+	.word	213
+	.half	3
+	.word	.L45
+	.byte	4,1
+	.byte	'../driver/smem/shared_memory.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
+	.word	.L2
+	.byte	3
+	.byte	's_slope',0,17,32,16
+	.word	.L69
+	.byte	1,5,3
+	.word	s_slope
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('s_slope')
+	.sect	'.debug_abbrev'
+.L45:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('s_targetSpeed')
+	.sect	'.debug_info'
+.L46:
+	.word	219
+	.half	3
+	.word	.L47
+	.byte	4,1
+	.byte	'../driver/smem/shared_memory.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
+	.word	.L2
+	.byte	3
+	.byte	's_targetSpeed',0,17,33,16
+	.word	.L70
+	.byte	1,5,3
+	.word	s_targetSpeed
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('s_targetSpeed')
+	.sect	'.debug_abbrev'
+.L47:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_info',debug,cluster('s_steeringAngle')
+	.sect	'.debug_info'
+.L48:
+	.word	221
+	.half	3
+	.word	.L49
+	.byte	4,1
+	.byte	'../driver/smem/shared_memory.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\TriCore Debug (TASKING)\\',0,12,1,2
+	.word	.L2
+	.byte	3
+	.byte	's_steeringAngle',0,17,34,16
+	.word	.L71
 	.byte	1,5,3
 	.word	s_steeringAngle
 	.byte	0
 	.sdecl	'.debug_abbrev',debug,cluster('s_steeringAngle')
 	.sect	'.debug_abbrev'
-.L41:
+.L49:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
 	.byte	0,0,0
 	; Module end

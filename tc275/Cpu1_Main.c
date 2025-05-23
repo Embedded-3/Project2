@@ -196,7 +196,7 @@ void core1_main(void)
         //tx_uart_pc_debug("sending shared : %s\r\n", s_arduinoTxBuf);
         //tx_uart(ARDUINO);
 
-        tx_uart_pc_debug("RECEIVE STARTS\r\n");
+        //tx_uart_pc_debug("RECEIVE STARTS\r\n");
         //tx_uart_debug(ARDUINO, "%c", 'a');
         /*
         tx_uart_debug(ARDUINO, "%c",0xaa);

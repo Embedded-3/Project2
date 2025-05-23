@@ -1,6 +1,6 @@
 // pwm.c
 #include "pwm.h"
-
+#include "user_MotorCtl.h"
 
 typedef struct {
     IfxGtm_Atom_Pwm_Config config;
@@ -68,24 +68,24 @@ static void setDutyCycle(PwmWheel_t* wheel, const uint32 dutyCycle) {
     IfxGtm_Atom_Pwm_init(&(wheel->driver), &(wheel->config));
 }
 
-// User Func : 좌우 조향 // TODO
-void setCurve(const e_SteeringDir_t dir, uint32 left_duty, uint32 right_duty) {
-    // duty 범위 체크
-    checkDutyCycle(&left_duty);
-    checkDutyCycle(&right_duty);
+// // User Func : 좌우 조향 // TODO
+// void setCurve(const e_SteeringDir_t dir, uint32 left_duty, uint32 right_duty) {
+//     // duty 범위 체크
+//     checkDutyCycle(&left_duty);
+//     checkDutyCycle(&right_duty);
 
-    if (dir == LEFT) {
-        setPwm(FL, left_duty);
-        setPwm(RL, left_duty);
-        setPwm(FR, right_duty);
-        setPwm(RR, right_duty);
-    } else if (dir == RIGHT) {
-        setPwm(FL, left_duty);
-        setPwm(RL, left_duty);
-        setPwm(FR, right_duty);
-        setPwm(RR, right_duty);
-    }
-}
+//     if (dir == LEFT) {
+//         setPwm(FL, left_duty);
+//         setPwm(RL, left_duty);
+//         setPwm(FR, right_duty);
+//         setPwm(RR, right_duty);
+//     } else if (dir == RIGHT) {
+//         setPwm(FL, left_duty);
+//         setPwm(RL, left_duty);
+//         setPwm(FR, right_duty);
+//         setPwm(RR, right_duty);
+//     }
+// }
 
 // Duty 범위 체크
 static void checkDutyCycle(uint32* dutyCycle) {

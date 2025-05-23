@@ -28,43 +28,6 @@ void ParserInit(ParserContext* ctx) {
     ctx->index = 0;
 }
 
-void ParseRingBuffer(volatile RingBuffer* rb, ParserContext* ctx) {
-    uint8 byte;
-    while (RingBufferGet(rb, &byte)) {
-        switch (ctx->state) {
-            case WAIT_START:
-                if (byte == 0xAA) {
-                    ctx->buffer[0] = byte;
-                    ctx->index = 1;
-                    ctx->state = RECEIVE_DATA;
-                }
-                break;
-
-            case RECEIVE_DATA:
-                ctx->buffer[ctx->index++] = byte;
-                if (ctx->index >= MSG_MAX_LENGTH) {
-                    // 메시지 최대 길이 초과, 에러 처리
-                    ctx->state = WAIT_START;
-                    ctx->index = 0;
-                } else if (byte == 0x55) {
-                    // ??
-                    // 종료 바이트 도착, 메시지 완성 시도
-                    /*
-                    if (CheckCRC(ctx->buffer, ctx->index)) {
-                        // 유효한 메시지: ctx->buffer에 완성 메시지 있음
-                        ProcessMessage(ctx->buffer, ctx->index);
-                    } else {
-                        // CRC 오류 처리 (무시하거나 로그 기록)
-                    }
-                    */
-                    ctx->state = WAIT_START;
-                    ctx->index = 0;
-                }
-                break;
-        }
-    }
-}
-
 int validateMessage(const uint8* data, uint8 len) {
     if (data[0] != 0xAA) return 0;         // Start byte 확인
     if (data[len-1] != 0x55) return 0;     // End byte 확인
@@ -73,12 +36,6 @@ int validateMessage(const uint8* data, uint8 len) {
     return 1;
 }
 
-int validateToFMessage(const uint8* data, uint8 len) {
-    if (data[0] != 0x5A) return 0;         // Frame Header 확인
-    uint8 sumCheck = calculateToFSumCheck(data, len);
-    if (sumCheck != data[len-1]) return 0; // Sum Check 확인
-    return 1;
-}
 
 uint8 calculateCRC(const uint8* data, uint8 len) {
     // data[0] = start, data[len-1] = end, data[len-2] = crc 위치
@@ -89,21 +46,17 @@ uint8 calculateCRC(const uint8* data, uint8 len) {
     return (uint8)(256 - (sum & 0xFF));
 }
 
-uint8 calculateToFSumCheck(const uint8* data, uint8 len) {
-    uint16 sum = 0;
-    for (uint8 i = 0; i < len - 1; i++) { // sumCheck 제외 마지막 바이트
-        sum += data[i];
-    }
-    return (uint8)(sum & 0xFF);
-}
 
 void ProcessReceivedMessage(uint8* msg, int len, int sourceDevice)
 {
     switch(sourceDevice) {
         case ARDUINO:
-            s_targetSpeedL = msg[1];
-            s_targetSpeedR = msg[2];
-            tx_uart_pc_debug("ARDUINO → targetSpeedL=%u, targetSpeedR=%u\r\n", s_targetSpeedL, s_targetSpeedR);
+            s_targetSpeedL_integer = msg[1];
+            s_targetSpeedL_decimal = msg[2];
+            s_targetSpeedR_integer = msg[3];
+            s_targetSpeedR_decimal = msg[4];
+            tx_uart_pc_debug("ARDUINO → targetSpeedL=%u.%u, targetSpeedR=%u.%u\r\n", s_targetSpeedL_integer, s_targetSpeedL_decimal,
+                                                                                   s_targetSpeedR_integer, s_targetSpeedR_decimal);
             break;
 
         case RPI:
@@ -267,12 +220,11 @@ void rx_uart_tof(void)
 
                         if (status == 0 && dist_mm != 0 && dist_mm != TOF_INVALID_DIST_MM) {
                             s_distance = dist_mm / 10; // mm → cm
-                            tx_uart_pc_debug("TOF → Valid dist: %u cm\r\n", s_distance);
+                            //tx_uart_pc_debug("TOF → Valid dist: %u cm\r\n", s_distance);
                             prev_distance = s_distance;
                         } else {
                             s_distance = prev_distance;
-                            tx_uart_pc_debug("TOF → Invalid dist: %u cm\r\n", s_distance);
-                            //tx_uart_pc_debug("TOF → Invalid (status=0x%02X, mm=%u)\r\n", status, dist_mm);
+                            //tx_uart_pc_debug("TOF → Invalid dist: %u cm\r\n", s_distance);
                         }
                     } else {
                         tx_uart_pc_debug("TOF → Header mismatch: %02X %02X %02X %02X\r\n",
@@ -339,7 +291,7 @@ void tx_uart(int ch)
 
         IfxAsclin_Asc_write(g_uartInstances[ch], (const void *)localBuf, &len, TIMEOUT);
 
-        tx_uart_pc_debug("TX DONE\r\n");
+        //tx_uart_pc_debug("TX DONE\r\n");
 
         // shared buffer 비우기 (동기화 플래그가 있으면 여기서 처리)
         ((uint8 *)sharedBuf)[0] = '\0';
@@ -377,13 +329,15 @@ void tx_uart_debug(int ch, const char *format, ...)
     for (volatile int i = 0; i < 100000; i++);
 }
 
-void PrepareArduinoMessageAndSend(uint8 speedL, uint8 speedR, char slope,
-                                  uint8 targetSpeed, char steeringAngle)
+void PrepareArduinoMessageAndSend(uint8 speedL_integer, uint8 speedL_decimal, uint8 speedR_integer, uint8 speedR_decimal,
+                                    char slope, uint8 targetSpeed, char steeringAngle)
 {
     uint8 idx = 0;
     s_arduinoTxBuf[idx++] = 0xAA;
-    s_arduinoTxBuf[idx++] = speedL;
-    s_arduinoTxBuf[idx++] = speedR;
+    s_arduinoTxBuf[idx++] = speedL_integer;
+    s_arduinoTxBuf[idx++] = speedL_decimal;
+    s_arduinoTxBuf[idx++] = speedR_integer;
+    s_arduinoTxBuf[idx++] = speedR_decimal;
     s_arduinoTxBuf[idx++] = (uint8)slope;         // signed char to byte
     s_arduinoTxBuf[idx++] = targetSpeed;
     s_arduinoTxBuf[idx++] = (uint8)steeringAngle;
@@ -399,7 +353,6 @@ void PrepareArduinoMessageAndSend(uint8 speedL, uint8 speedR, char slope,
     // 전송 호출
     tx_uart(ARDUINO);
 }
-
 
 
 /*********************************************************************************************************************/

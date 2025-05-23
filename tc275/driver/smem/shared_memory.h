@@ -25,8 +25,10 @@ extern volatile RingBuffer s_pcRxRingBuffer;
 extern volatile RingBuffer s_tofRxRingBuffer;
 
 // 아두이노 받는 변수
-extern volatile uint8 s_targetSpeedL;
-extern volatile uint8 s_targetSpeedR;
+extern volatile uint8 s_targetSpeedL_integer;
+extern volatile uint8 s_targetSpeedL_decimal;
+extern volatile uint8 s_targetSpeedR_integer;
+extern volatile uint8 s_targetSpeedR_decimal;
 
 // 라베파 받는 변수
 extern volatile char   s_followAngle;
@@ -35,8 +37,10 @@ extern volatile char   s_followAngle;
 extern volatile uint16 s_distance;
 
 // 아두이노 보낼 변수
-extern volatile uint8 s_speedL;
-extern volatile uint8 s_speedR;
+extern volatile uint8 s_speedL_integer;
+extern volatile uint8 s_speedL_decimal;
+extern volatile uint8 s_speedR_integer;
+extern volatile uint8 s_speedR_decimal;
 extern volatile char  s_slope;
 extern volatile uint8 s_targetSpeed;
 extern volatile char  s_steeringAngle;

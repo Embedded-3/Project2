@@ -67,17 +67,14 @@ typedef struct {
 
 
 uint8 calculateCRC(const uint8* data, uint8 len);
-uint8 calculateToFSumCheck(const uint8* data, uint8 len);
 int validateMessage(const uint8* data, uint8 len);
-int validateToFMessage(const uint8* data, uint8 len);
 void ProcessReceivedMessage(uint8* msg, int len, int sourceDevice);
 
 void ParserInit(ParserContext* ctx);
-void ParseRingBuffer(volatile RingBuffer* rb, ParserContext* ctx);
 uint8 calculateCRC(const uint8* data, uint8 len);
 uint8 calculateToFSumCheck(const uint8* data, uint8 len);
-void PrepareArduinoMessageAndSend(uint8 speedL, uint8 speedR, char slope,
-                                  uint8 targetSpeed, char steeringAngle);
+void PrepareArduinoMessageAndSend(uint8 speedL_integer, uint8 speedL_decimal, uint8 speedR_integer, uint8 speedR_decimal,
+                                    char slope, uint8 targetSpeed, char steeringAngle);
 
 void tx_uart(int ch);
 void tx_uart_pc_debug(const char *format, ...);

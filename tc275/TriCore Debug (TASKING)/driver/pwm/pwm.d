@@ -108,3 +108,7 @@ pwm.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\T
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Atom\\Pwm\IfxGtm_Atom_Pwm.h" :
 pwm.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h" :
+pwm.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\user_MotorCtl.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\user_MotorCtl.h" :
+pwm.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h" :
