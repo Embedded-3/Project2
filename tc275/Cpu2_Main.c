@@ -26,7 +26,10 @@
  *********************************************************************************************************************/
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
+#include "driver/stm/stm.h"
 #include "IfxScuWdt.h"
+#include "Bsp.h"
+#include "SMU_IR_Alarm.h"
 
 extern IfxCpu_syncEvent g_cpuSyncEvent;
 
@@ -38,12 +41,133 @@ void core2_main(void)
      * Enable the watchdog and service it periodically if it is required
      */
     IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
+    IfxScuWdt_changeCpuWatchdogReload(IfxScuWdt_getCpuWatchdogPassword(), REL_VAL); /* Set CPU0WD timer to ~1.3 sec */
+    IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
     
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
     
+    Driver_Stm_Init();      // 스케줄링
+
+    initPwm();              // PWM 초기화
+    startPwm();             // PWM 시작
+    
+    /* Configuration and triggering of the alarm */
+    SMU_configuration();
+
     while(1)
     {
     }
+}
+
+void AppTask1ms(void)
+{
+    stTestCnt.u32nuCnt1ms++;
+}
+
+void AppTask10ms(void)
+{
+    stTestCnt.u32nuCnt10ms++;
+
+    if(!flag_sw.on_off) return; // TOOD 임시
+
+    // Priority 1 : ToF
+    if(stTestCnt.u32nuCnt10ms % 5== 0) {   // Period : 50ms
+        uint16 avg_speed = (s_speedL_integer + s_speedR_integer) / 2;
+        uint32 stop_distance = (avg_speed / 5) * 5 + 20;    //ex) 30이면 50cm, 20이면 40cm
+        if(s_distance <= stop_distance) {
+            ;
+            // tx_uart_pc_debug("distance %d\n\r", s_distance);
+            // tx_uart_pc_debug("BRAKE\n\r");
+            //setSpeed(STOP);
+        }
+        else {
+            ;
+        }
+    }
+
+    // Priority 2 : IMU
+    if(stTestCnt.u32nuCnt10ms % 5 == 0) {   // Period : 50ms
+        // imu
+        read_accel_g(&ax, &ay, &az);
+        read_gyro_dps(&gx, &gy, &gz);
+        read_magnetometer_raw(&mx, &my, &mz);
+        float mx_ut = mx * 0.15f;
+        float my_ut = my * 0.15f;
+        float mz_ut = mz * 0.15f;
+        MadgwickQuaternionUpdate(ax, ay, az, gx , gy, gz, mx_ut, my_ut, mz_ut);
+        quaternionToEuler();
+        //if(offset_calibrated) print("Yaw=%d, Pitch=%d, Roll=%d\n\r", (int)yaw, (int)pitch, (int)roll);
+        if(offset_calibrated) {
+            //tx_uart_pc_debug("Madgwick = %d\n\r",(int)pitch);
+            s_slope = (int)pitch;
+        }
+        //
+
+
+
+
+
+
+        // if(flag_sw.on_off) {
+        //     getSpeed(50); // 속도 측정
+        //     tx_uart_pc_debug(MAGENTA"set %.3lf \n\r"RESET, pid_control(s_targetSpeed, measured_speed.lspeed, 50));
+        // }
+        
+        if(s_distance <= 30){ // 속도가 빠르면 tof가 읽기전에 이미 가 있음 조절 필요
+            //IfxPort_setPinHigh(BRAKE_PIN);
+            //for(int i=0;i<4;i++) setPwm(i, 0);   
+            ;
+            //print("BRAKE\n\r");
+
+        }
+        else{ ;
+            //IfxPort_setPinLow(BRAKE_PIN);
+            //for(int i=0;i<4;i++) setPwm(i, 3500);   
+            //print("GO\n\r");
+        }
+
+
+
+    }
+
+
+
+}
+
+void AppTask100ms(void)
+{
+    stTestCnt.u32nuCnt100ms++;
+    distance = s_distance;
+}
+
+void AppTask1000ms(void)
+{
+    stTestCnt.u32nuCnt1000ms++;
+
+    if(flag_sw.on_off) {
+        getSpeed(1000); // 속도 측정
+        //setSpeed(SPEED_3);
+    }
+
+    //pid_control(s_targetSpeed, measured_speed.rspeed, 1000);
+    //tx_uart_pc_debug(MAGENTA"set %d \n\r"RESET, pid_control(s_targetSpeed, measured_speed.rspeed, 1000));
+    if(flag_sw.on_off) {
+        //for(int i=0;i<4;i++) setPwm(i, 3500);   
+        //getSpeed(1000); // 속도 측정
+        //tx_uart_pc_debug(MAGENTA"set %.3lf \n\r"RESET, pid_control(s_targetSpeed, measured_speed.lspeed, 1));
+
+        // TODO 소수점 두자리만 보내도록 고치기
+        s_speedL_integer = (uint8)measured_speed.lspeed;
+        s_speedL_decimal = (uint8)(measured_speed.lspeed - (double)s_speedL_integer);
+        s_speedR_integer = (uint8)measured_speed.rspeed;
+        s_speedR_decimal = (uint8)(measured_speed.rspeed - (double)s_speedR_integer);
+    }
+    else{
+        for(int i=0;i<4;i++) setPwm(i, 0);   
+    }
+
+    //print("%d %d %d\n\r", flag_sw.y, flag_sw.g, flag_sw.b);
+    IfxScuWdt_serviceCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
 }
