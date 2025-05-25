@@ -20,6 +20,8 @@ volatile uint8 s_targetSpeedL_integer __attribute__((section(".shared")));
 volatile uint8 s_targetSpeedL_decimal __attribute__((section(".shared")));
 volatile uint8 s_targetSpeedR_integer __attribute__((section(".shared")));
 volatile uint8 s_targetSpeedR_decimal __attribute__((section(".shared")));
+volatile uint16 s_targetLeftPWM __attribute__((section(".shared")));
+volatile uint16 s_targetRightPWM __attribute__((section(".shared")));
 
 volatile char   s_followAngle __attribute__((section(".shared")));
 

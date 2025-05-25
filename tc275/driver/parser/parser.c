@@ -53,10 +53,12 @@ void ProcessReceivedMessage(uint8* msg, int len, int sourceDevice)
         case ARDUINO:
             s_targetSpeedL_integer = msg[1];
             s_targetSpeedL_decimal = msg[2];
+            s_targetLeftPWM = ((uint16)msg[1] << 8) | ((uint16)msg[2]);
             s_targetSpeedR_integer = msg[3];
             s_targetSpeedR_decimal = msg[4];
-            tx_uart_pc_debug("ARDUINO → targetSpeedL=%u.%u, targetSpeedR=%u.%u\r\n", s_targetSpeedL_integer, s_targetSpeedL_decimal,
-                                                                                   s_targetSpeedR_integer, s_targetSpeedR_decimal);
+            s_targetRightPWM = ((uint16)msg[3] << 8) | ((uint16)msg[4]);
+            //tx_uart_pc_debug("ARDUINO → targetSpeedL=%u.%u, targetSpeedR=%u.%u\r\n", s_targetSpeedL_integer, s_targetSpeedL_decimal, s_targetSpeedR_integer, s_targetSpeedR_decimal);
+            tx_uart_pc_debug("ARDUINO -> targetLeftPWM = %d, targetRightPWM = %d\r\n", s_targetLeftPWM, s_targetRightPWM);
             break;
 
         case RPI:
@@ -299,6 +301,7 @@ void tx_uart(int ch)
         // 간단한 딜레이 (필요시 조절)
         for (volatile int i = 0; i < 100000; i++);
     }
+    //tx_uart_pc_debug("TX DONE\r\n");
 }
 
 // for debug

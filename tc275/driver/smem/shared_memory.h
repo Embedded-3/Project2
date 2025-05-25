@@ -30,6 +30,9 @@ extern volatile uint8 s_targetSpeedL_decimal;
 extern volatile uint8 s_targetSpeedR_integer;
 extern volatile uint8 s_targetSpeedR_decimal;
 
+extern volatile uint16 s_targetLeftPWM;
+extern volatile uint16 s_targetRightPWM;
+
 // 라베파 받는 변수
 extern volatile char   s_followAngle;
 

@@ -55,6 +55,7 @@ void arduinoTxISR(void)
 IFX_INTERRUPT(arduinoRxISR, 1, ISR_PRIORITY_ARDUINO_RX);
 void arduinoRxISR(void)
 {
+    //tx_uart_pc_debug("Interrupt\r\n");
     uint8 receivedData[UART_BUFFER_SIZE];
     Ifx_SizeT length = UART_BUFFER_SIZE;
     boolean dataAvailable;
@@ -92,7 +93,25 @@ void rpiTxISR(void)
 IFX_INTERRUPT(rpiRxISR, 1, ISR_PRIORITY_RPI_RX);
 void rpiRxISR(void)
 {
+    //tx_uart_pc_debug("Interrupt\r\n");
+    uint8 receivedData[UART_BUFFER_SIZE];
+    Ifx_SizeT length = UART_BUFFER_SIZE;
+    boolean dataAvailable;
+
+    // 먼저 ISR 내부 처리를 수행 (필수)
     IfxAsclin_Asc_isrReceive(&g_uart_rpi);
+
+    // UART 수신 FIFO에서 최대 UART_BUFFER_SIZE 바이트 읽기 시도
+    IfxAsclin_Asc_read(&g_uart_rpi, receivedData, &length, 0);  // Non-blocking read (timeout=0)
+
+    // 읽은 데이터가 있으면 링버퍼에 넣기
+    if (length > 0)
+    {
+        for (Ifx_SizeT i = 0; i < length; i++)
+        {
+            RingBufferPut(&s_rpiRxRingBuffer, receivedData[i]);
+        }
+    }
 }
 
 IFX_INTERRUPT(rpiErISR, 1, ISR_PRIORITY_RPI_ER);
@@ -179,6 +198,7 @@ void core1_main(void)
 
     tx_uart_pc_debug("hello TC275!\r\n");
 
+    PrepareArduinoMessageAndSend(s_speedL_integer, s_speedL_decimal, s_speedR_integer, s_speedR_decimal, s_slope, s_targetSpeed, s_steeringAngle);  // TODO 자꾸떠서 주석해놨음
     while (1)
     {
 
@@ -215,13 +235,14 @@ void core1_main(void)
         // Arduino Receive
         //rx_uart_debug(ARDUINO);
         rx_uart(ARDUINO);
+        //tx_uart_pc_debug("now left PWM : %d, right PWM : %d\r\n", s_targetLeftPWM, s_targetRightPWM);
         //tx_uart_pc_debug("arduino head : %d , tail : %d\r\n", s_arduinoRxRingBuffer.head, s_arduinoRxRingBuffer.tail);
         //tx_uart_pc_debug("arduino received : %s\r\n", s_arduinoRxRingBuffer.buffer);
         rx_uart(TOF);
         // speedL, speedR, slope, targetSpeed, steeringAngle
 
-        
-        //PrepareArduinoMessageAndSend(10, 20, 30, 40, 50);  // TODO 자꾸떠서 주석해놨음
+        PrepareArduinoMessageAndSend(s_speedL_integer, s_speedL_decimal, s_speedR_integer, s_speedR_decimal, s_slope, s_targetSpeed, s_steeringAngle);  // TODO 자꾸떠서 주석해놨음
+
         RingBufferInit(&s_arduinoRxRingBuffer);
         RingBufferInit(&s_rpiRxRingBuffer);
         RingBufferInit(&s_tofRxRingBuffer);

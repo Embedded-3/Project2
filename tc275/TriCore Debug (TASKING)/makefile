@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include driver/user_MotorCtl/subdir.mk
 -include driver/uart/subdir.mk
 -include driver/stm/subdir.mk
 -include driver/smem/subdir.mk
@@ -17,12 +18,9 @@ RM := rm -rf
 -include driver/imu/subdir.mk
 -include driver/etc/subdir.mk
 -include driver/encoder/subdir.mk
--include driver/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_PinMap/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Impl/subdir.mk
--include Libraries/iLLD/TC27D/Tricore/Vadc/Std/subdir.mk
--include Libraries/iLLD/TC27D/Tricore/Vadc/Adc/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Stm/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Src/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Scu/Std/subdir.mk

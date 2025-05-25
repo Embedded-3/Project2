@@ -130,8 +130,8 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D\Tricore\Cpu\Irq\IfxCpu_Irq.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h" :
-Cpu0_Main.o :	..\driver\user_MotorCtl.h
-..\driver\user_MotorCtl.h :
+Cpu0_Main.o :	..\driver\user_MotorCtl\user_MotorCtl.h
+..\driver\user_MotorCtl\user_MotorCtl.h :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\uart\uart.h"

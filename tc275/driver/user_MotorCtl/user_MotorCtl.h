@@ -37,6 +37,6 @@ extern volatile Speed_t measured_speed;
 
 void getSpeed(int time);
 void setSpeed(SpeedType speedType);
-int pid_control(float set_speed, float measured_speed, float dt_ms);
+//int pid_control(float set_speed, float measured_speed, float dt_ms);
 
 #endif
