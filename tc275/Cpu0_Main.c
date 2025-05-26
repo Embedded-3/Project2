@@ -118,6 +118,7 @@ void core0_main(void)
     s_speedR_decimal = 1;
     s_distance = 1;
 
+    //setPwm(FR, 0); // 초기화
     //Ifx_TickTime ticksFor1s = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, WAIT_TIME); // CPU0의 Watchdog 갱신
 
     while(1)
@@ -133,8 +134,7 @@ void core0_main(void)
         handleSpeedSwitch(&cur_yellow, &prev_yellow, YELLOW_SPEED_SW_PIN, SPEED_YELLOW);
         handleSpeedSwitch(&cur_green, &prev_green, GREEN_SPEED_SW_PIN, SPEED_GREEN);
         handleSpeedSwitch(&cur_blue, &prev_blue, BLUE_SPEED_SW_PIN, SPEED_BLUE);
-        //
-       // wait(ticksFor1s);
+
     }
 }
 
@@ -234,7 +234,7 @@ void AppTask10ms(void)
             }
             //    tx_uart_pc_debug("STOP! distance\n");
  
-            setSpeed(STOP);
+            //setSpeed(STOP);
         }
         else{
             IfxPort_setPinLow(BRAKE_PIN);
@@ -260,7 +260,7 @@ void AppTask10ms(void)
         }
     }
     
-    if(stTestCnt.u32nuCnt10ms % 10 == 0) {   // Period : 20ms
+    if(stTestCnt.u32nuCnt10ms % 10 == 0) {   // Period : 50ms
         getSpeed(100); // 속도 측정4
 
         // 소수점 두자리만 보냄

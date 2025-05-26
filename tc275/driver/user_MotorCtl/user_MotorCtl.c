@@ -36,7 +36,7 @@ void setSpeed(SpeedType speedType)  // 스위치로 선택한 속도를 PWM으�
             setAllMotor(STOP);
             break;
         case SPEED_1:
-            s_targetSpeed = 20; //10; // TODO
+            s_targetSpeed = 5; //20; //10; // TODO
             //setAllMotor(DT_SPEED_1);
             break;
         case SPEED_2:
