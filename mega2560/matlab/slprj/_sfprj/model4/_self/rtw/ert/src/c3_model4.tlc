@@ -1,0 +1,67 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   7 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "p_valid"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "model4:127:226-233"\
+    }\
+    ChartData {\
+      Name         "p_speed_L"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "model4:127:234-243"\
+    }\
+    ChartData {\
+      Name         "p_speed_R"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "model4:127:244-253"\
+    }\
+    ChartData {\
+      Name         "p_v_target"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "model4:127:254-264"\
+    }\
+    ChartData {\
+      Name         "p_slope"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "model4:127:265-272"\
+    }\
+    ChartData {\
+      Name         "p_steer"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "model4:127:273-280"\
+    }\
+    ChartData {\
+      Name         "p_crc"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "model4:127:281-286"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

@@ -1,0 +1,158 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   20 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "doneDoubleBufferReInit"\
+      Description  "DoubleBufferInitCheck"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "p_start"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:238-245"\
+    }\
+    ChartData {\
+      Name         "p_start_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:238-245"\
+    }\
+    ChartData {\
+      Name         "p_valid"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:246-253"\
+    }\
+    ChartData {\
+      Name         "p_valid_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:246-253"\
+    }\
+    ChartData {\
+      Name         "p_speed_L"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:254-263"\
+    }\
+    ChartData {\
+      Name         "p_speed_L_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:254-263"\
+    }\
+    ChartData {\
+      Name         "p_speed_R"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:264-273"\
+    }\
+    ChartData {\
+      Name         "p_speed_R_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:264-273"\
+    }\
+    ChartData {\
+      Name         "p_v_target"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:274-284"\
+    }\
+    ChartData {\
+      Name         "p_v_target_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:274-284"\
+    }\
+    ChartData {\
+      Name         "p_slope"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:285-292"\
+    }\
+    ChartData {\
+      Name         "p_slope_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:285-292"\
+    }\
+    ChartData {\
+      Name         "p_steer"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:293-300"\
+    }\
+    ChartData {\
+      Name         "p_steer_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:293-300"\
+    }\
+    ChartData {\
+      Name         "p_crc"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:301-306"\
+    }\
+    ChartData {\
+      Name         "p_crc_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:301-306"\
+    }\
+    ChartData {\
+      Name         "p_fin"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:307-312"\
+    }\
+    ChartData {\
+      Name         "p_fin_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "car_speed_control_uart_proto2:127:307-312"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
