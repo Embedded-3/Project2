@@ -90,6 +90,8 @@ stm.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D\Trico
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D\Tricore\Cpu\Irq\IfxCpu_Irq.h" :
 stm.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h" :
+stm.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\safety.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\safety.h" :
 stm.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h" :
 stm.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\_PinMap\IfxPort_PinMap.h"

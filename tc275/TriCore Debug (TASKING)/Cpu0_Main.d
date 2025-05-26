@@ -130,6 +130,8 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D\Tricore\Cpu\Irq\IfxCpu_Irq.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\safety.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\safety.h" :
 Cpu0_Main.o :	..\driver\user_MotorCtl\user_MotorCtl.h
 ..\driver\user_MotorCtl\user_MotorCtl.h :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h"
@@ -176,3 +178,5 @@ Cpu0_Main.o :	..\driver\imu\imu.h
 ..\driver\imu\imu.h :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\etc\etc.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\etc\etc.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Service\\CpuGeneric\\SysSe\\Bsp\Bsp.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Service\\CpuGeneric\\SysSe\\Bsp\Bsp.h" :

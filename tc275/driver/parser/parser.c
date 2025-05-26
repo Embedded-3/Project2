@@ -58,12 +58,12 @@ void ProcessReceivedMessage(uint8* msg, int len, int sourceDevice)
             s_targetSpeedR_decimal = msg[4];
             s_targetRightPWM = ((uint16)msg[3] << 8) | ((uint16)msg[4]);
             //tx_uart_pc_debug("ARDUINO → targetSpeedL=%u.%u, targetSpeedR=%u.%u\r\n", s_targetSpeedL_integer, s_targetSpeedL_decimal, s_targetSpeedR_integer, s_targetSpeedR_decimal);
-            tx_uart_pc_debug("ARDUINO -> targetLeftPWM = %d, targetRightPWM = %d\r\n", s_targetLeftPWM, s_targetRightPWM);
+            tx_uart_pc_debug("ARDUINO -> targetLeftPWM = %d, targetRightPWM = %d\r\n", (sint16)s_targetLeftPWM, (sint16)s_targetRightPWM);
             break;
 
         case RPI:
-            s_followAngle = (char)msg[1];  // signed 처리
-            tx_uart_pc_debug("RPI → steeringAngle=%d\r\n", s_followAngle);
+            s_steeringAngle = (char)msg[1];  // signed 처리
+            tx_uart_pc_debug("RPI → steeringAngle=%d\r\n", s_steeringAngle);
             break;
 
         case TOF:
@@ -333,7 +333,7 @@ void tx_uart_debug(int ch, const char *format, ...)
 }
 
 void PrepareArduinoMessageAndSend(uint8 speedL_integer, uint8 speedL_decimal, uint8 speedR_integer, uint8 speedR_decimal,
-                                    char slope, uint8 targetSpeed, char steeringAngle)
+                                    uint8 slope, uint8 targetSpeed, uint8 steeringAngle)
 {
     uint8 idx = 0;
     s_arduinoTxBuf[idx++] = 0xAA;
@@ -343,6 +343,7 @@ void PrepareArduinoMessageAndSend(uint8 speedL_integer, uint8 speedL_decimal, ui
     s_arduinoTxBuf[idx++] = speedR_decimal;
     s_arduinoTxBuf[idx++] = (uint8)slope;         // signed char to byte
     s_arduinoTxBuf[idx++] = targetSpeed;
+    if(steeringAngle == 0) steeringAngle = 1; // steeringAngle이 0이면 1로 설정
     s_arduinoTxBuf[idx++] = (uint8)steeringAngle;
 
     // CRC 계산: start 제외, end 제외

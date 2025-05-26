@@ -37,6 +37,7 @@
 #include "IfxStm.h"
 #include "parser.h"
 #include "ring_buffer.h"
+#include "safety.h"
 
 extern IfxCpu_syncEvent g_cpuSyncEvent;
 
@@ -183,7 +184,7 @@ void core1_main(void)
      * Enable the watchdog and service it periodically if it is required
      */
     IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
-    
+
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
@@ -201,6 +202,13 @@ void core1_main(void)
     PrepareArduinoMessageAndSend(s_speedL_integer, s_speedL_decimal, s_speedR_integer, s_speedR_decimal, s_slope, s_targetSpeed, s_steeringAngle);  // TODO 자꾸떠서 주석해놨음
     while (1)
     {
+        if(flag1 == 0){
+            flag1 = 1;
+        }
+        else if(flag1 == 2){
+            tx_uart_pc_debug("Core1 STOP\n\r");
+            return;
+        }
 
         /*
         // pc Transmit
@@ -235,18 +243,23 @@ void core1_main(void)
         // Arduino Receive
         //rx_uart_debug(ARDUINO);
         rx_uart(ARDUINO);
-        //tx_uart_pc_debug("now left PWM : %d, right PWM : %d\r\n", s_targetLeftPWM, s_targetRightPWM);
-        //tx_uart_pc_debug("arduino head : %d , tail : %d\r\n", s_arduinoRxRingBuffer.head, s_arduinoRxRingBuffer.tail);
-        //tx_uart_pc_debug("arduino received : %s\r\n", s_arduinoRxRingBuffer.buffer);
+        rx_uart(RPI);
         rx_uart(TOF);
-        // speedL, speedR, slope, targetSpeed, steeringAngle
+
 
         PrepareArduinoMessageAndSend(s_speedL_integer, s_speedL_decimal, s_speedR_integer, s_speedR_decimal, s_slope, s_targetSpeed, s_steeringAngle);  // TODO 자꾸떠서 주석해놨음
 
         RingBufferInit(&s_arduinoRxRingBuffer);
         RingBufferInit(&s_rpiRxRingBuffer);
         RingBufferInit(&s_tofRxRingBuffer);
-        for (volatile int i = 0; i < 5000000; i++); //100ms
+
+        if(flag1 == 1){
+            flag1 = 0;
+        }
+
+        for (volatile int i = 0; i < 5000000; i++); // 100ms
+        //for (volatile int i = 0; i < 1000000 / 2 * 5; i++); //50ms
+        //for (volatile int i = 0; i < 1000000; i++); // 20ms
         //for (volatile int i = 0; i < 50000000; i++); // 1 second
         //for (int i = 0; i < 1000000; i++); // 50 msec
     }

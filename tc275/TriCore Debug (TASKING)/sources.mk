@@ -28,6 +28,7 @@ Configurations/Debug \
 . \
 Libraries/Infra/Platform/Tricore/Compilers \
 Libraries/Service/CpuGeneric/StdIf \
+Libraries/Service/CpuGeneric/SysSe/Bsp \
 Libraries/Service/CpuGeneric/SysSe/Comm \
 Libraries/iLLD/TC27D/Tricore/Asclin/Asc \
 Libraries/iLLD/TC27D/Tricore/Asclin/Std \
@@ -43,6 +44,7 @@ Libraries/iLLD/TC27D/Tricore/I2c/Std \
 Libraries/iLLD/TC27D/Tricore/Mtu/Std \
 Libraries/iLLD/TC27D/Tricore/Port/Std \
 Libraries/iLLD/TC27D/Tricore/Scu/Std \
+Libraries/iLLD/TC27D/Tricore/Smu/Std \
 Libraries/iLLD/TC27D/Tricore/Src/Std \
 Libraries/iLLD/TC27D/Tricore/Stm/Std \
 Libraries/iLLD/TC27D/Tricore/_Impl \
@@ -55,6 +57,7 @@ driver/parser \
 driver/pwm \
 driver/ringbuffer \
 driver/smem \
+driver/smu_ir \
 driver/stm \
 driver/uart \
 driver/user_MotorCtl \

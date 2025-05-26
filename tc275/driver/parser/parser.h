@@ -74,7 +74,7 @@ void ParserInit(ParserContext* ctx);
 uint8 calculateCRC(const uint8* data, uint8 len);
 uint8 calculateToFSumCheck(const uint8* data, uint8 len);
 void PrepareArduinoMessageAndSend(uint8 speedL_integer, uint8 speedL_decimal, uint8 speedR_integer, uint8 speedR_decimal,
-                                    char slope, uint8 targetSpeed, char steeringAngle);
+                                    uint8 slope, uint8 targetSpeed, uint8 steeringAngle);
 
 void tx_uart(int ch);
 void tx_uart_pc_debug(const char *format, ...);

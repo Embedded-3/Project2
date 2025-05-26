@@ -27,6 +27,9 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
+#include "safety.h"
+#include "stm.h"
+#include "driver\smu_ir\SMU_IR_Alarm.h"
 
 extern IfxCpu_syncEvent g_cpuSyncEvent;
 
@@ -38,13 +41,15 @@ void core2_main(void)
      * Enable the watchdog and service it periodically if it is required
      */
     IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
-    
+
+
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
     
+    //SMU_configuration(); // SMU 설정
     while(1)
     {
-        
+
     }
 }

@@ -128,3 +128,5 @@ Cpu1_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Stm\\Std\IfxStm.h" :
 Cpu1_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\parser\parser.h" :
+Cpu1_Main.o :	..\safety.h
+..\safety.h :

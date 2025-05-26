@@ -74,3 +74,25 @@ Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\S
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxPort_regdef.h" :
 Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Scu\\Std\IfxScuWdt.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Scu\\Std\IfxScuWdt.h" :
+Cpu2_Main.o :	..\safety.h
+..\safety.h :
+Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\stm\stm.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\driver\\stm\stm.h" :
+Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Stm\\Std\IfxStm.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\\Stm\\Std\IfxStm.h" :
+Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxStm_cfg.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxStm_cfg.h" :
+Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Src\Std\IfxSrc.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\Src\Std\IfxSrc.h" :
+Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxSrc_cfg.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxSrc_cfg.h" :
+Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCbs_reg.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCbs_reg.h" :
+Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCbs_regdef.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCbs_regdef.h" :
+Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D\Tricore\Cpu\Irq\IfxCpu_Irq.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\Libraries\iLLD\TC27D\Tricore\Cpu\Irq\IfxCpu_Irq.h" :
+Cpu2_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p2\main.h" :
+Cpu2_Main.o :	..\driver\smu_ir\SMU_IR_Alarm.h
+..\driver\smu_ir\SMU_IR_Alarm.h :

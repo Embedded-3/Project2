@@ -98,6 +98,7 @@ void AppScheduling(void)
     {
         stSchedulingInfo.u8nuScheduling1msFlag = 0u;
         AppTask1ms();
+        //checkSafetyFlag();
 
         if(stSchedulingInfo.u8nuScheduling10msFlag == 1u)
         {
@@ -117,3 +118,4 @@ void AppScheduling(void)
         }
     }
 }
+

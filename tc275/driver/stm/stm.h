@@ -12,6 +12,7 @@
 #include "Libraries\iLLD\TC27D\Tricore\Cpu\Irq\IfxCpu_Irq.h"
 
 #include "main.h"
+#include "safety.h"
 
 /***********************************************************************/
 /*Typedef*/

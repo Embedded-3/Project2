@@ -11,6 +11,7 @@ RM := rm -rf
 -include driver/user_MotorCtl/subdir.mk
 -include driver/uart/subdir.mk
 -include driver/stm/subdir.mk
+-include driver/smu_ir/subdir.mk
 -include driver/smem/subdir.mk
 -include driver/ringbuffer/subdir.mk
 -include driver/pwm/subdir.mk
@@ -23,6 +24,7 @@ RM := rm -rf
 -include Libraries/iLLD/TC27D/Tricore/_Impl/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Stm/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Src/Std/subdir.mk
+-include Libraries/iLLD/TC27D/Tricore/Smu/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Scu/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Port/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Mtu/Std/subdir.mk
@@ -38,6 +40,7 @@ RM := rm -rf
 -include Libraries/iLLD/TC27D/Tricore/Asclin/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Asclin/Asc/subdir.mk
 -include Libraries/Service/CpuGeneric/SysSe/Comm/subdir.mk
+-include Libraries/Service/CpuGeneric/SysSe/Bsp/subdir.mk
 -include Libraries/Service/CpuGeneric/StdIf/subdir.mk
 -include Libraries/Infra/Platform/Tricore/Compilers/subdir.mk
 -include Configurations/Debug/subdir.mk
