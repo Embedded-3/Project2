@@ -35,9 +35,9 @@ typedef enum DUTYCYCLE{
     DT_STOP = 0,
 
 
-    DT_SPEED_1 = 2400, // 앞바퀴는 바닥에서만 감
-    DT_SPEED_2 = 3200,
-    DT_SPEED_3 = 4000,
+    DT_SPEED_1 = 1900,
+    DT_SPEED_2 = 2000,
+    DT_SPEED_3 = 2100,
 } e_DutyCycle_t;
 
 

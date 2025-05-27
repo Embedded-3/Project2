@@ -200,6 +200,9 @@ void core1_main(void)
     tx_uart_pc_debug("hello TC275!\r\n");
 
     PrepareArduinoMessageAndSend(s_speedL_integer, s_speedL_decimal, s_speedR_integer, s_speedR_decimal, s_slope, s_targetSpeed, s_steeringAngle);  // TODO 자꾸떠서 주석해놨음
+    
+    
+    
     while (1)
     {
         if(flag1 == 0){
@@ -242,6 +245,7 @@ void core1_main(void)
 
         // Arduino Receive
         //rx_uart_debug(ARDUINO);
+
         rx_uart(ARDUINO);
         rx_uart(RPI);
         rx_uart(TOF);

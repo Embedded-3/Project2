@@ -64,7 +64,6 @@ void core0_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
         
-    //initShellInterface();   // 디버깅
     Driver_Stm_Init();      // 스케줄링
     initEncoder();          // 엔코더 초기화
 
@@ -77,17 +76,6 @@ void core0_main(void)
     init_mpu9250_registers();               //mpu92500_registers_init
     init_ak8963_registers();                //ak8963_registers_init
     delay_ms(500);
-
-
-    //for(int i=0;i<4;i++) setPwm(i, GO_AFTER_STOP);
-
-    //for(int i=0;i<4;i++) setPwm(i, MIN);
-    //for(int i=0;i<4;i++) setPwm(i, 1700);   
-    //for(int i=0;i<4;i++) setPwm(i, 2000);   
-    //for(int i=0;i<4;i++) setPwm(i, MAX);   
-    //setCurve(LEFT, 2000, MAX); // 왼쪽으로 회전 : 급격한 회전
-    //setCurve(RIGHT, MAX, 3000); // 왼쪽으로 회전 : 급격한 회전
-    //setCurve(RIGHT, 3500, 3000); // 깔끔한 회전??
 
 
     // 스위치
@@ -118,13 +106,12 @@ void core0_main(void)
     s_speedR_decimal = 1;
     s_distance = 1;
 
-    //setPwm(FR, 0); // 초기화
-    //Ifx_TickTime ticksFor1s = IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, WAIT_TIME); // CPU0의 Watchdog 갱신
 
     while(1)
     {
+
         AppScheduling();
-        // Speed switch
+        // // Speed switch
         static int cur_sw = 0, prev_sw = 0;
         static int cur_yellow = 0, prev_yellow = 0;
         static int cur_green = 0, prev_green = 0;
@@ -134,7 +121,6 @@ void core0_main(void)
         handleSpeedSwitch(&cur_yellow, &prev_yellow, YELLOW_SPEED_SW_PIN, SPEED_YELLOW);
         handleSpeedSwitch(&cur_green, &prev_green, GREEN_SPEED_SW_PIN, SPEED_GREEN);
         handleSpeedSwitch(&cur_blue, &prev_blue, BLUE_SPEED_SW_PIN, SPEED_BLUE);
-
     }
 }
 
@@ -151,26 +137,33 @@ static void handleSpeedSwitch(int* cur, int* prev, Ifx_P *port, uint8 pin, Switc
                 setSpeed(STOP); // 브레이크
                 sum_left_pwm = 0;
                 sum_right_pwm = 0;
-                            tx_uart_pc_debug(GREEN"STOP\n\r"RESET);
                 break;
 
             case SPEED_BLUE:
-                if(!flag_sw.on_off) break;
+                if(!flag_sw.on_off) {
+                    setAllMotor(DT_SPEED_1);
+                    break;
+                }
                 flag_sw = (switch_t){flag_sw.on_off, 1, 0, 0};
                 tx_uart_pc_debug(BLUE"SPEED : BLUE\n\r"RESET);
                 setSpeed(SPEED_1);
-                //s_targetSpeed = 20;
                 break;
 
             case SPEED_GREEN:
-                if(!flag_sw.on_off) break;
+                if(!flag_sw.on_off) {
+                    setAllMotor(DT_SPEED_2);
+                    break;
+                }
                 flag_sw = (switch_t){flag_sw.on_off, 0, 1, 0};
                 tx_uart_pc_debug(GREEN"SPEED : GREEN\n\r"RESET);
                 setSpeed(SPEED_2);
                 break;
 
             case SPEED_YELLOW:
-                if(!flag_sw.on_off) break;
+                if(!flag_sw.on_off) {
+                    setAllMotor(DT_SPEED_3);
+                    break;
+                }
                 flag_sw = (switch_t){flag_sw.on_off, 0, 0, 1};
                 tx_uart_pc_debug(YELLOW"SPEED : YELLOW\n\r"RESET);
                 setSpeed(SPEED_3);
@@ -185,24 +178,7 @@ void AppTask1ms(void)
     stTestCnt.u32nuCnt1ms++;
 
 
-            //if(!flag_sw.on_off) return;
-            //getSpeed(1); // 속도 측정1
-            // if(measured_speed.lspeed > s_targetSpeed){
-            //     left_pwm -= 10; // 왼쪽 바퀴 속도가 목표 속도보다 크면 속도 감소
-            // }
-            // else if(measured_speed.lspeed < s_targetSpeed){
-            //     left_pwm += 10; // 왼쪽 바퀴 속도가 목표 속도보다 작으면 속도 증가
-            // }
-            // if(measured_speed.rspeed > s_targetSpeed){
-            //     right_pwm -= 10; // 오른쪽 바퀴 속도가 목표 속도보다 크면 속도 감소
-            // }
-            // else if(measured_speed.rspeed < s_targetSpeed){
-            //     right_pwm += 10; // 오른쪽 바퀴 속도가 목표 속도보다 작으면 속도 증가
-            // }
-            // setPwm(FR, right_pwm);
-            // setPwm(FL, left_pwm);
-            // setPwm(RR, right_pwm);
-            // setPwm(RL, left_pwm);
+
 }
 
 void AppTask10ms(void)
@@ -234,7 +210,7 @@ void AppTask10ms(void)
             }
             //    tx_uart_pc_debug("STOP! distance\n");
  
-            //setSpeed(STOP);
+            setSpeed(STOP);
         }
         else{
             IfxPort_setPinLow(BRAKE_PIN);
@@ -260,7 +236,8 @@ void AppTask10ms(void)
         }
     }
     
-    if(stTestCnt.u32nuCnt10ms % 10 == 0) {   // Period : 50ms
+    if(stTestCnt.u32nuCnt10ms % 10 == 0) {   // Period : 100ms
+
         getSpeed(100); // 속도 측정4
 
         // 소수점 두자리만 보냄
@@ -288,6 +265,7 @@ void AppTask10ms(void)
                 else if(sum_left_pwm < 0) sum_left_pwm = 0;
                 if(sum_right_pwm > 4000) sum_right_pwm = 4000;
                 else if(sum_right_pwm < 0) sum_right_pwm = 0;
+                
                 setPwm(FR, sum_right_pwm);
                 setPwm(FL, sum_left_pwm);
                 setPwm(RR, sum_right_pwm);
@@ -299,14 +277,12 @@ void AppTask10ms(void)
                 // setPwm(RR, s_targetRightPWM);
                 // setPwm(RL, s_targetLeftPWM);
             }
-
-
         }
     }
 
     // 빨강 스위치 off면 속도 0
     if(!flag_sw.on_off) {
-        setSpeed(STOP);
+        //setSpeed(STOP);
     }
 
     if(stTestCnt.u32nuCnt10ms % 2 == 0) {   // Period : 20ms
@@ -320,6 +296,26 @@ void AppTask10ms(void)
 void AppTask100ms(void)
 {
     stTestCnt.u32nuCnt100ms++;
+
+
+    //     if(!flag_sw.on_off) return;
+    //     getSpeed(10); // 속도 측정1
+    // if(measured_speed.lspeed > s_targetSpeed){
+    //     left_pwm -= 50; // 왼쪽 바퀴 속도가 목표 속도보다 크면 속도 감소
+    // }
+    // else if(measured_speed.lspeed < s_targetSpeed){
+    //     left_pwm += 50; // 왼쪽 바퀴 속도가 목표 속도보다 작으면 속도 증가
+    // }
+    // if(measured_speed.rspeed > s_targetSpeed){
+    //     right_pwm -= 50; // 오른쪽 바퀴 속도가 목표 속도보다 크면 속도 감소
+    // }
+    // else if(measured_speed.rspeed < s_targetSpeed){
+    //     right_pwm += 50; // 오른쪽 바퀴 속도가 목표 속도보다 작으면 속도 증가
+    // }
+    // setPwm(FR, right_pwm);
+    // setPwm(FL, left_pwm);
+    // setPwm(RR, right_pwm);
+    // setPwm(RL, left_pwm);
 }
 
 void AppTask1000ms(void)

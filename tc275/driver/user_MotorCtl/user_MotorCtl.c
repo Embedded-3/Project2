@@ -17,10 +17,12 @@ void getSpeed(int time) // int time : 측정시간 (ms)
 
     //tx_uart_pc_debug("%d | %d\n\r", left_duration, right_duration);
     static int cnt = 0;
-    if (cnt++ % 10 == 0) { // 10번마다 출력
+    if (time == 100 && cnt++ % 10 == 0) {
         tx_uart_pc_debug(RRED"%.3lf [cm/s] | %.3lf [cm/s]\n\r"RESET, measured_speed.lspeed, measured_speed.rspeed);
     }
-
+    // if (time == 10 && cnt++ % 100 == 0) {
+    //     tx_uart_pc_debug(RRED"%.3lf [cm/s] | %.3lf [cm/s]\n\r"RESET, measured_speed.lspeed, measured_speed.rspeed);
+    // }
 
     // duration 초기화
     right_duration = 0;
